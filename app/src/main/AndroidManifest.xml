@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dukaan">
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.EditBusinessDetails"/>
+        <activity android:name=".views.ShareDukaanApp" />
+        <activity android:name=".views.GetYourOwnApp" />
+        <activity android:name=".views.ChangeLanguage" />
+        <activity android:name=".views.MainActivity" />
+        <activity android:name=".views.AccountPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Dukaan</string>
+    <string name="account">Account</string>
+    <string name="support">Support</string>
+    <string name="edit_business_details">Edit business details</string>
+    <string name="share_dukaan_app">Share Dukaan App</string>
+    <string name="get_your_own_app">Get your own App</string>
+    <string name="change_langauge">Change Langauge</string>
+    <string name="whatsapp_chat_support">WhatsApp Chat Support</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="get_yor_own_app">Get your own App</string>
+    <string name="download_your_store">Download your store</string>
+    <string name="change_language">Change Language</string>
+    <string name="english">English</string>
+    <string name="hindi">हिन्दी</string>
+    <string name="tamil">தமிழ்</string>
+    <string name="kannada">ಕನ್ನಡ</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="marathi">मराठी</string>
+    <string name="help_other_businesses">Help other businesses</string>
+    <string name="share">Share</string>
+    <string name="update_store_logo">Update store logo</string>
+    <string name="store_link">Store Link</string>
+    <string name="your_business_name">your business name</string>
+    <string name="business_name">Business Name</string>
+    <string name="your_business_category">your business category</string>
+    <string name="business_category_text">Business Category</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="address">Address</string>
+    <string name="save">Save</string>
 </resources>
