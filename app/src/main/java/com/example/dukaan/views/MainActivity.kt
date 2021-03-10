@@ -7,34 +7,37 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.example.dukaan.R
 import com.example.dukaan.fragments.AllOrderOperationsFragment
+import com.example.dukaan.fragments.OTPFragment
 import com.example.dukaan.fragments.OrdersFragment
 import com.example.dukaan.fragments.ViewPagerAdapter
+import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
+import kotlin.concurrent.schedule
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var viewPager: ViewPager
-    private lateinit var tabLayout: TabLayout
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewPager = viewPagerProducts
-        tabLayout = tabLayoutProducts
+        Timer("settingup").schedule(1000){
+            if (!PreferenceHelper.getStringFromPreference(this@MainActivity,OTPFragment.PHONE_KEY).isNullOrEmpty()){
+                val intent = Intent(this@MainActivity,Homescreen::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }else{
 
-        setViewPagerAdapter()
-    }
-
-    private fun setViewPagerAdapter() {
-        val viewPagerAdapter = ViewPagerAdapter(
-            supportFragmentManager,
-            FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
-        )
-
-        viewPager.adapter = viewPagerAdapter
-        tabLayout.setupWithViewPager(viewPager)
+                val intent = Intent(this@MainActivity,phone_login_activity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
+        }
 
     }
+
+
 }

@@ -61,6 +61,7 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val orderViewModelFactory = OrdersModelFactory(orderRepo)
         ordersViewModel =
             ViewModelProviders.of(this, orderViewModelFactory).get(OrdersViewModel::class.java)
+        launchAllOrderOperations()
     }
 
     override fun onItemClicked(operation: String){
