@@ -17,11 +17,6 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AcceptOrderActivity::class.java)
             startActivity(intent)
         }
-        launchFragment()
+        //launchFragment()
     }
-
-    fun launchFragment(){
-        val OrderFragment = OrdersFragment()
-        supportFragmentManager.beginTransaction().add(R.id.flContainer1, OrderFragment, "OrderFragment").commit()
-    }
-}
+}gt
