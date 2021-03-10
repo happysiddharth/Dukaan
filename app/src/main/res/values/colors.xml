@@ -7,9 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray">#DCDDDF</color>
+    <color name="default_button">#146EB4</color>
     <color name="custom_top">#0567BD</color>
     <color name="custom_notificationBar">#03559D</color>
     <color name="custom_color_text">#4F96D3</color>
     <color name="custom_orange">#FF6700</color>
     <color name="custom_continue_button">#9C9E9C</color>
+>>>>>>> ebe3ed3e4cd342924425fc2cdd2254f116c46a0a
 </resources>

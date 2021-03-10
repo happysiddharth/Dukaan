@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">Dukaan</string>
+    <string name="start">Start</string>
+    <string name="enter_your_mobile_number">Enter your mobile number</string>
+    <string name="enter_otp">Enter otp</string>
+    <string name="store_setup_is_completed">Store setup is completed</string>
+    <string name="find_following_steps_to_unlock_features">Find following steps to unlock features</string>
+    <string name="create_store">Create store</string>
+    <string name="business_categories">Business categories</string>
+
     <string name="catalogue">Catalogue</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="add_new_product">Add new product</string>
     <string name="add_new_category">Add new category</string>
