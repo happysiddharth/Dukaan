@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dukaan">
+        <activity android:name=".views.AcceptOrderActivity"></activity>
+       
         <activity android:name=".views.CreateStore"/>
         <activity android:name=".views.Homescreen" />
         <activity android:name=".views.MainActivity" />
@@ -26,5 +28,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

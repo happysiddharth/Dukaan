@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Dukaan</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="start">Start</string>
     <string name="enter_your_mobile_number">Enter your mobile number</string>
     <string name="enter_otp">Enter otp</string>
@@ -22,4 +24,5 @@
     <string name="add_product">Add Product</string>
     <string name="category_name">Category Name</string>
     <string name="add_category">Add Category</string>
+
 </resources>

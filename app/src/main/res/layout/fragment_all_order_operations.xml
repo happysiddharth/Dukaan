@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.AllOrderOperationsFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TvAllOrders"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:id="@+id/TvLifeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TvLifeTime"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TvLifeTime">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvAllOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rlEmptyOrders"
+        android:layout_below="@id/TvLifeTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/ivCheckList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_checklist"/>
+
+        <TextView
+            android:id="@+id/TvNoOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivCheckList"
+            android:text="@string/TvNoOrders"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share your store's link with your customers \n on social media to get more orders."
+            android:textColor="@color/light_gray"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            android:textStyle="normal"
+            android:padding="5dp"
+            android:layout_margin="1dp"/>
+
+        <Button
+            android:id="@+id/BtnShareStore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share store"
+            android:textAllCaps="false"
+            android:layout_marginTop="60dp"
+            android:paddingHorizontal="20dp"
+            android:textColor="@color/white"
+            android:background="@drawable/bg_button_share_store"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/TvNoOrder"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
