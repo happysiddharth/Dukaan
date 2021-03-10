@@ -5,7 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProviders
 import com.example.dukaan.R
+import com.example.dukaan.localDatabase.ProductEntity
+import com.example.dukaan.models.ProductsApplication
+import com.example.dukaan.recylerViewAdapter.ProductsDataAdapter
+import com.example.dukaan.viewModels.ProductsViewModel
+import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
 import kotlinx.android.synthetic.main.activity_add_category.*
 import kotlinx.android.synthetic.main.activity_add_product.*
 
