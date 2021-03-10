@@ -52,7 +52,7 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         var operationList = ordersViewModel.allOperationsModel() as MutableList<String>
         orderOperationsAdapter = OrderOperationsAdapter(operationList, this)
         rvOrderOperations.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,
-            true)
+            false)
         rvOrderOperations.adapter = orderOperationsAdapter
     }
 
@@ -65,32 +65,15 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
 
     override fun onItemClicked(operation: String){
         when (operation){
-            "All" -> {
-                launchAllOrderOperations()
-            }
-            "Pending" -> {
-                launchPendingOrderOperations()
-            }
-            "Accepted" -> {
-                launchAcceptedOrderOperations()
-            }
-            "Rejected" -> {
-                launchRejectedOrderOperations()
-            }
-            "Shipped" -> {
-                launchShippedOrderOperations()
-            }
-            "Cancelled" -> {
-                launchCancelledOrderOperations()
-            }
-            "Delivered" -> {
-                launchDeliveredOrderOperations()
-            }
-            "Failed" -> {
-                launchFailedOrderOperations()
-            }else -> {
-            launchAllOrderOperations()
-            }
+            "All" -> { launchAllOrderOperations() }
+            "Pending" -> { launchPendingOrderOperations() }
+            "Accepted" -> { launchAcceptedOrderOperations() }
+            "Rejected" -> { launchRejectedOrderOperations() }
+            "Shipped" -> { launchShippedOrderOperations() }
+            "Cancelled" -> { launchCancelledOrderOperations() }
+            "Delivered" -> { launchDeliveredOrderOperations() }
+            "Failed" -> { launchFailedOrderOperations() }
+            else -> { launchAllOrderOperations() }
         }
     }
 

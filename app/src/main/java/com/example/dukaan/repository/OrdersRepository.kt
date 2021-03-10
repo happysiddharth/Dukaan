@@ -5,14 +5,15 @@ class OrdersRepository {
     var operationList = mutableListOf<String>()
 
     fun setOperationsRepo(){
-        operationList.add("Failed")
-        operationList.add("Delivered")
-        operationList.add("Cancelled")
-        operationList.add("Shipped")
-        operationList.add("Rejected")
-        operationList.add("Accepted")
-        operationList.add("Pending")
+
         operationList.add("All")
+        operationList.add("Pending")
+        operationList.add("Accepted")
+        operationList.add("Rejected")
+        operationList.add("Shipped")
+        operationList.add("Cancelled")
+        operationList.add("Delivered")
+        operationList.add("Failed")
     }
 
     fun allOperationsRepo():List<String>{
