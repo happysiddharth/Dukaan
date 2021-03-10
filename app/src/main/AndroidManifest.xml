@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dukaan">
+        <activity android:name=".views.AcceptOrderActivity"></activity>
         <activity android:name=".views.MainActivity">
             <intent-filter>
 S                <action android:name="android.intent.action.MAIN" />
@@ -17,5 +18,4 @@ S                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
     </application>
-
 </manifest>
