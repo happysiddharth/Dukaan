@@ -2,10 +2,9 @@ package com.example.dukaan.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.*
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import com.example.dukaan.R
 import com.example.dukaan.views.AddCategoryActivity
 import kotlinx.android.synthetic.main.fragment_catefories.*
@@ -33,5 +32,25 @@ class CategoriesFragment : Fragment() {
             val intent = Intent(activity, AddCategoryActivity::class.java)
             startActivity(intent)
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+
+        inflater.inflate(R.menu.category, menu)
+        val searchItem = menu.findItem(R.id.category_search)
+        if (searchItem != null) {
+            val searchView = searchItem.actionView as SearchView
+            searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    return true
+                }
+
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    return true
+                }
+            })
+        }
+
+        super.onCreateOptionsMenu(menu, inflater)
     }
 }
