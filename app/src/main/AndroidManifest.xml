@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dukaan">
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.CreateStore"></activity>
+        <activity android:name=".views.Homescreen" />
+        <activity android:name=".views.MainActivity" />
+        <activity android:name=".views.phone_login_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
