@@ -7,7 +7,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.dukaan.R
+import kotlinx.android.synthetic.main.activity_add_product.*
 import kotlinx.android.synthetic.main.activity_add_product_details.*
 
 class AddProductDetailsActivity : AppCompatActivity() {
@@ -21,9 +23,13 @@ class AddProductDetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product_details)
 
-//        if (intent != null && intent.extras != null) {
-//            etProductNameAddProductDetails.text = intent.getStringExtra("name") as Editable
-//        }
+        btnAddProductProductDetails.background =
+            ContextCompat.getDrawable(this, R.drawable.disable_btn)
+
+        etProductDetailsAddProductDetails.setOnClickListener {
+            btnAddProductProductDetails.background =
+                ContextCompat.getDrawable(this, R.drawable.enable_button)
+        }
 
         cvAddImageAddProductDetails.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -44,7 +50,7 @@ class AddProductDetailsActivity : AppCompatActivity() {
 
         btnAddProductProductDetails.setOnClickListener {
             if (checkValidation()) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, ProductsActivity::class.java)
                 startActivity(intent)
             }
         }

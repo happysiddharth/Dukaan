@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.dukaan.R
+import kotlinx.android.synthetic.main.activity_add_category.*
 import kotlinx.android.synthetic.main.activity_add_product.*
 
 class AddProductActivity : AppCompatActivity() {
@@ -12,6 +14,13 @@ class AddProductActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product)
+
+        btnContinueAddProduct.background = ContextCompat.getDrawable(this, R.drawable.disable_btn)
+
+        etProductNameAddProduct.setOnClickListener {
+            btnContinueAddProduct.background =
+                ContextCompat.getDrawable(this, R.drawable.enable_button)
+        }
 
         btnContinueAddProduct.setOnClickListener {
             if (checkValidity()) {
@@ -23,6 +32,7 @@ class AddProductActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun checkValidity(): Boolean {
         if (etProductNameAddProduct.text.toString().isEmpty()) {

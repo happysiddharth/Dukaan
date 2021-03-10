@@ -7,9 +7,9 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.dukaan.R
 import kotlinx.android.synthetic.main.activity_add_category.*
-import kotlinx.android.synthetic.main.activity_add_product_details.*
 
 class AddCategoryActivity : AppCompatActivity() {
 
@@ -21,6 +21,8 @@ class AddCategoryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_category)
+
+        btnCreateAddCategory.background = ContextCompat.getDrawable(this, R.drawable.disable_btn)
 
         cvAddCategoryImageAddCategory.setOnClickListener {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -41,9 +43,17 @@ class AddCategoryActivity : AppCompatActivity() {
 
         btnCreateAddCategory.setOnClickListener {
             if (checkValidity()) {
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, ProductsActivity::class.java)
                 startActivity(intent)
             }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        if (checkValidity()) {
+            btnCreateAddCategory.background =
+                ContextCompat.getDrawable(this, R.drawable.enable_button)
         }
     }
 
