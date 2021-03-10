@@ -3,25 +3,38 @@ package com.example.dukaan.views
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.FragmentStatePagerAdapter
+import androidx.viewpager.widget.ViewPager
 import com.example.dukaan.R
 import com.example.dukaan.fragments.AllOrderOperationsFragment
 import com.example.dukaan.fragments.OrdersFragment
+import com.example.dukaan.fragments.ViewPagerAdapter
+import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var viewPager: ViewPager
+    private lateinit var tabLayout: TabLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Accept.setOnClickListener {
-            val intent = Intent(this,AcceptOrderActivity::class.java)
-            startActivity(intent)
-        }
-        launchFragment()
+
+        viewPager = viewPagerProducts
+        tabLayout = tabLayoutProducts
+
+        setViewPagerAdapter()
     }
 
-    fun launchFragment(){
-        val OrderFragment = OrdersFragment()
-        supportFragmentManager.beginTransaction().add(R.id.flContainer1, OrderFragment, "OrderFragment").commit()
+    private fun setViewPagerAdapter() {
+        val viewPagerAdapter = ViewPagerAdapter(
+            supportFragmentManager,
+            FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+        )
+
+        viewPager.adapter = viewPagerAdapter
+        tabLayout.setupWithViewPager(viewPager)
+
     }
 }
