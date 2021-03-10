@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_recents"
+        android:enabled="true"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"
+
+  />
+    <item
+        android:id="@+id/action_favorites"
+        android:enabled="true"
+        android:title="Orders"
+        android:icon="@drawable/ic_baseline_shopping_bag_24"
+        />
+    <item
+        android:id="@+id/action_make_money"
+        android:enabled="true"
+        android:title="Make Money"
+        android:icon="@drawable/ic_baseline_apps_24"
+        />
+    <item
+        android:id="@+id/action_offers"
+        android:enabled="true"
+        android:title="Offers"
+        android:icon="@drawable/ic_baseline_person_24"
+        />
+    <item
+        android:id="@+id/action_account"
+        android:enabled="true"
+        android:title="Account"
+        android:icon="@drawable/ic_baseline_person_24"
+        />
+</menu>

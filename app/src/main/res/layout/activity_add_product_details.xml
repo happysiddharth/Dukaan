@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.AddProductDetailsActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAddImageAddProductDetails"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_camera" />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ImageView
+        android:id="@+id/ivProductImageAddProductDetails"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="15dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toEndOf="@id/cvAddImageAddProductDetails"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etProductNameAddProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="@string/product_name"
+        app:layout_constraintBottom_toTopOf="@id/etProductCategoryAddProductDetails"
+        app:layout_constraintTop_toBottomOf="@id/cvAddImageAddProductDetails" />
+
+    <EditText
+        android:id="@+id/etProductCategoryAddProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="@string/product_category"
+        app:layout_constraintBottom_toTopOf="@id/llMrpProductDetails"
+        app:layout_constraintTop_toBottomOf="@id/etProductNameAddProductDetails" />
+
+
+    <LinearLayout
+        android:id="@+id/llMrpProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@id/llQuantityProductDetails"
+        app:layout_constraintTop_toBottomOf="@id/etProductCategoryAddProductDetails">
+
+        <EditText
+            android:id="@+id/etMrpAddProductDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/mrp"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etSellingPriceAddProductDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/selling_price"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llQuantityProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintBottom_toTopOf="@id/etProductDetailsAddProductDetails"
+        app:layout_constraintTop_toBottomOf="@id/llMrpProductDetails">
+
+        <EditText
+            android:id="@+id/etQuantityAddProductDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/quantity"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etUnitAddProductDetails"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="@string/unit" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/etProductDetailsAddProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:hint="@string/product_category"
+        app:layout_constraintBottom_toTopOf="@id/cvBtnAddProductProductDetails"
+        app:layout_constraintTop_toBottomOf="@id/llQuantityProductDetails" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvBtnAddProductProductDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardBackgroundColor="@color/custom_top"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/btnAddProductProductDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/material_on_background_disabled"
+            android:text="@string/add_product"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
