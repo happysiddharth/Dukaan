@@ -17,6 +17,7 @@ import com.example.dukaan.localDatabase.UsersEntity
 import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.UsersViewModel
 import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.views.AddProductActivity
 import com.example.dukaan.views.CreateStore
 import kotlinx.android.synthetic.main.activity_create_store2.*
 import kotlinx.android.synthetic.main.fragment_homescreen_fragement.*
@@ -66,6 +67,11 @@ class HomescreenFragement : Fragment() {
                           btnCreateStore.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
 
                           btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.border)
+
+                          btnAddProdcut.setOnClickListener(View.OnClickListener {
+                              val intent = Intent(context,AddProductActivity::class.java)
+                              startActivity(intent)
+                          })
 
                       }
                   })
