@@ -17,7 +17,6 @@
         <activity android:name=".views.GetYourOwnApp" />
         <activity android:name=".views.ChangeLanguage" />
         <activity android:name=".views.MainActivity" />
-        <activity android:name=".views.AccountPage" />
         <activity android:name=".views.CreateStore" />
         <activity android:name=".views.Homescreen" />
         <activity android:name=".views.AddCategoryActivity" />
