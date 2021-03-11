@@ -1,4 +1,4 @@
-package com.example.dukaan.recylerViewHolders
+package com.example.dukaan.interfaces
 
 interface OnOrderOperationClicked {
 

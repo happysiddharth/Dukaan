@@ -7,12 +7,21 @@
     android:orientation="vertical"
     tools:context=".views.MainActivity">
 
-    <Button
-        android:id="@+id/Accept"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayoutProducts"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Accept"
-        android:layout_gravity="center"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@color/custom_top"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/white"
+        app:tabTextColor="@color/white" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tabLayoutProducts" />
 
     <FrameLayout
         android:id="@+id/flContainer1"

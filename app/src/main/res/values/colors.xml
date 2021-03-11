@@ -11,4 +11,11 @@
     <color name="light_gray">#adb5bd</color>
     <color name="orange">#f83600</color>
     <color name="green">#048809</color>
+    <color name="gray">#DCDDDF</color>
+    <color name="default_button">#146EB4</color>
+    <color name="custom_top">#0567BD</color>
+    <color name="custom_notificationBar">#03559D</color>
+    <color name="custom_color_text">#4F96D3</color>
+    <color name="custom_orange">#FF6700</color>
+    <color name="custom_continue_button">#9C9E9C</color>
 </resources>
