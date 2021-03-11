@@ -5,10 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.dukaan.R
-import com.example.dukaan.fragments.HomescreenFragement
-import com.example.dukaan.fragments.ManageStoreFragement
-import com.example.dukaan.fragments.OrdersFragment
-import com.example.dukaan.fragments.ProductsFragment
+import com.example.dukaan.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_homescreen.*
 
@@ -51,11 +48,10 @@ class Homescreen : AppCompatActivity() {
                 return@setOnNavigationItemSelectedListener true
             }
             R.id.action_account->{
-                val intent = Intent(this,AccountPage::class.java)
-                startActivity(intent)
-//                val manageStoreFragement = ManageStoreFragement()
-//                val transaction = fragmentManager.beginTransaction()
-//                transaction.replace(R.id.flHomescreen,manageStoreFragement,"manageStoreFragement").addToBackStack("manageStoreFragement").commit()
+
+                val accountPage = AccountPage()
+                val transaction = fragmentManager.beginTransaction()
+                transaction.replace(R.id.flHomescreen,accountPage,"accountPage").addToBackStack("accountPage").commit()
 
                 return@setOnNavigationItemSelectedListener true
             }

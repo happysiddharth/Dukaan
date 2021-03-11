@@ -13,6 +13,8 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="652dp" />
 
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
