@@ -2,15 +2,12 @@
   <library name="Gradle: org.robolectric:utils:4.0">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.robolectric/utils/4.0/572d9327ca78910373dfedb3caa455a46bf5b9fb/utils-4.0.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/utils/4.0/572d9327ca78910373dfedb3caa455a46bf5b9fb/utils-4.0.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.robolectric/utils/4.0/50bc21f88877c8b0ccad3476b07bae77a9daa84d/utils-4.0-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/utils/4.0/50bc21f88877c8b0ccad3476b07bae77a9daa84d/utils-4.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.robolectric/utils/4.0/b75e703968f1efd3243383fd03a358d46c284617/utils-4.0-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/utils/4.0/b75e703968f1efd3243383fd03a358d46c284617/utils-4.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

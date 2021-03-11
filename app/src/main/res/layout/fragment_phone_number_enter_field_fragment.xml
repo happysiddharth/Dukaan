@@ -16,22 +16,24 @@
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/enter_your_mobile_number"
             android:layout_margin="@dimen/dp_10"
+            android:ems="10"
+            android:fontFamily="@font/roboto_thin"
+            android:hint="@string/enter_your_mobile_number"
             android:inputType="phone" />
 
         <Button
             android:id="@+id/btnToOtp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/default_button"
             android:layout_margin="@dimen/dp_10"
+            android:background="@color/default_button"
+            android:fontFamily="@font/roboto_thin"
             android:text="@string/start"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textStyle="bold"
             android:textSize="@dimen/sp_15"
-            android:textAllCaps="false"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
 </FrameLayout>

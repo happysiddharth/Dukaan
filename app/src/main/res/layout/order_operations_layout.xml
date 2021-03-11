@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="4dp">
+    android:layout_margin="4dp"
+    android:orientation="vertical">
 
-        <Button
-            android:id="@+id/BtnOrdOperation"
-            android:layout_width="wrap_content"
-            android:layout_height="35dp"
-            android:textSize="15sp"
-            android:textStyle="normal"
-            android:layout_gravity="center"
-            android:text="all"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:background="@drawable/bg_button_order_operation" />
+    <Button
+        android:id="@+id/BtnOrdOperation"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_button_order_operation"
+        android:fontFamily="@font/roboto_thin"
+        android:text="all"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="normal" />
 
 </LinearLayout>

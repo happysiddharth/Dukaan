@@ -18,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
+            android:fontFamily="@font/roboto_thin"
             android:text="@string/edit_business_details"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_25"
@@ -55,6 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_20"
+        android:fontFamily="@font/roboto_thin"
         android:text="@string/update_store_logo"
         android:textColor="@color/blue_bg"
         android:textSize="@dimen/sp_15"
@@ -67,6 +69,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_20"
+        android:fontFamily="@font/roboto_thin"
         android:text="@string/store_link"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvUpdateLogo" />
@@ -76,6 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
+        android:fontFamily="@font/roboto_thin"
         android:text="mydukaan.io/"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_20"
@@ -83,9 +87,10 @@
         app:layout_constraintTop_toBottomOf="@id/tvStoreLink" />
 
     <EditText
+        android:id="@+id/etBusinessNameLink"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:id="@+id/etBusinessNameLink"
+        android:fontFamily="@font/roboto_thin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvLink"
         app:layout_constraintTop_toBottomOf="@id/tvStoreLink" />
@@ -95,6 +100,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_20"
+        android:fontFamily="@font/roboto_thin"
         android:text="@string/business_name"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_20"
@@ -106,6 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5"
+        android:fontFamily="@font/roboto_thin"
         android:hint="@string/your_business_name"
         app:layout_constraintTop_toBottomOf="@id/tvBusinessName" />
 
@@ -115,6 +122,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_20"
+        android:fontFamily="@font/roboto_thin"
         android:text="@string/business_category_text"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_20"
@@ -126,6 +134,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5"
+        android:fontFamily="@font/roboto_thin"
         android:hint="@string/your_business_category"
         app:layout_constraintTop_toBottomOf="@id/tvBusinessCategory" />
 
@@ -135,6 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_20"
+        android:fontFamily="@font/roboto_thin"
         android:text="@string/phone_number"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_20"
@@ -146,8 +156,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5"
+        android:focusable="false"
+        android:fontFamily="@font/roboto_thin"
         android:hint="@string/phone_number"
         android:inputType="number"
+        android:text="+91 9923762295"
         app:layout_constraintTop_toBottomOf="@id/tvPhoneNumber" />
 
 
@@ -156,6 +169,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_10"
+        android:fontFamily="@font/roboto_thin"
         android:hint="@string/address"
         app:layout_constraintTop_toBottomOf="@id/etPhoneNumber" />
 
@@ -166,6 +180,7 @@
         android:layout_margin="@dimen/dp_10"
         android:layout_weight="1"
         android:background="@drawable/all_blue"
+        android:fontFamily="@font/roboto_thin"
         android:text="@string/save"
         android:textAllCaps="false"
         android:textColor="@color/white"

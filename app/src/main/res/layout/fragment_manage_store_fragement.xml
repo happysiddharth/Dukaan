@@ -64,6 +64,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="Marketing Designs"
                         android:textStyle="bold" />
 
@@ -87,8 +88,8 @@
 
                     <TextView
                         android:layout_width="match_parent"
-
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="Online Payments"
                         android:textStyle="bold" />
 
@@ -121,6 +122,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="Discount Coupons"
 
                         android:textStyle="bold" />
@@ -146,8 +148,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="My Cutomers"
-
                         android:textStyle="bold" />
 
 
@@ -179,6 +181,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="Store QR Code"
 
                         android:textStyle="bold" />
@@ -204,8 +207,8 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="Extra Charges"
-
                         android:textStyle="bold" />
 
 

@@ -1,20 +1,16 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.test.ext:junit:1.1.2-beta01@aar">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/res" />
+      <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/res" />
+      <root url="jar://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/jars/classes.jar!/" />
       <root url="file://$PROJECT_DIR$/../.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c29793cb7092ff360148334ae64bb65c/jetified-junit-1.1.2-beta01/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2-beta01/c69cad63303f01767122a49e379c6121d6721a0b/junit-1.1.2-beta01-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2-beta01/c69cad63303f01767122a49e379c6121d6721a0b/junit-1.1.2-beta01-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2-beta01/d8ceef67c64321bbf484dc5997a1d2efa319bed7/junit-1.1.2-beta01-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.test.ext/junit/1.1.2-beta01/d8ceef67c64321bbf484dc5997a1d2efa319bed7/junit-1.1.2-beta01-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

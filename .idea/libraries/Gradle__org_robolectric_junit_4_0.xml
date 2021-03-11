@@ -2,15 +2,12 @@
   <library name="Gradle: org.robolectric:junit:4.0">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.robolectric/junit/4.0/44a2a6aeb7e7ca1ba64a214310670ca97e0c2523/junit-4.0.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/junit/4.0/44a2a6aeb7e7ca1ba64a214310670ca97e0c2523/junit-4.0.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.robolectric/junit/4.0/23947cee406a9fa161b88c837200cb9a967e5b8c/junit-4.0-javadoc.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/junit/4.0/23947cee406a9fa161b88c837200cb9a967e5b8c/junit-4.0-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.robolectric/junit/4.0/9844ca7e3b13a9f3fa4aeee3aef0fe693f3e248a/junit-4.0-sources.jar!/" />
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.robolectric/junit/4.0/9844ca7e3b13a9f3fa4aeee3aef0fe693f3e248a/junit-4.0-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

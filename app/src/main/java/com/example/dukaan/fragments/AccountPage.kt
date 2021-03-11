@@ -6,8 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import com.example.dukaan.R
+import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.sharedpreference.PreferenceHelper
+import com.example.dukaan.viewModels.UsersViewModel
+import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
 import com.example.dukaan.views.*
 import kotlinx.android.synthetic.main.fragment_account_page.*
 
@@ -62,8 +67,23 @@ class AccountPage : Fragment() {
             }
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val database = DukaanRoomDatabase.getDatabaseContext(context!!)
+        val dao = database.getDukaan()
+        val viewModelFactory = ViewModelFactory(dao)
+        val usersViewModel = ViewModelProviders.of(this, viewModelFactory)
+            .get(UsersViewModel::class.java)
+
+        usersViewModel.getStoreDetails().observe(this,
+            Observer {
+                tvStoreName.text = it[0].store_name
+            })
+
+
+
         tvSignOut.setOnClickListener(View.OnClickListener {
             PreferenceHelper.writeStringToPreference(context!!, OTPFragment.PHONE_KEY, "")
             val intent = Intent(context!!, phone_login_activity::class.java)
