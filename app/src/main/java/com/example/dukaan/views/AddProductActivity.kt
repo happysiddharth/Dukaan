@@ -32,6 +32,8 @@ class AddProductActivity : AppCompatActivity() {
         btnContinueAddProduct.setOnClickListener {
             if (checkValidity()) {
                 val intent = Intent(this, AddProductDetailsActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+
                 intent.putExtra("name", etProductNameAddProduct.text.toString())
 
                 startActivity(intent)

@@ -29,7 +29,8 @@ class ProductsActivity : AppCompatActivity() {
     private fun setViewPagerAdapter() {
         val viewPagerAdapter = ViewPagerAdapter(
             supportFragmentManager,
-            FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+            FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT,
+            emptyList()
         )
 
         viewPager.adapter = viewPagerAdapter

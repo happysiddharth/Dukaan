@@ -22,9 +22,12 @@
         <activity android:name=".views.Homescreen" />
         <activity android:name=".views.AddCategoryActivity" />
         <activity android:name=".views.AcceptOrderActivity"/>
-       
-        <activity android:name=".views.AddProductDetailsActivity" />
-        <activity android:name=".views.AddProductActivity" />
+        <activity android:name=".views.AddProductDetailsActivity"
+            android:noHistory="true"
+            />
+        <activity android:name=".views.AddProductActivity"
+            android:noHistory="true"
+            />
         <activity android:name=".views.EditBusinessDetails" />
         <activity android:name=".views.MainActivity">
             <intent-filter>

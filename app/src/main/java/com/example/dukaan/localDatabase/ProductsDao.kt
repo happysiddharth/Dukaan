@@ -10,8 +10,8 @@ interface ProductsDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     fun addProduct(productEntity: ProductEntity)
 
-    @Query("select * from products")
-    fun getProducts(): LiveData<List<ProductEntity>>
+    @Query("select * from products where store_id = :storeId and name like :s")
+    fun getProducts(storeId: Int, s: String): LiveData<List<ProductEntity>>
 
     @Update
     fun editProduct(productEntity: ProductEntity)

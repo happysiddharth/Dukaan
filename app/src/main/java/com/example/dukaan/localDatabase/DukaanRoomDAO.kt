@@ -18,6 +18,9 @@ interface DukaanRoomDAO {
     @Query("select * from users where phone = :phonenumber")
     fun fetchUser(phonenumber: String): LiveData<List<UsersEntity>>
 
+    @Query("select * from stores where user_id = :userId")
+    fun fetchParticularStore(userId: Int): StoreEntity
+
     @Insert
     fun addStore(storeEntity: StoreEntity)
 

@@ -11,8 +11,8 @@ class ProductsViewModel(private val productsRepo: ProductsRepo) : ViewModel() {
         productsRepo.addProduct(productEntity)
     }
 
-    fun getProducts(): LiveData<List<ProductEntity>> {
-        return productsRepo.getProducts()
+    fun getProducts(storeId: Int, s: String): LiveData<List<ProductEntity>> {
+        return productsRepo.getProducts(storeId,s)
     }
 
     fun editProduct(productEntity: ProductEntity) {

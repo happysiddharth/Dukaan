@@ -104,7 +104,7 @@ class AddProductDetailsActivity : AppCompatActivity() {
                     quantity,
                     unit,
                     productDetails,
-                    1
+                    PreferenceHelper.getIntFromPreference(applicationContext,CreateStore.STORE_ID)
                 )
                 CoroutineScope(Dispatchers.Main).launch {
                     usersViewModel.fetchUser(PreferenceHelper.getStringFromPreference(this@AddProductDetailsActivity,OTPFragment.PHONE_KEY)!!).observe(this@AddProductDetailsActivity,
@@ -120,10 +120,11 @@ class AddProductDetailsActivity : AppCompatActivity() {
                 }
                 viewModel.addProduct(productEntity)
 
-                val intent = Intent(applicationContext, ProductsActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-                startActivity(intent)
+//                val intent = Intent(applicationContext, ProductsActivity::class.java)
+//                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+//                startActivity(intent)
 
+                finish()
 
 
 

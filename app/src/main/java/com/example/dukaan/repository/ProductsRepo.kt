@@ -15,8 +15,8 @@ class ProductsRepo(private val productsDao: ProductsDao) {
         }
     }
 
-    fun getProducts(): LiveData<List<ProductEntity>> {
-        return productsDao.getProducts()
+    fun getProducts(StoreId: Int, s: String): LiveData<List<ProductEntity>> {
+        return productsDao.getProducts(StoreId,s)
     }
 
     fun editProducts(productEntity: ProductEntity) {

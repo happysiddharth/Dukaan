@@ -19,51 +19,61 @@ class Homescreen : AppCompatActivity() {
     }
 
     private fun init() {
-        bottomNavigationView.setOnNavigationItemSelectedListener {
-            item: MenuItem ->  when(item.itemId){
-                R.id.orders_menu->{
+        bottomNavigationView.setOnNavigationItemSelectedListener { item: MenuItem ->
+            when (item.itemId) {
+                R.id.orders_menu -> {
                     val ordersFragment = OrdersFragment()
                     val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.flHomescreen,ordersFragment,"orders").addToBackStack("orders").commit()
+                    transaction.replace(R.id.flHomescreen, ordersFragment, "orders")
+                        .addToBackStack("orders").commit()
                     return@setOnNavigationItemSelectedListener true
                 }
-                R.id.action_products->{
-                    val productsFragment = ProductsFragment()
+                R.id.action_products -> {
+                    val productsFragment = productMainFragment()
                     val transaction = fragmentManager.beginTransaction()
-                    transaction.replace(R.id.flHomescreen,productsFragment,"product").addToBackStack("product").commit()
+                    transaction.replace(R.id.flHomescreen, productsFragment, "product")
+                        .addToBackStack("product").commit()
                     return@setOnNavigationItemSelectedListener true
                 }
-            R.id.action_home->{
-                val homescreenFragement = HomescreenFragement()
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.flHomescreen,homescreenFragement,"homescreenFragement").addToBackStack("homescreenFragement").commit()
+                R.id.action_home -> {
+                    val homescreenFragement = HomescreenFragement()
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(
+                        R.id.flHomescreen,
+                        homescreenFragement,
+                        "homescreenFragement"
+                    ).addToBackStack("homescreenFragement").commit()
 
-                return@setOnNavigationItemSelectedListener true
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.action_manage_store -> {
+                    val manageStoreFragement = ManageStoreFragement()
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(
+                        R.id.flHomescreen,
+                        manageStoreFragement,
+                        "manageStoreFragement"
+                    ).addToBackStack("manageStoreFragement").commit()
+
+                    return@setOnNavigationItemSelectedListener true
+                }
+                R.id.action_account -> {
+                    val accountPage = AccountPage()
+                    val transaction = fragmentManager.beginTransaction()
+                    transaction.replace(R.id.flHomescreen, accountPage, "accountPage")
+                        .addToBackStack("accountPage").commit()
+
+                    return@setOnNavigationItemSelectedListener true
+                }
+                else -> false
             }
-            R.id.action_manage_store->{
-                val manageStoreFragement = ManageStoreFragement()
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.flHomescreen,manageStoreFragement,"manageStoreFragement").addToBackStack("manageStoreFragement").commit()
-
-                return@setOnNavigationItemSelectedListener true
-            }
-            R.id.action_account->{
-
-                val accountPage = AccountPage()
-                val transaction = fragmentManager.beginTransaction()
-                transaction.replace(R.id.flHomescreen,accountPage,"accountPage").addToBackStack("accountPage").commit()
-
-                return@setOnNavigationItemSelectedListener true
-            }
-            else -> false
-        }
         }
     }
 
     private fun setHomescreenFragment() {
         val transaction = fragmentManager.beginTransaction()
         val homescreenFragement = HomescreenFragement()
-        transaction.add(R.id.flHomescreen,homescreenFragement,"homescreen").commit()
+        transaction.add(R.id.flHomescreen, homescreenFragement, "homescreen").commit()
 
     }
 }

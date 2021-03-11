@@ -18,6 +18,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CreateStore : AppCompatActivity() {
+    companion object{
+        final val STORE_ID = "store_id"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_store2)
@@ -51,6 +54,12 @@ class CreateStore : AppCompatActivity() {
                             etBusinessCategories.text.toString()
                         )
                     )
+
+                    val storeEntity = usersViewModel.fetchParticularStore(userID)
+
+                    PreferenceHelper.writeIntToPreference(this@CreateStore,CreateStore.STORE_ID,storeEntity.id!!)
+
+
                     var usersEntity = UsersEntity("sid", phone_number!!, true, false, "", "")
                     usersEntity.id = userID
                     usersViewModel.updateUser(usersEntity)

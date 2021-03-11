@@ -25,6 +25,10 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO) : ViewModel() {
         return userRepository.insertStore(storeEntity)
     }
 
+    suspend fun fetchParticularStore(userId:Int): StoreEntity {
+        return userRepository.fetchParticularStore(userId)
+    }
+
     suspend fun updateUser(usersEntity: UsersEntity) {
         userRepository.updateUser(usersEntity)
     }

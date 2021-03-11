@@ -5,14 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager.widget.ViewPager
 import com.example.dukaan.R
 import com.example.dukaan.recylerViewAdapter.OrderOperationsAdapter
 import com.example.dukaan.recylerViewHolders.OnOrderOperationClicked
 import com.example.dukaan.repository.OrdersRepository
 import com.example.dukaan.viewModels.OrdersModelFactory
 import com.example.dukaan.viewModels.OrdersViewModel
+import com.google.android.material.tabs.TabLayout
+import kotlinx.android.synthetic.main.activity_products.*
 import kotlinx.android.synthetic.main.fragment_orders.*
 
 
@@ -20,6 +24,7 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
 
     lateinit var orderOperationsAdapter: OrderOperationsAdapter
     lateinit var ordersViewModel: OrdersViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +67,11 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         ordersViewModel =
             ViewModelProviders.of(this, orderViewModelFactory).get(OrdersViewModel::class.java)
         launchAllOrderOperations()
+
+
+
+
+
     }
 
     override fun onItemClicked(operation: String){
