@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/action_recents"
+        android:id="@+id/action_home"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="Home" />
     <item
-        android:id="@+id/action_favorites"
+        android:id="@+id/orders_menu"
         android:enabled="true"
         android:icon="@drawable/ic_baseline_shopping_bag_24"
         android:title="Orders" />
     <item
-        android:id="@+id/action_make_money"
+        android:id="@+id/action_products"
         android:enabled="true"
+        android:title="Products"
         android:icon="@drawable/ic_baseline_apps_24"
-        android:title="Make Money" />
+       />
     <item
-        android:id="@+id/action_offers"
+        android:id="@+id/action_manage_store"
         android:enabled="true"
-        android:icon="@drawable/ic_baseline_person_24"
-        android:title="Offers" />
+        android:title="Manage Store"
+        android:icon="@drawable/ic_baseline_article_24"
+        />
     <item
         android:id="@+id/action_account"
         android:enabled="true"

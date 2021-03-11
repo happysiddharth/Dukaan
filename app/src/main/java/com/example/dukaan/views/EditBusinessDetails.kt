@@ -2,6 +2,7 @@ package com.example.dukaan.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.dukaan.R
@@ -27,6 +28,11 @@ class EditBusinessDetails : AppCompatActivity() {
                 etBusinessNameLink.setText(it[0].store_name + "54232")
                 etBusinessCategory.setText(it[0].categories)
             })
+
+        btnSaveBusiness.setOnClickListener {
+            Toast.makeText(this, "Changes saved successfully", Toast.LENGTH_SHORT).show()
+            finish()
+        }
 
     }
 }

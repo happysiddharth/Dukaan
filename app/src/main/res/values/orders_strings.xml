@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="TvOrders">Orders</string>
+    <string name="TvAllOrders">All orders</string>
+    <string name="TvPending">Pending orders</string>
+    <string name="TvAccepted">Accepted orders</string>
+    <string name="TvRejected">Rejected orders</string>
+    <string name="TvShipped">Shipped orders</string>
+    <string name="TvCancelled">Cancelled orders</string>
+    <string name="TvDelivered">Delivered orders </string>
+    <string name="TvFailed">Failed orders</string>
+    <string name="TvLifeTime">Life Time</string>
+    <string name="TvNoOrders">You do not have any active orders.</string>
+    <string name="TvNoPendingOrders">You do not have any pending orders.</string>
+    <string name="TvNoAcceptedOrders">You do not have any accepted orders.</string>
+    <string name="TvNoRejectedOrders">You do not have any rejected orders.</string>
+    <string name="TvNoShippedOrders">You do not have any shipped orders.</string>
+    <string name="TvNoCancelledOrders">You do not have any cancelled orders.</string>
+    <string name="TvNoDeliveredOrders">You do not have any delivered orders.</string>
+    <string name="TvNoFailedOrders">You do not have any failed orders.</string>
+
+</resources>

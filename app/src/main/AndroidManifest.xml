@@ -6,23 +6,27 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
+        android:name=".models.ProductsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dukaan">
+        <activity android:name=".views.ProductsActivity" />
         <activity android:name=".views.phone_login_activity" />
         <activity android:name=".views.ShareDukaanApp" />
         <activity android:name=".views.GetYourOwnApp" />
         <activity android:name=".views.ChangeLanguage" />
-        <activity android:name=".views.MainActivity" />
         <activity android:name=".views.CreateStore" />
         <activity android:name=".views.Homescreen" />
         <activity android:name=".views.AddCategoryActivity" />
+        <activity android:name=".views.AcceptOrderActivity"/>
+       
         <activity android:name=".views.AddProductDetailsActivity" />
         <activity android:name=".views.AddProductActivity" />
-        <activity android:name=".views.EditBusinessDetails">
+        <activity android:name=".views.EditBusinessDetails" />
+        <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -30,5 +34,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

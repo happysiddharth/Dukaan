@@ -28,7 +28,7 @@
             android:id="@+id/btnContinueAddProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/custom_top"
+            android:background="@color/default_button"
             android:paddingLeft="45dp"
             android:paddingTop="7dp"
             android:paddingRight="45dp"

@@ -1,11 +1,15 @@
 package com.example.dukaan.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.dukaan.R
+import com.example.dukaan.sharedpreference.PreferenceHelper
+import com.example.dukaan.views.*
+import kotlinx.android.synthetic.main.fragment_account_page.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,7 +42,6 @@ class AccountPage : Fragment() {
         return inflater.inflate(R.layout.fragment_account_page, container, false)
     }
 
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -57,5 +60,35 @@ class AccountPage : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        tvSignOut.setOnClickListener(View.OnClickListener {
+            PreferenceHelper.writeStringToPreference(context!!, OTPFragment.PHONE_KEY, "")
+            val intent = Intent(context!!, phone_login_activity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        })
+
+        tvShareDukaanApp.setOnClickListener {
+            val intent = Intent(context!!, ShareDukaanApp::class.java)
+            startActivity(intent)
+        }
+        tvGetOwnApp.setOnClickListener {
+            val intent = Intent(context!!, GetYourOwnApp::class.java)
+            startActivity(intent)
+        }
+
+        tvChangeLangauge.setOnClickListener {
+            val intent = Intent(context!!, ChangeLanguage::class.java)
+            startActivity(intent)
+        }
+
+        tvEditBusiness.setOnClickListener {
+            val intent = Intent(context!!, EditBusinessDetails::class.java)
+            startActivity(intent)
+        }
+
     }
 }

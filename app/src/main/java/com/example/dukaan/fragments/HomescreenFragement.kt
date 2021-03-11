@@ -25,6 +25,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
+
 class HomescreenFragement : Fragment() {
 
 
@@ -38,68 +39,68 @@ class HomescreenFragement : Fragment() {
 
     override fun onResume() {
         super.onResume()
-//        val topAnim = AnimationUtils.loadAnimation(context, R.anim.top_animation)
-//        val bottomAnim = AnimationUtils.loadAnimation(context, R.anim.bottom_animation)
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
         val viewmodelFactory = ViewModelFactory(dao)
         val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
-        val phone_number:String = PreferenceHelper.getStringFromPreference(
-            context!!,
-            OTPFragment.PHONE_KEY
-        )!!
+        val phone_number:String = PreferenceHelper.getStringFromPreference(context!!,OTPFragment.PHONE_KEY)!!
         CoroutineScope(Dispatchers.IO).launch {
             if (usersViewModel.isUserExists(phone_number)) {
-              CoroutineScope(Dispatchers.Main).launch {
-                  usersViewModel.fetchUser(phone_number).observe(
-                      this@HomescreenFragement,
-                      Observer {
-                          if (it[0].is_created_first_store == false) {
-                              CoroutineScope(Dispatchers.Main).launch {
-                                  btnCreateStore.setOnClickListener(View.OnClickListener {
-                                      val intent = Intent(context, CreateStore::class.java)
-                                      startActivity(intent)
+                CoroutineScope(Dispatchers.Main).launch {
+                    usersViewModel.fetchUser(phone_number).observe(this@HomescreenFragement, Observer {
+                        if (it[0].is_created_first_store==false){
+                            CoroutineScope(Dispatchers.Main).launch {
+                                btnCreateStore.setOnClickListener(View.OnClickListener {
+                                    val intent = Intent(context,CreateStore::class.java)
+                                    startActivity(intent)
 
-                                  })
-                              }
-                              btnAddProdcut.background = ContextCompat.getDrawable(
-                                  context!!,
-                                  R.drawable.disable_btn
-                              )
-                          } else {
+                                })
+                            }
+                            btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+                        }else if (it[0].is_created_first_product==false){
 
-                              tvStoreAdd.visibility = View.GONE
+                            tvStoreAdd.visibility = View.GONE
 
-                              ivStoreAddDone.visibility = View.VISIBLE
+                            ivStoreAddDone.visibility = View.VISIBLE
 
-                              btnCreateStore.background = ContextCompat.getDrawable(
-                                  context!!,
-                                  R.drawable.disable_btn
-                              )
+                            btnCreateStore.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
 
-                              btnAddProdcut.background = ContextCompat.getDrawable(
-                                  context!!,
-                                  R.drawable.border
-                              )
+                            btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.border)
 
-                              btnAddProdcut.setOnClickListener(View.OnClickListener {
-                                  val intent = Intent(context, AddProductActivity::class.java)
-                                  startActivity(intent)
-                              })
+                            btnAddProdcut.setOnClickListener(View.OnClickListener {
+                                val intent = Intent(context,AddProductActivity::class.java)
+                                startActivity(intent)
+                            })
 
-                          }
-                      })
-              }
+                        }else{
+
+                            tvStoreAdd.visibility = View.GONE
+
+                            ivStoreAddDone.visibility = View.VISIBLE
+
+                            btnCreateStore.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+
+                            btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.border)
+
+
+                            tvAddProduct.visibility = View.GONE
+
+                            ivProductAddDone.visibility = View.VISIBLE
+
+                            btnCreateStore.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+
+                            btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+
+                        }
+                    })
+                }
             } else {
-                btnAddProdcut.background = ContextCompat.getDrawable(
-                    context!!,
-                    R.drawable.disable_btn
-                )
+                btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
 
                 CoroutineScope(Dispatchers.Main).launch {
                     btnCreateStore.setOnClickListener(View.OnClickListener {
-                        val intent = Intent(context, CreateStore::class.java)
+                        val intent = Intent(context,CreateStore::class.java)
                         startActivity(intent)
 
                     })
@@ -107,20 +108,10 @@ class HomescreenFragement : Fragment() {
                 usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", ""))
 
                 CoroutineScope(Dispatchers.Main).launch {
-                        usersViewModel.fetchUser(phone_number).observe(
-                            this@HomescreenFragement,
-                            Observer {
-                                PreferenceHelper.writeStringToPreference(
-                                    context!!,
-                                    OTPFragment.PHONE_KEY,
-                                    phone_number
-                                )
-                                PreferenceHelper.writeIntToPreference(
-                                    context!!,
-                                    OTPFragment.PHONE_USER_ID,
-                                    it[0].id!!
-                                )
-                            })
+                    usersViewModel.fetchUser(phone_number).observe(this@HomescreenFragement, Observer {
+                        PreferenceHelper.writeStringToPreference(context!!,OTPFragment.PHONE_KEY,phone_number)
+                        PreferenceHelper.writeIntToPreference(context!!,OTPFragment.PHONE_USER_ID,it[0].id!!)
+                    })
                 }
             }
         }
@@ -128,6 +119,8 @@ class HomescreenFragement : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
     }
 
 }

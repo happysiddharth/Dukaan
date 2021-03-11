@@ -74,6 +74,7 @@
 
 
     <Button
+        android:id="@+id/btnDownloadApp"
         android:layout_width="@dimen/dp_200"
         android:layout_height="@dimen/dp_40"
         android:layout_marginBottom="@dimen/dp_30"
