@@ -16,6 +16,7 @@ import com.example.dukaan.viewModels.LoginViewModel
 import com.example.dukaan.viewModels.UsersViewModel
 import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
 import com.example.dukaan.views.Homescreen
+import com.example.dukaan.views.RegistrationActivity
 import kotlinx.android.synthetic.main.fragment_o_t_p.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -36,16 +37,12 @@ class OTPFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_o_t_p, container, false)
     }
 
     override fun onStart() {
         super.onStart()
-
     }
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -60,7 +57,7 @@ class OTPFragment : Fragment() {
                 if (etOTP.text.toString().length > 3) {
                     if (loginRepository.login(phone, etOTP.text.toString())) {
                         PreferenceHelper.writeStringToPreference(context!!,PHONE_KEY,phone)
-                        val intent = Intent(context, Homescreen::class.java)
+                        val intent = Intent(context, RegistrationActivity::class.java) //Homescreen::class.java
                         intent.putExtra("phone", phone)
                         startActivity(intent)
                     } else {

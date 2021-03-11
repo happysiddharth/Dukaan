@@ -85,7 +85,7 @@ class HomescreenFragement : Fragment() {
 
                     })
                 }
-                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", "",""))
+                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", "","Seller"))
 
                 CoroutineScope(Dispatchers.Main).launch {
                         usersViewModel.fetchUser(phone_number).observe(this@HomescreenFragement, Observer {

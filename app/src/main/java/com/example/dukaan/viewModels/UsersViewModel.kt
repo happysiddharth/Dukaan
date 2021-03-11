@@ -27,4 +27,8 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO): ViewModel() {
     suspend fun updateUser(usersEntity: UsersEntity){
         userRepository.updateUser(usersEntity)
     }
+
+    fun getAllStoreModel(): LiveData<List<StoreEntity>>{
+        return userRepository.fetchAllStoreRepo()
+    }
 }

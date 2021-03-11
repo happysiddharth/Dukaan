@@ -25,4 +25,8 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
     fun updateUser(usersEntity: UsersEntity){
         dukaanRoomDAO.updateUser(usersEntity)
     }
+
+    fun fetchAllStoreRepo(): LiveData<List<StoreEntity>>{
+        return dukaanRoomDAO.fetchAllStoreDao()
+    }
 }

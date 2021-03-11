@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragments.BuyerFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register as a buyer"
+        android:layout_gravity="center"
+        android:textSize="25sp"
+        android:padding="5dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/blue1"/>
+
+    <EditText
+        android:id="@+id/EtvBuyerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:hint="Enter Name"
+        android:padding="10dp"
+        android:background="@drawable/bg_edit_text"/>
+
+    <EditText
+        android:id="@+id/EtvBuyerMobileNo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:hint="Enter Mobile No"
+        android:padding="10dp"
+        android:background="@drawable/bg_edit_text"/>
+
+    <Button
+        android:id="@+id/BtnRegisterBuyer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shop Now"
+        android:textColor="@color/white"
+        android:textStyle="normal"
+        android:layout_margin="5dp"
+        android:background="@drawable/bg_button_share_store"
+        android:textAllCaps="false"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

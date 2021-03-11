@@ -24,6 +24,9 @@ interface DukaanRoomDAO {
     @Insert
     fun addStore(storeEntity: StoreEntity)
 
+    @Query("select * from stores")
+    fun fetchAllStoreDao(): LiveData<List<StoreEntity>>
+
     @Update
     fun updateUser(usersEntity: UsersEntity)
 

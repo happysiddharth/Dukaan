@@ -6,4 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".views.RegistrationActivity">
 
+    <LinearLayout
+        android:id="@+id/llTopBarOfRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        android:background="@color/blue1"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registrations"
+            android:layout_gravity="center"
+            android:textStyle="normal"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:padding="12dp"
+            android:layout_margin="5dp"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayoutRegistration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/white"
+            app:tabTextColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/llTopBarOfRegistration"/>
+
+    </LinearLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPagerRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/llTopBarOfRegistration" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

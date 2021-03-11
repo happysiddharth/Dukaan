@@ -16,8 +16,6 @@ class phone_login_activity : AppCompatActivity(),LoginWIthPhoneInterface {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_login_activity)
         setFragment()
-
-
     }
 
     private fun setFragment() {

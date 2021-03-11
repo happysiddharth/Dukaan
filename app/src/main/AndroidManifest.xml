@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dukaan">
-        <activity android:name=".views.RegistrationActivity"></activity>
+        <activity android:name=".views.OrderNowActivity"></activity>
+        <activity android:name=".views.RegistrationActivity" />
         <activity android:name=".views.AcceptOrderActivity" />
         <activity android:name=".views.CreateStore" />
         <activity android:name=".views.Homescreen" />
@@ -20,8 +21,8 @@
         <activity android:name=".views.AddCategoryActivity" />
         <activity android:name=".views.AddProductDetailsActivity" />
         <activity android:name=".views.AddProductActivity" />
-        <activity android:name=".views.phone_login_activity" />
-        <activity android:name=".views.OrderActivity">
+        <activity android:name=".views.OrderActivity" />
+        <activity android:name=".views.phone_login_activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
