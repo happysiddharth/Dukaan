@@ -7,9 +7,9 @@ import com.example.dukaan.localDatabase.StoreEntity
 import com.example.dukaan.localDatabase.UsersEntity
 import com.example.dukaan.repository.UsersRepository
 
-class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO): ViewModel() {
+class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO) : ViewModel() {
     val userRepository = UsersRepository(dukaanRoomDAO)
-    suspend fun isUserExists(phonenumber:String): Boolean {
+    suspend fun isUserExists(phonenumber: String): Boolean {
         return userRepository.isUserExists(phonenumber)
     }
 
@@ -21,10 +21,16 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO): ViewModel() {
         return userRepository.fetchUser(phonenumber)
     }
 
-    suspend fun insertStore(storeEntity: StoreEntity){
+    suspend fun insertStore(storeEntity: StoreEntity) {
         return userRepository.insertStore(storeEntity)
     }
-    suspend fun updateUser(usersEntity: UsersEntity){
+
+    suspend fun updateUser(usersEntity: UsersEntity) {
         userRepository.updateUser(usersEntity)
     }
+
+    fun getStoreDetails(): LiveData<List<StoreEntity>> {
+        return userRepository.getStoreDetails()
+    }
+
 }

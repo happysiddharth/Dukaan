@@ -85,6 +85,7 @@
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:id="@+id/etBusinessNameLink"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tvLink"
         app:layout_constraintTop_toBottomOf="@id/tvStoreLink" />
@@ -101,7 +102,7 @@
         app:layout_constraintTop_toBottomOf="@id/tvLink" />
 
     <EditText
-        android:id="@+id/etBusinessName"
+        android:id="@+id/etBusinessNameDetails"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/dp_5"
@@ -118,7 +119,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/sp_20"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etBusinessName" />
+        app:layout_constraintTop_toBottomOf="@id/etBusinessNameDetails" />
 
     <EditText
         android:id="@+id/etBusinessCategory"
