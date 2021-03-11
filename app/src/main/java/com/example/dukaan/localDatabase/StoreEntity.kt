@@ -20,8 +20,8 @@ data class StoreEntity(
     @ColumnInfo(name = "user_id") var user_id: Int,
     @ColumnInfo(name = "timestamp") var timestamp: String,
     @ColumnInfo(name = "categories") var categories: String
-    ) {
+) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id:Int? = null
+    var id: Int? = null
 }

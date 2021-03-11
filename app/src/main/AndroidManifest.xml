@@ -22,6 +22,11 @@
         <activity android:name=".views.phone_login_activity" />
         <activity android:name=".views.AddProductDetailsActivity" />
         <activity android:name=".views.AddProductActivity" />
+        <activity android:name=".views.ShareDukaanApp" />
+        <activity android:name=".views.GetYourOwnApp" />
+        <activity android:name=".views.ChangeLanguage" />
+        <activity android:name=".views.EditBusinessDetails" />
+        <activity android:name=".views.AccountPage" />
         <activity android:name=".views.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

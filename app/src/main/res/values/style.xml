@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SwitchCompatStyle" >
+        <item name="thumbTint">@color/blue_bg</item>
+        <item name="trackTint">@color/gray_color</item>
+    </style>
+</resources>

@@ -1,5 +1,6 @@
 package com.example.dukaan.views
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -46,6 +47,15 @@ class Homescreen : AppCompatActivity() {
                 val manageStoreFragement = ManageStoreFragement()
                 val transaction = fragmentManager.beginTransaction()
                 transaction.replace(R.id.flHomescreen,manageStoreFragement,"manageStoreFragement").addToBackStack("manageStoreFragement").commit()
+
+                return@setOnNavigationItemSelectedListener true
+            }
+            R.id.action_account->{
+                val intent = Intent(this,AccountPage::class.java)
+                startActivity(intent)
+//                val manageStoreFragement = ManageStoreFragement()
+//                val transaction = fragmentManager.beginTransaction()
+//                transaction.replace(R.id.flHomescreen,manageStoreFragement,"manageStoreFragement").addToBackStack("manageStoreFragement").commit()
 
                 return@setOnNavigationItemSelectedListener true
             }
