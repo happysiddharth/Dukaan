@@ -19,7 +19,10 @@ interface DukaanRoomDAO {
     fun fetchUser(phonenumber: String): LiveData<List<UsersEntity>>
 
     @Query("select * from users where phone = :phonenumber AND userType =:userType")
-    fun getUserType(phonenumber: String,userType:String):List<UsersEntity>
+    fun getUserType(phonenumber: String, userType: String): List<UsersEntity>
+
+    @Query("select * from products where store_id =:StoreId")
+    fun getAllProduct(StoreId: Int): LiveData<List<ProductEntity>>
 
     @Insert
     fun addStore(storeEntity: StoreEntity)
@@ -30,5 +33,15 @@ interface DukaanRoomDAO {
     @Update
     fun updateUser(usersEntity: UsersEntity)
 
+    @Query("SELECT * FROM Orders")
+    fun getAllOrdersDao():LiveData<List<OrderEntity>>
 
+    @Insert
+    fun PlaceOrderDao(orderEntity: OrderEntity)
+
+    @Query("SELECT * FROM Consumer")
+    fun getAllConsumersDao():LiveData<List<ConsumerEntity>>
+
+    @Insert
+    fun checkOutOrder(consumerEntity: ConsumerEntity)
 }

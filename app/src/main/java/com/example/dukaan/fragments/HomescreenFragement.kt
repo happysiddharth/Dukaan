@@ -76,7 +76,9 @@ class HomescreenFragement : Fragment() {
                   })
               }
             } else {
-                btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+                CoroutineScope(Dispatchers.Main).launch {
+                    btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+                }
 
                 CoroutineScope(Dispatchers.Main).launch {
                     btnCreateStore.setOnClickListener(View.OnClickListener {

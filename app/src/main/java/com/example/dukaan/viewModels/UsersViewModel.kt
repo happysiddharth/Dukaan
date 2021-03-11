@@ -2,9 +2,7 @@ package com.example.dukaan.viewModels
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import com.example.dukaan.localDatabase.DukaanRoomDAO
-import com.example.dukaan.localDatabase.StoreEntity
-import com.example.dukaan.localDatabase.UsersEntity
+import com.example.dukaan.localDatabase.*
 import com.example.dukaan.repository.UsersRepository
 
 class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO): ViewModel() {
@@ -28,7 +26,28 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO): ViewModel() {
         userRepository.updateUser(usersEntity)
     }
 
-    fun getAllStoreModel(): LiveData<List<StoreEntity>>{
+     fun getAllStoreModel(): LiveData<List<StoreEntity>>{
         return userRepository.fetchAllStoreRepo()
     }
+
+    suspend fun getAllProductModel(StoreId:Int):LiveData<List<ProductEntity>>{
+        return userRepository.getAllProductRepo(StoreId)
+    }
+
+    suspend fun getAllOrdersModel():LiveData<List<OrderEntity>>{
+        return userRepository.getAllOrdersRepo()
+    }
+
+    suspend fun placeOrderModel(orderEntity: OrderEntity){
+        userRepository.placeOrderRepo(orderEntity)
+    }
+
+    suspend fun getAllConsumersModel():LiveData<List<ConsumerEntity>>{
+        return userRepository.getAllConsumersRepo()
+    }
+
+    suspend fun checkOutOrderModel(consumerEntity: ConsumerEntity){
+        userRepository.checkOutOrderRepo(consumerEntity)
+    }
+
 }

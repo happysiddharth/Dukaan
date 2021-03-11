@@ -37,7 +37,7 @@ class CreateStore : AppCompatActivity() {
 
                 CoroutineScope(Dispatchers.IO).launch {
                     usersViewModel.insertStore(StoreEntity(etBusinessName.text.toString(),userID!!,"",etBusinessCategories.text.toString()))
-                    var usersEntity = UsersEntity("sid",phone_number!!,true,false,"","","")
+                    var usersEntity = UsersEntity("sid",phone_number!!,true,false,"","","Seller")
                     usersEntity.id = userID!!
                     usersViewModel.updateUser(usersEntity)
                     CoroutineScope(Dispatchers.Main).launch {
@@ -46,9 +46,6 @@ class CreateStore : AppCompatActivity() {
                 }
             }
         })
-
-
-
 
     }
 }

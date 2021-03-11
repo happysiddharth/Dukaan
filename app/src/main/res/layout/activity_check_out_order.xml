@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.CheckOutOrderActivity">
+
+    <TextView
+        android:id="@+id/TitleCheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Shipping Details"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivOrderItemPicCheck"
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/blue1"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_bagcart_svg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TitleCheck" />
+
+    <TextView
+        android:id="@+id/TvOrderItemNameCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:paddingTop="10dp"
+        android:text="CHANA BESAN"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicCheck"
+        app:layout_constraintTop_toBottomOf="@id/TitleCheck" />
+
+    <TextView
+        android:id="@+id/TvOrderItemPriceCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Rs 450"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicCheck"
+        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameCheck" />
+
+    <TextView
+        android:id="@+id/TvOrderItemTotalPriceCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Rs 450"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameCheck" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/ivOrderItemPicCheck">
+
+        <LinearLayout
+            android:id="@+id/Row1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="5dp">
+            <EditText
+                android:id="@+id/EtvConsumerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:hint="Enter Name"
+                android:background="@drawable/bg_edit_text"/>
+
+            <EditText
+                android:id="@+id/EtvConsumerMobileNo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:layout_margin="5dp"
+                android:hint="Enter Mobile NO"
+                android:background="@drawable/bg_edit_text"/>
+
+            <EditText
+                android:id="@+id/EtvConsumerAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:hint="Enter Address"
+                android:background="@drawable/bg_edit_text"/>
+
+            <EditText
+                android:id="@+id/EtvConsumerCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:hint="Enter City"
+                android:background="@drawable/bg_edit_text"/>
+
+            <EditText
+                android:id="@+id/EtvConsumerPin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:layout_margin="5dp"
+                android:hint="Enter Pin"
+                android:background="@drawable/bg_edit_text"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/BtnPayment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="COD"
+        android:textColor="@color/orange"
+        android:textStyle="bold"
+        android:background="@drawable/bg_cod"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
