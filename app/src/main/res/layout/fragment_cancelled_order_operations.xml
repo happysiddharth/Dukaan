@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.CancelledOrderOperationsFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TvCancelled"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="15dp"/>
+
+    <TextView
+        android:id="@+id/TvLifeTimeFailed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/TvLifeTime"
+        android:textColor="@color/light_gray"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TvLifeTimeFailed">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCancelledOrders"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llShippedOrders"
+        android:layout_below="@id/TvLifeTimeFailed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/ivCheckList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_checklist"/>
+
+        <TextView
+            android:id="@+id/TvNoOrder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivCheckList"
+            android:text="@string/TvNoCancelledOrders"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:padding="5dp"
+            android:layout_margin="4dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

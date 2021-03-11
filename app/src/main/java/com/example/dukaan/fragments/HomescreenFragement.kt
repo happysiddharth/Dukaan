@@ -58,7 +58,7 @@ class HomescreenFragement : Fragment() {
                               })
                           }
                           btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
-                      }else{
+                      }else if (it[0].is_created_first_product==false){
 
                           tvStoreAdd.visibility = View.GONE
 
@@ -72,6 +72,25 @@ class HomescreenFragement : Fragment() {
                               val intent = Intent(context,AddProductActivity::class.java)
                               startActivity(intent)
                           })
+
+                      }else{
+
+                          tvStoreAdd.visibility = View.GONE
+
+                          ivStoreAddDone.visibility = View.VISIBLE
+
+                          btnCreateStore.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+
+                          btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.border)
+
+
+                          tvAddProduct.visibility = View.GONE
+
+                          ivProductAddDone.visibility = View.VISIBLE
+
+                          btnCreateStore.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+
+                          btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
 
                       }
                   })

@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".views.AcceptOrderActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue1"
+        android:paddingVertical="5dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <ImageView
+            android:id="@+id/ivGoTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/ic_arrow_back"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/BtnEditOrderDetailsAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_edit_order"
+            android:text="Edit order"
+            android:textColor="@color/white"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/TvOrderIdDetailsAccept"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Order #12456"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        android:layout_below="@id/cLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <TextView
+                    android:id="@+id/TvOrderDataTimeDetailsAccept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_margin="10dp"
+                    android:text="Mar 9, 08:25 PM"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/TvOrderStatusDetailsAccept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="10dp"
+                    android:text="Pending"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/View1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/TvOrderStatusDetailsAccept">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="4dp"
+                        android:background="@color/light_gray" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TvOrderItemQuantityAccept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/View1"
+                    android:layout_margin="10dp"
+                    android:text="1 Item"
+                    android:textSize="18sp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cLayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/TvOrderItemQuantityAccept">
+
+                    <ImageView
+                        android:id="@+id/ivOrderItemPicAccept"
+                        android:layout_width="60dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/amul_milk"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/TvOrderItemNameAccept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:paddingTop="25dp"
+                        android:text="CHANA BESAN"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicAccept"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/TvOrderItemPriceAccept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Rs 450"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicAccept"
+                        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameAccept" />
+
+                    <TextView
+                        android:id="@+id/TvOrderItemTotalPriceAccept"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Rs 450"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameAccept" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="8dp"
+                        android:background="@color/light_gray"
+                        app:layout_constraintTop_toBottomOf="@id/ivOrderItemPicAccept"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/Total"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Item Total"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/cLayout2"/>
+
+                <TextView
+                    android:id="@+id/TvItemTotalAccept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Rs 450"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/cLayout2"/>
+
+                <TextView
+                    android:id="@+id/Delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Delivery Free"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/Total"/>
+
+                <TextView
+                    android:id="@+id/TvOrderDeliveryChargesAccept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Rs 00"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvItemTotalAccept"/>
+
+                <TextView
+                    android:id="@+id/grandTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="Grand Total"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/TvOrderDeliveryChargesAccept"/>
+
+                <TextView
+                    android:id="@+id/TvOrderGrandTotalAccept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Rs 450"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvOrderDeliveryChargesAccept"/>
+
+                <LinearLayout
+                    android:id="@+id/View2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/TvOrderGrandTotalAccept">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_margin="4dp"
+                        android:background="@color/light_gray" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/TvCustomerDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="CUSTOMER DETAILS"
+                    android:textStyle="normal"
+                    android:textColor="@color/light_gray"
+                    android:textSize="18sp"
+                    android:layout_below="@id/View2"/>
+
+                <TextView
+                    android:id="@+id/TvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Name : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/TvCustomerDetails"/>
+
+                <TextView
+                    android:id="@+id/TvCustomerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="harshad pawar"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvCustomerDetails"/>
+
+                <TextView
+                    android:id="@+id/TvMobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Mobile : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/TvName"/>
+
+                <TextView
+                    android:id="@+id/TvCustomerMobileNO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="123456789"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvName"/>
+
+                <TextView
+                    android:id="@+id/TvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Address : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/TvCustomerMobileNO"/>
+
+                <TextView
+                    android:id="@+id/TvCustomerAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Nashik "
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvMobile"/>
+
+                <TextView
+                    android:id="@+id/TvCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="City : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/TvAddress"/>
+
+                <TextView
+                    android:id="@+id/TvCustomerCity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="malegaon "
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvAddress"/>
+
+                <TextView
+                    android:id="@+id/TvPin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Pin Code : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/TvCity"/>
+
+                <TextView
+                    android:id="@+id/TvCustomerPinCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="423203"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvCity"/>
+
+                <TextView
+                    android:id="@+id/TvPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Payment : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@id/TvPin"/>
+
+                <TextView
+                    android:id="@+id/TvCustomerPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Cash on delivery"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/TvPin"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/BtnOrderAccept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:text="Accept order"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_accept"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"/>
+
+    <Button
+        android:id="@+id/BtnOrderReject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="15dp"
+        android:text="Reject order"
+        android:textAllCaps="false"
+        android:textColor="#FF0000"
+        android:background="@drawable/btn_reject"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>
