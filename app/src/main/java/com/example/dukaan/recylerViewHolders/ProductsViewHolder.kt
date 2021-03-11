@@ -20,6 +20,10 @@ class ProductsViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
             tvProductPriceProductRecyclerLayout.text = "₹${productEntity.selling_price}"
             scStockSwitchProductsRecyclerLayout.isChecked = true
 
+            cvRecyclerLayout.setOnClickListener {
+                productClickListener.onEditClicked(productEntity)
+            }
+
             if (scStockSwitchProductsRecyclerLayout.isChecked) {
                 tvStockProductsRecyclerLayout.text = "In stock"
             } else {

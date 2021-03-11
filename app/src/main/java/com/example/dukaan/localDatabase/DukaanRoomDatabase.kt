@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 
 @Database(
     entities = [UsersEntity::class, StoreEntity::class, ProductEntity::class, CategoriesEntity::class],
-    version = 4
+    version = 6
 )
 abstract class DukaanRoomDatabase : RoomDatabase() {
     abstract fun getDukaan(): DukaanRoomDAO
