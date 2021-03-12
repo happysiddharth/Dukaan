@@ -13,7 +13,7 @@ class ProductsViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
     fun setData(productEntity: ProductEntity, productClickListener: ProductClickListener) {
 
         view.apply {
-            Glide.with(view).load(productEntity.image).placeholder(R.drawable.ic_baseline_image_24)
+            Glide.with(view).load(productEntity.image).placeholder(R.drawable.milk)
                 .into(ivProductImageProductRecyclerLayout)
             TvOrderStoreProductName.text = productEntity.name
             TvOrderStoreProductPrice.text = "${productEntity.quantity} pieces"

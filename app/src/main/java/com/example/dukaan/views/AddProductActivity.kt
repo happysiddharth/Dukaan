@@ -21,7 +21,8 @@ class AddProductActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_product)
 
-        btnContinueAddProduct.background = ContextCompat.getDrawable(this, R.drawable.disable_btn)
+       // btnContinueAddProduct.background = ContextCompat.getDrawable(this, R.drawable.disable_btn)
+
 
         etProductNameAddProduct.setOnClickListener {
             btnContinueAddProduct.background =
@@ -31,7 +32,10 @@ class AddProductActivity : AppCompatActivity() {
         btnContinueAddProduct.setOnClickListener {
             if (checkValidity()) {
                 val intent = Intent(this, AddProductDetailsActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+
                 intent.putExtra("name", etProductNameAddProduct.text.toString())
+
                 startActivity(intent)
             } else {
                 Toast.makeText(this, "Enter properly", Toast.LENGTH_SHORT).show()

@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.example.dukaan.R
+import kotlinx.android.synthetic.main.fragment_all_order_operations.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -22,8 +25,8 @@ import com.example.dukaan.views.AcceptOrderActivity
 import kotlinx.android.synthetic.main.fragment_all_order_operations.*
 import kotlinx.android.synthetic.main.fragment_show_products.*
 
-
 class AllOrderOperationsFragment : Fragment() {
+
 
     var StoreId: Int? = 0
     lateinit var usersViewModel: UsersViewModel
@@ -36,8 +39,12 @@ class AllOrderOperationsFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
         savedInstanceState: Bundle?): View? {
         StoreId = arguments?.getInt("StoreId")
+
         return inflater.inflate(R.layout.fragment_all_order_operations, container, false)
     }
 

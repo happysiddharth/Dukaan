@@ -31,4 +31,5 @@ data class ProductEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Int? = null
+
 }

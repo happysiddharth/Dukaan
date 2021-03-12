@@ -7,7 +7,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
-    fun isUserExists(phonenumber:String): Boolean {
+    fun isUserExists(phonenumber: String): Boolean {
         return dukaanRoomDAO.isUserExists(phonenumber).isNotEmpty()
     }
 
@@ -19,14 +19,21 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
         dukaanRoomDAO.addNewUser(usersEntity)
     }
 
-    fun insertStore(storeEntity: StoreEntity){
+    fun insertStore(storeEntity: StoreEntity) {
         dukaanRoomDAO.addStore(storeEntity)
     }
 
-    fun updateUser(usersEntity: UsersEntity){
+    fun fetchParticularStore(userId:Int): StoreEntity {
+        return dukaanRoomDAO.fetchParticularStore(userId)
+    }
+
+    fun updateUser(usersEntity: UsersEntity) {
         dukaanRoomDAO.updateUser(usersEntity)
     }
 
+    fun getStoreDetails(): LiveData<List<StoreEntity>> {
+        return dukaanRoomDAO.getStoreDetails()
+      
     fun fetchAllStoreRepo(): LiveData<List<StoreEntity>>{
             return dukaanRoomDAO.fetchAllStoreDao()
     }

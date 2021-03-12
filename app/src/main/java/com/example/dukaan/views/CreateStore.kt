@@ -18,23 +18,47 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CreateStore : AppCompatActivity() {
+    companion object{
+        final val STORE_ID = "store_id"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_store2)
 
         val database = DukaanRoomDatabase.getDatabaseContext(applicationContext)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
-        val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+        val viewModelFactory = ViewModelFactory(dao)
+        val usersViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(UsersViewModel::class.java)
 
         btnAddStore.setOnClickListener(View.OnClickListener {
-            if (etBusinessName.text.toString().isNotEmpty() && etBusinessCategories.text.toString().isNotEmpty()){
+            if (etBusinessName.text.toString().isNotEmpty() && etBusinessCategories.text.toString()
+                    .isNotEmpty()
+            ) {
 
-                val phone_number:String? = PreferenceHelper.getStringFromPreference( applicationContext, OTPFragment.PHONE_KEY)
-                val userID:Int? = PreferenceHelper.getIntFromPreference(applicationContext,OTPFragment.PHONE_USER_ID)
+                val phone_number: String? = PreferenceHelper.getStringFromPreference(
+                    applicationContext,
+                    OTPFragment.PHONE_KEY
+                )
+                val userID: Int? = PreferenceHelper.getIntFromPreference(
+                    applicationContext,
+                    OTPFragment.PHONE_USER_ID
+                )
 
                 CoroutineScope(Dispatchers.IO).launch {
+                    usersViewModel.insertStore(
+                        StoreEntity(
+                            etBusinessName.text.toString(),
+                            userID!!,
+                            "",
+                            etBusinessCategories.text.toString()
+                        )
+                    )
+
+                    val storeEntity = usersViewModel.fetchParticularStore(userID)
+                    PreferenceHelper.writeIntToPreference(this@CreateStore,CreateStore.STORE_ID,storeEntity.id!!)
+                    var usersEntity = UsersEntity("sid", phone_number!!, true, false, "", "")
+                    usersEntity.id = userID
                     usersViewModel.insertStore(StoreEntity(etBusinessName.text.toString(),userID!!,"",etBusinessCategories.text.toString()))
                     var usersEntity = UsersEntity("sid",phone_number!!,true,false,"","","Seller")
                     usersEntity.id = userID!!

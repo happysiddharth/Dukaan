@@ -14,21 +14,24 @@ import com.example.dukaan.clickListeners.ProductClickListener
 import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.models.ProductsApplication
 import com.example.dukaan.recylerViewAdapter.ProductsDataAdapter
+import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.ProductsViewModel
 import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
 import com.example.dukaan.views.AddProductActivity
+import com.example.dukaan.views.CreateStore
 import com.example.dukaan.views.EditProductActivity
 import kotlinx.android.synthetic.main.fragment_products.*
 
-class ProductsFragment : Fragment(), ProductClickListener {
+class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickListener {
 
     private val productList = mutableListOf<ProductEntity>()
     lateinit var productsDataAdapter: ProductsDataAdapter
     lateinit var viewModel: ProductsViewModel
-
+    lateinit var listL:List<ProductEntity>
     companion object {
-        fun newInstance(): ProductsFragment {
-            return ProductsFragment()
+        fun newInstance(list: List<ProductEntity>): ProductsFragment {
+
+            return ProductsFragment(list)
         }
     }
 
@@ -60,11 +63,11 @@ class ProductsFragment : Fragment(), ProductClickListener {
     }
 
     private fun getProductsData() {
-        viewModel.getProducts().observe(this, Observer {
             productList.clear()
-            productList.addAll(it)
+            productList.addAll(list)
+            recyclerViewProductsFragment.visibility = View.VISIBLE
+            progressBar.visibility = View.GONE
             productsDataAdapter.notifyDataSetChanged()
-        })
     }
 
     private fun setRecyclerData() {
