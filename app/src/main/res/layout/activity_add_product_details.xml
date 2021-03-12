@@ -36,7 +36,6 @@
 
     </androidx.cardview.widget.CardView>
 
-
     <ImageView
         android:id="@+id/ivProductImageAddProductDetails"
         android:layout_width="100dp"
