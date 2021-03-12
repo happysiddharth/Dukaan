@@ -35,8 +35,8 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
      return  dukaanRoomDAO.getAllProduct(StoreId)
     }
 
-    fun getAllOrdersRepo():LiveData<List<OrderEntity>>{
-        return dukaanRoomDAO.getAllOrdersDao()
+    fun getAllOrdersRepo(storeId:Int):LiveData<List<OrderEntity>>{
+        return dukaanRoomDAO.getAllOrdersDao(storeId)
     }
 
     fun placeOrderRepo(orderEntity: OrderEntity){
@@ -53,5 +53,9 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
         CoroutineScope(Dispatchers.IO).launch {
             dukaanRoomDAO.checkOutOrder(consumerEntity)
         }
+    }
+
+    fun fetchStoreIdRepo(userId:Int): LiveData<List<StoreEntity>>{
+       return dukaanRoomDAO.fetchStoreIdDao(userId)
     }
 }

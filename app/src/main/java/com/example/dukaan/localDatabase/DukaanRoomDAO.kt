@@ -30,11 +30,14 @@ interface DukaanRoomDAO {
     @Query("select * from stores")
     fun fetchAllStoreDao(): LiveData<List<StoreEntity>>
 
+    @Query("select * from stores where user_id=:userId")
+    fun fetchStoreIdDao(userId:Int): LiveData<List<StoreEntity>>
+
     @Update
     fun updateUser(usersEntity: UsersEntity)
 
-    @Query("SELECT * FROM Orders")
-    fun getAllOrdersDao():LiveData<List<OrderEntity>>
+    @Query("SELECT * FROM Orders where store_id=:storeId")
+    fun getAllOrdersDao(storeId:Int):LiveData<List<OrderEntity>>
 
     @Insert
     fun PlaceOrderDao(orderEntity: OrderEntity)

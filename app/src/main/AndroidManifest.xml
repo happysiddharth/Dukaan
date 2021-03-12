@@ -25,8 +25,8 @@
         <activity android:name=".views.AddCategoryActivity" />
         <activity android:name=".views.AddProductDetailsActivity" />
         <activity android:name=".views.AddProductActivity" />
-        <activity android:name=".views.OrderActivity" />
-        <activity android:name=".views.phone_login_activity">
+        <activity android:name=".views.phone_login_activity" />
+        <activity android:name=".views.OrderActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -37,8 +37,8 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO): ViewModel() {
         return userRepository.getAllProductRepo(StoreId)
     }
 
-     fun getAllOrdersModel():LiveData<List<OrderEntity>>{
-        return userRepository.getAllOrdersRepo()
+     fun getAllOrdersModel(storeId:Int):LiveData<List<OrderEntity>>{
+        return userRepository.getAllOrdersRepo(storeId)
     }
 
      fun placeOrderModel(orderEntity: OrderEntity){
@@ -55,6 +55,10 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO): ViewModel() {
         CoroutineScope(Dispatchers.IO).launch {
             userRepository.checkOutOrderRepo(consumerEntity)
         }
+    }
+
+    fun fetchStoreIdModel(userId:Int): LiveData<List<StoreEntity>>{
+        return userRepository.fetchStoreIdRepo(userId)
     }
 
 }

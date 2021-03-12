@@ -1,6 +1,5 @@
 package com.example.dukaan.views
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View

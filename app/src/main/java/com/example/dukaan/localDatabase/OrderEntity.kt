@@ -25,6 +25,7 @@ data class OrderEntity(
     @ColumnInfo(name = "unitOrder") var unitOrder: String,
     @ColumnInfo(name = "product_detailsOrder") var product_detailsOrder: String,
     @ColumnInfo(name = "OrderStatus")var OrderStatus:String,
+    @ColumnInfo(name = "timestampOrder") var date:String,
     @ColumnInfo(name = "store_id") var store_id: Int) : Serializable {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
