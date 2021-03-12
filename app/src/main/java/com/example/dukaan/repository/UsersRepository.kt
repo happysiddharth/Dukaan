@@ -33,6 +33,7 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
 
     fun getStoreDetails(): LiveData<List<StoreEntity>> {
         return dukaanRoomDAO.getStoreDetails()
+    }
       
     fun fetchAllStoreRepo(): LiveData<List<StoreEntity>>{
             return dukaanRoomDAO.fetchAllStoreDao()

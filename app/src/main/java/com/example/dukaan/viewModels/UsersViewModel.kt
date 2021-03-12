@@ -36,6 +36,7 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO) : ViewModel() {
 
     fun getStoreDetails(): LiveData<List<StoreEntity>> {
         return userRepository.getStoreDetails()
+    }
       
      fun getAllStoreModel(): LiveData<List<StoreEntity>>{
         return userRepository.fetchAllStoreRepo()
