@@ -22,10 +22,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_10"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/galano_grotesque"
                 android:text="@string/account"
                 android:textColor="@color/white"
-                android:textSize="@dimen/sp_30"
+                android:textSize="@dimen/sp_25"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -40,6 +40,7 @@
             android:fontFamily="@font/roboto_thin"
             android:text="@string/support"
             android:textColor="@color/blue_bg"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_20"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="Store Name"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_30"
@@ -72,7 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_20"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/edit_business_details"
             android:textColor="@color/blue_bg"
             android:textSize="@dimen/sp_15"
@@ -95,9 +96,9 @@
 
         <ImageView
             android:id="@+id/imgShareIcon"
-            android:layout_width="@dimen/dp_25"
-            android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/ic_share"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/ViewLine" />
@@ -106,11 +107,11 @@
             android:id="@+id/tvShareDukaanApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_25"
-            android:fontFamily="@font/roboto_thin"
+            android:layout_margin="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/share_dukaan_app"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintStart_toEndOf="@id/imgShareIcon"
             app:layout_constraintTop_toBottomOf="@id/ViewLine" />
 
@@ -118,7 +119,7 @@
             android:id="@+id/Next1"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvShareDukaanApp"
@@ -127,9 +128,9 @@
 
         <ImageView
             android:id="@+id/imgGetMobile"
-            android:layout_width="@dimen/dp_25"
-            android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/cellphone_image"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgShareIcon" />
@@ -139,11 +140,11 @@
             android:id="@+id/tvGetOwnApp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_25"
-            android:fontFamily="@font/roboto_thin"
+            android:layout_margin="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/get_your_own_app"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintStart_toEndOf="@id/imgGetMobile"
             app:layout_constraintTop_toBottomOf="@id/tvShareDukaanApp" />
 
@@ -151,7 +152,7 @@
             android:id="@+id/Next2"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvGetOwnApp"
@@ -160,9 +161,9 @@
 
         <ImageView
             android:id="@+id/imgChangeLanguage"
-            android:layout_width="@dimen/dp_25"
-            android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/ic_language"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgGetMobile" />
@@ -172,10 +173,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_20"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/change_langauge"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintStart_toEndOf="@id/imgChangeLanguage"
             app:layout_constraintTop_toBottomOf="@id/tvGetOwnApp" />
 
@@ -183,7 +184,7 @@
             android:id="@+id/Next3"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvGetOwnApp"
@@ -191,9 +192,9 @@
 
         <ImageView
             android:id="@+id/imgWhatsAppChat"
-            android:layout_width="@dimen/dp_25"
-            android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/icon_chat"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgChangeLanguage" />
@@ -202,31 +203,31 @@
             android:id="@+id/tvWhatsAppChat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/dp_25"
-            android:fontFamily="@font/roboto_thin"
+            android:layout_margin="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/whatsapp_chat_support"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintStart_toEndOf="@id/imgWhatsAppChat"
             app:layout_constraintTop_toBottomOf="@id/tvChangeLangauge" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/Switch"
-            android:layout_width="@dimen/dp_30"
-            android:layout_height="@dimen/dp_25"
-            android:layout_marginStart="@dimen/dp_30"
-            android:layout_marginLeft="@dimen/dp_30"
-            android:layout_marginTop="@dimen/dp_30"
-            android:theme="@style/SwitchCompatStyle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tvWhatsAppChat"
-            app:layout_constraintTop_toBottomOf="@id/Next3" />
+        <!--        <androidx.appcompat.widget.SwitchCompat-->
+        <!--            android:id="@+id/Switch"-->
+        <!--            android:layout_width="@dimen/dp_30"-->
+        <!--            android:layout_height="@dimen/dp_25"-->
+        <!--            android:layout_marginStart="@dimen/dp_30"-->
+        <!--            android:layout_marginLeft="@dimen/dp_30"-->
+        <!--            android:layout_marginTop="@dimen/dp_30"-->
+        <!--            android:theme="@style/SwitchCompatStyle"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toEndOf="@id/tvWhatsAppChat"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/Next3" />-->
 
         <ImageView
             android:id="@+id/imgPrivacyPolicy"
-            android:layout_width="@dimen/dp_25"
-            android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/lock"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgWhatsAppChat" />
@@ -236,19 +237,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_20"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/privacy_policy"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintStart_toEndOf="@id/imgPrivacyPolicy"
             app:layout_constraintTop_toBottomOf="@id/tvWhatsAppChat" />
 
 
         <ImageView
             android:id="@+id/imgSignOut"
-            android:layout_width="@dimen/dp_25"
-            android:layout_height="@dimen/dp_25"
-            android:layout_margin="@dimen/dp_25"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_margin="@dimen/dp_20"
             android:src="@drawable/ic_signout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/imgPrivacyPolicy" />
@@ -258,10 +259,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_20"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/sign_out"
             android:textColor="@color/black"
-            android:textSize="@dimen/sp_20"
+            android:textSize="@dimen/sp_15"
             app:layout_constraintStart_toEndOf="@id/imgPrivacyPolicy"
             app:layout_constraintTop_toBottomOf="@id/tvPrivacyPolicy" />
 

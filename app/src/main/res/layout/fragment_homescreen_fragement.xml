@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_10"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/galano_grotesque"
                 android:gravity="center"
                 android:text="@string/store_setup_is_completed"
                 android:textColor="@color/white"
@@ -47,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_10"
-                android:fontFamily="@font/roboto_thin"
+                android:fontFamily="@font/galano_grotesque"
                 android:gravity="center"
                 android:text="@string/find_following_steps_to_unlock_features"
                 android:textColor="@color/white"
@@ -110,7 +110,7 @@
                     android:layout_height="40dp"
                     android:layout_margin="@dimen/dp_10"
                     android:background="@drawable/circle"
-                    android:fontFamily="@font/roboto_thin"
+                    android:fontFamily="@font/galano_grotesque"
                     android:gravity="center"
                     android:text="1" />
 
@@ -124,7 +124,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
+                        android:fontFamily="@font/galano_grotesque"
                         android:text="Create Online Store"
                         android:textColor="@color/black"
                         android:textSize="@dimen/sp_18" />
@@ -132,7 +132,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
+                        android:fontFamily="@font/galano_grotesque"
                         android:text="Congratulation on opening your new online store!" />
 
                     <Button
@@ -141,7 +141,7 @@
                         android:layout_height="30dp"
                         android:layout_marginTop="@dimen/dp_10"
                         android:background="@drawable/border"
-                        android:fontFamily="@font/roboto_thin"
+                        android:fontFamily="@font/galano_grotesque"
                         android:padding="5dp"
                         android:text="Create Store"
                         android:textColor="@color/white" />
@@ -185,7 +185,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
+                        android:fontFamily="@font/galano_grotesque"
                         android:text="Add Product"
                         android:textColor="@color/black"
                         android:textSize="@dimen/sp_18" />
@@ -193,7 +193,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
+                        android:fontFamily="@font/galano_grotesque"
                         android:text="Create your first product by adding the product name and image" />
 
 
@@ -203,7 +203,7 @@
                         android:layout_height="30dp"
                         android:layout_marginTop="@dimen/dp_10"
                         android:background="@drawable/border"
-                        android:fontFamily="@font/roboto_thin"
+                        android:fontFamily="@font/galano_grotesque"
                         android:padding="5dp"
                         android:text="Add Product"
                         android:textColor="@color/white" />
@@ -226,7 +226,7 @@
                     android:layout_height="40dp"
                     android:layout_margin="@dimen/dp_10"
                     android:background="@drawable/circle"
-                    android:fontFamily="@font/roboto_thin"
+                    android:fontFamily="@font/galano_grotesque"
                     android:gravity="center"
                     android:text="3" />
 
@@ -241,8 +241,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/roboto_thin"
+                        android:fontFamily="@font/galano_grotesque"
                         android:text="Share on whatsapp" />
+
                 </LinearLayout>
             </LinearLayout>
 

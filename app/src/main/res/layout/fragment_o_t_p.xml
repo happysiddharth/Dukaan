@@ -18,7 +18,7 @@
             android:id="@+id/tvPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/enter_otp"
             android:textSize="@dimen/sp_15"
             android:textStyle="bold" />
@@ -27,6 +27,7 @@
             android:id="@+id/etOTP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/enter_otp" />
 
         <Button
@@ -34,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/default_button"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="Submit"
             android:textAllCaps="false"
             android:textColor="@color/white"

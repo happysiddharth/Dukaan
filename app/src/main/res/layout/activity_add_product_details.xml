@@ -39,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="@string/product_name"
         app:layout_constraintBottom_toTopOf="@id/etProductCategoryAddProductDetails"
         app:layout_constraintTop_toBottomOf="@id/cvAddImageAddProductDetails" />
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="@string/product_category"
         app:layout_constraintBottom_toTopOf="@id/llMrpProductDetails"
         app:layout_constraintTop_toBottomOf="@id/etProductNameAddProductDetails" />
@@ -72,7 +72,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/mrp"
             android:inputType="number" />
 
@@ -81,7 +81,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/selling_price"
             android:inputType="number" />
 
@@ -103,7 +103,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/quantity"
             android:inputType="number" />
 
@@ -112,8 +112,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/unit" />
+
 
     </LinearLayout>
 
@@ -123,7 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="@string/product_category"
         app:layout_constraintBottom_toTopOf="@id/cvBtnAddProductProductDetails"
         app:layout_constraintTop_toBottomOf="@id/llQuantityProductDetails" />
@@ -144,7 +145,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/material_on_background_disabled"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/add_product"
             android:textAllCaps="false"
             android:textColor="@color/white"

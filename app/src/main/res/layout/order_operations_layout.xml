@@ -11,7 +11,7 @@
         android:layout_height="35dp"
         android:layout_gravity="center"
         android:background="@drawable/bg_button_order_operation"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/galano_grotesque"
         android:text="all"
         android:textAllCaps="false"
         android:textColor="@color/white"

@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
-            android:fontFamily="@font/roboto_thin"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/change_language"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_25"
@@ -40,6 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_10"
+        android:fontFamily="@font/galano_grotesque"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/TopLL3">
@@ -49,6 +50,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/english"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_20" />
@@ -58,6 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/hindi"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_20" />
@@ -67,6 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/marathi"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_20" />
@@ -76,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/tamil"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_20" />
@@ -85,6 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_20"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/kannada"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_20" />
@@ -97,7 +103,7 @@
         android:layout_height="@dimen/dp_40"
         android:layout_marginBottom="@dimen/dp_30"
         android:background="@color/blue_bg"
-        android:fontFamily="@font/roboto_thin"
+        android:fontFamily="@font/galano_grotesque"
         android:text="@string/save_changes"
         android:textAllCaps="false"
         android:textColor="@color/white"
