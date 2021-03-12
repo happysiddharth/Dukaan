@@ -58,7 +58,7 @@ class BuyerFragment : Fragment() {
                val name = EtvBuyerName.text.toString()
                val mobileNo = EtvBuyerMobileNo.text.toString()
                val userType = "Buyer"
-               val usersEntity = UsersEntity(name,mobileNo,false,false,"","",userType)
+               val usersEntity = UsersEntity(name,mobileNo,false,false,"","")
                 CoroutineScope(Dispatchers.IO).launch {
                     usersViewModel.addNewuser(usersEntity)
                 }

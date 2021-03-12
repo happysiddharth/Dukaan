@@ -56,10 +56,9 @@ class CreateStore : AppCompatActivity() {
                     )
 
                     val storeEntity = usersViewModel.fetchParticularStore(userID)
-
                     PreferenceHelper.writeIntToPreference(this@CreateStore,CreateStore.STORE_ID,storeEntity.id!!)
 
-                    var usersEntity = UsersEntity("sid",phone_number!!,true,false,"","","Seller")
+                    var usersEntity = UsersEntity("sid",phone_number!!,true,false,"","Seller")
                     usersEntity.id = userID!!
                     usersViewModel.updateUser(usersEntity)
                     CoroutineScope(Dispatchers.Main).launch {

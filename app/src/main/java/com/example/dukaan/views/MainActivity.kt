@@ -2,8 +2,8 @@ package com.example.dukaan.views
 
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.example.dukaan.R
 import com.example.dukaan.fragments.AllOrderOperationsFragment
 import com.example.dukaan.fragments.OTPFragment
@@ -15,7 +15,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.concurrent.schedule
 
-class MainActivity : AppCompatActivity() {
 
 
     class MainActivity : AppCompatActivity() {
@@ -42,9 +41,6 @@ class MainActivity : AppCompatActivity() {
                 }
             }
 
-        }
-
 
     }
-
 }

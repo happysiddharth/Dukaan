@@ -91,11 +91,11 @@ class OTPFragment : Fragment() {
                 var user = ""
                 for (i in 0 until totalUser){
                     if (it[i].phone == phone && it[i].userType == "Buyer" ){
-                        count++
+                        count = 1
                         user = it[i].userType
                     }
                     if (it[i].phone == phone && it[i].userType == "Seller" ){
-                        count++
+                        count = 1
                         user = it[i].userType
                     }
                 }

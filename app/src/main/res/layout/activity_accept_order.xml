@@ -48,6 +48,8 @@
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toRightOf="@+id/ivGoTo"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,7 +122,7 @@
                     android:layout_below="@id/TvOrderItemQuantityAccept">
 
                     <ImageView
-                        android:id="@+id/ivOrderItemPicCheck"
+                        android:id="@+id/ivOrderItemPicAccept"
                         android:layout_width="60dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="10dp"
@@ -139,6 +141,13 @@
                         android:text="CHANA BESAN"
                         android:textColor="@color/black"
                         android:textSize="16sp"
+                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicAccept"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/TvOrderItemPriceAccept"
                         app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicCheck"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -151,7 +160,10 @@
                         android:text="Rs 450"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicCheck"
+                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicAccept"
+/>
+                    <TextView
+                        android:id="@+id/TvOrderItemTotalPriceAccept"
                         app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameCheck" />
 
                     <TextView
@@ -171,8 +183,7 @@
                         android:layout_height="1dp"
                         android:layout_margin="8dp"
                         android:background="@color/light_gray"
-                        app:layout_constraintTop_toBottomOf="@id/ivOrderItemPicCheck"/>
-
+                        app:layout_constraintTop_toBottomOf="@id/ivOrderItemPicAccept"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView

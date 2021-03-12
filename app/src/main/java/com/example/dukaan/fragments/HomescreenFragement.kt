@@ -120,10 +120,9 @@ class HomescreenFragement : Fragment() {
                     btnCreateStore.setOnClickListener(View.OnClickListener {
                         val intent = Intent(context,CreateStore::class.java)
                         startActivity(intent)
-
                     })
                 }
-                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", "","Seller"))
+                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", "Seller"))
 
                 CoroutineScope(Dispatchers.Main).launch {
                     usersViewModel.fetchUser(phone_number).observe(this@HomescreenFragement, Observer {
@@ -137,8 +136,6 @@ class HomescreenFragement : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
     }
 
 }

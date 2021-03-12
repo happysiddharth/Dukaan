@@ -22,6 +22,7 @@ interface DukaanRoomDAO {
 
     @Query("select * from stores where user_id = :userId")
     fun fetchParticularStore(userId: Int): StoreEntity
+
     @Query("select * from users where phone = :phonenumber AND userType =:userType")
     fun getUserType(phonenumber: String, userType: String): List<UsersEntity>
 
@@ -34,6 +35,9 @@ interface DukaanRoomDAO {
     @Query("select * from stores")
     fun fetchAllStoreDao(): LiveData<List<StoreEntity>>
 
+    @Query("select * from stores where user_id=:userId")
+    fun fetchStoreIdDao(userId:Int): LiveData<List<StoreEntity>>
+
     @Update
     fun updateUser(usersEntity: UsersEntity)
 
@@ -42,6 +46,12 @@ interface DukaanRoomDAO {
 
     @Query("SELECT * FROM Orders")
     fun getAllOrdersDao():LiveData<List<OrderEntity>>
+
+    @Query("select * from stores")
+    fun getStoreDetails(): LiveData<List<StoreEntity>>
+  
+    @Query("SELECT * FROM Orders where store_id=:storeId")
+    fun getAllOrdersDao(storeId:Int):LiveData<List<OrderEntity>>
 
     @Insert
     fun PlaceOrderDao(orderEntity: OrderEntity)

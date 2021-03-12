@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dukaan.R
-import com.example.dukaan.interfaces.AddItemToCart
+import com.example.dukaan.interfaces.OrderNow
 import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.recylerViewHolders.AllProductViewHolder
 
-class AllProductAdapter(val productList:List<ProductEntity>,val addItemToCart: AddItemToCart):RecyclerView.Adapter<AllProductViewHolder>() {
+class AllProductAdapter(val productList:List<ProductEntity>,val addItemToCart: OrderNow):RecyclerView.Adapter<AllProductViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllProductViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.all_store_product_layout,parent,false)

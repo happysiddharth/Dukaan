@@ -15,7 +15,7 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
         return dukaanRoomDAO.fetchUser(phonenumber)
     }
 
-    fun updateStore(storeEntity: StoreEntity){
+    fun updateStore(storeEntity: StoreEntity) {
         dukaanRoomDAO.updateStore(storeEntity)
     }
 
@@ -27,7 +27,7 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
         dukaanRoomDAO.addStore(storeEntity)
     }
 
-    fun fetchParticularStore(userId:Int): StoreEntity {
+    fun fetchParticularStore(userId: Int): StoreEntity {
         return dukaanRoomDAO.fetchParticularStore(userId)
     }
 
@@ -38,31 +38,40 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
     fun getStoreDetails(user_id: Int): LiveData<List<StoreEntity>> {
         return dukaanRoomDAO.getStoreDetails(user_id)
     }
-    fun fetchAllStoreRepo(): LiveData<List<StoreEntity>>{
-            return dukaanRoomDAO.fetchAllStoreDao()
+
+    fun getStoreDetails(): LiveData<List<StoreEntity>> {
+        return dukaanRoomDAO.getStoreDetails()
     }
 
-    fun getAllProductRepo(StoreId:Int):LiveData<List<ProductEntity>>{
-     return  dukaanRoomDAO.getAllProduct(StoreId)
+    fun fetchAllStoreRepo(): LiveData<List<StoreEntity>> {
+        return dukaanRoomDAO.fetchAllStoreDao()
     }
 
-    fun getAllOrdersRepo():LiveData<List<OrderEntity>>{
-        return dukaanRoomDAO.getAllOrdersDao()
+    fun getAllProductRepo(StoreId: Int): LiveData<List<ProductEntity>> {
+        return dukaanRoomDAO.getAllProduct(StoreId)
     }
 
-    fun placeOrderRepo(orderEntity: OrderEntity){
+    fun getAllOrdersRepo(storeId: Int): LiveData<List<OrderEntity>> {
+        return dukaanRoomDAO.getAllOrdersDao(storeId)
+    }
+
+    fun placeOrderRepo(orderEntity: OrderEntity) {
         CoroutineScope(Dispatchers.IO).launch {
             dukaanRoomDAO.PlaceOrderDao(orderEntity)
         }
     }
 
-    fun getAllConsumersRepo():LiveData<List<ConsumerEntity>>{
+    fun getAllConsumersRepo(): LiveData<List<ConsumerEntity>> {
         return dukaanRoomDAO.getAllConsumersDao()
     }
 
-    fun checkOutOrderRepo(consumerEntity: ConsumerEntity){
+    fun checkOutOrderRepo(consumerEntity: ConsumerEntity) {
         CoroutineScope(Dispatchers.IO).launch {
             dukaanRoomDAO.checkOutOrder(consumerEntity)
         }
+    }
+
+    fun fetchStoreIdRepo(userId: Int): LiveData<List<StoreEntity>> {
+        return dukaanRoomDAO.fetchStoreIdDao(userId)
     }
 }

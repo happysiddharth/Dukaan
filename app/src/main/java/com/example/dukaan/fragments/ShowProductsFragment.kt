@@ -11,21 +11,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dukaan.R
-import com.example.dukaan.interfaces.AddItemToCart
+import com.example.dukaan.interfaces.OrderNow
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.localDatabase.OrderEntity
 import com.example.dukaan.localDatabase.ProductEntity
-import com.example.dukaan.localDatabase.StoreEntity
 import com.example.dukaan.recylerViewAdapter.AllProductAdapter
-import com.example.dukaan.recylerViewAdapter.AllStoresAdapter
 import com.example.dukaan.viewModels.UsersViewModel
 import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
 import com.example.dukaan.views.CheckOutOrderActivity
-import kotlinx.android.synthetic.main.activity_order_now.*
-import kotlinx.android.synthetic.main.activity_order_now.rvAllStores
 import kotlinx.android.synthetic.main.fragment_show_products.*
+import java.time.LocalDateTime
 
-class ShowProductsFragment : Fragment(), AddItemToCart {
+class ShowProductsFragment : Fragment(), OrderNow {
 
     var StoreId:Int? = 0
     var StoreName: String? = ""
@@ -91,10 +88,16 @@ class ShowProductsFragment : Fragment(), AddItemToCart {
         var unitOrder = productEntity.unit
         var product_detailsOrder = productEntity.product_details
         var store_id = productEntity.store_id
+
+        var time = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            LocalDateTime.now()
+        } else {
+            Toast.makeText(context,"Android Version is old",Toast.LENGTH_SHORT).show()
+        }
         //Toast.makeText(context,nameOrder,Toast.LENGTH_SHORT).show()
 
         val orderEntity = OrderEntity(imageOrder, nameOrder, categoryOrder, priceOrder, quantityOrder, unitOrder,
-            product_detailsOrder, orderStatus,store_id)
+            product_detailsOrder, orderStatus,time.toString(),store_id)
         usersViewModel.placeOrderModel(orderEntity)
         val intent = Intent(context,CheckOutOrderActivity::class.java)
         intent.putExtra("imageOrder",imageOrder)
