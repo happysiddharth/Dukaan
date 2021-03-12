@@ -5,7 +5,6 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
-import com.example.dukaan.localDatabase.UsersEntity
 
 @Dao
 interface DukaanRoomDAO {
@@ -27,7 +26,7 @@ interface DukaanRoomDAO {
     @Update
     fun updateUser(usersEntity: UsersEntity)
 
-    @Query("select * from stores")
-    fun getStoreDetails(): LiveData<List<StoreEntity>>
+    @Query("select * from stores where user_id=:user_id")
+    fun getStoreDetails(user_id: Int): LiveData<List<StoreEntity>>
 
 }

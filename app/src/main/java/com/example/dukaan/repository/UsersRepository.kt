@@ -30,7 +30,7 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
         dukaanRoomDAO.updateUser(usersEntity)
     }
 
-    fun getStoreDetails(): LiveData<List<StoreEntity>> {
-        return dukaanRoomDAO.getStoreDetails()
+    fun getStoreDetails(user_id: Int): LiveData<List<StoreEntity>> {
+        return dukaanRoomDAO.getStoreDetails(user_id)
     }
 }

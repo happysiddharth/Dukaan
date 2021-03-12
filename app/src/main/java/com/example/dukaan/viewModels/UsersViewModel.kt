@@ -33,8 +33,8 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO) : ViewModel() {
         userRepository.updateUser(usersEntity)
     }
 
-    fun getStoreDetails(): LiveData<List<StoreEntity>> {
-        return userRepository.getStoreDetails()
+    fun getStoreDetails(user_id: Int): LiveData<List<StoreEntity>> {
+        return userRepository.getStoreDetails(user_id)
     }
 
 }

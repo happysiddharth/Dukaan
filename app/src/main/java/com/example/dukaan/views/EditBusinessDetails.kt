@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.dukaan.R
+import com.example.dukaan.fragments.OTPFragment
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
+import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.UsersViewModel
 import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_edit_business_details.*
@@ -21,7 +23,7 @@ class EditBusinessDetails : AppCompatActivity() {
         val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
 
-        usersViewModel.getStoreDetails().observe(this,
+        usersViewModel.getStoreDetails(PreferenceHelper.getIntFromPreference(applicationContext,OTPFragment.PHONE_KEY)).observe(this,
             Observer {
                 etBusinessNameDetails.setText(it[0].store_name)
                 etBusinessNameLink.setText(it[0].store_name + "54232")

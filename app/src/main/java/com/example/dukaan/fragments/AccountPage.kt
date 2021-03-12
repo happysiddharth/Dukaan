@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.dukaan.R
 import com.example.dukaan.sharedpreference.PreferenceHelper
+import com.example.dukaan.views.EditBusinessDetails
 import com.example.dukaan.views.phone_login_activity
 import kotlinx.android.synthetic.main.activity_account_page.*
 
@@ -64,6 +65,10 @@ class AccountPage : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        tvEditBusiness.setOnClickListener(View.OnClickListener {
+            val intent = Intent(context!!,EditBusinessDetails::class.java)
+            startActivity(intent)
+        })
         tvSignOut.setOnClickListener(View.OnClickListener {
             PreferenceHelper.writeStringToPreference(context!!,OTPFragment.PHONE_KEY,"")
             val intent = Intent(context!!,phone_login_activity::class.java)
