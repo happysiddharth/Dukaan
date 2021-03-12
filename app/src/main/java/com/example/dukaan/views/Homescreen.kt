@@ -10,6 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_homescreen.*
 
 class Homescreen : AppCompatActivity() {
+
     val fragmentManager = supportFragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

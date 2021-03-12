@@ -31,8 +31,7 @@ class HomescreenFragement : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_homescreen_fragement, container, false)
     }
@@ -96,7 +95,9 @@ class HomescreenFragement : Fragment() {
                     })
                 }
             } else {
-                btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+                CoroutineScope(Dispatchers.Main).launch {
+                    btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+                }
 
                 CoroutineScope(Dispatchers.Main).launch {
                     btnCreateStore.setOnClickListener(View.OnClickListener {
@@ -105,7 +106,7 @@ class HomescreenFragement : Fragment() {
 
                     })
                 }
-                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", ""))
+                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", "","Seller"))
 
                 CoroutineScope(Dispatchers.Main).launch {
                     usersViewModel.fetchUser(phone_number).observe(this@HomescreenFragement, Observer {

@@ -15,8 +15,8 @@ class CategoriesViewHolder(private val view: View) : RecyclerView.ViewHolder(vie
         view.apply {
             Glide.with(view).load(categoriesEntity.image).placeholder(R.drawable.ic_baseline_image_24)
                 .into(ivProductImageProductRecyclerLayout)
-            tvProductNameProductRecyclerLayout.text = categoriesEntity.name
-            tvProductQuantityProductRecyclerLayout.text = "${categoriesEntity.quantity} products available"
+            TvOrderStoreProductName.text = categoriesEntity.name
+            TvOrderStoreProductPrice.text = "${categoriesEntity.quantity} products available"
             scStockSwitchProductsRecyclerLayout.isChecked = true
 
             if (scStockSwitchProductsRecyclerLayout.isChecked) {

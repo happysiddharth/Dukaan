@@ -18,8 +18,9 @@ import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.ProductsViewModel
 import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
 import com.example.dukaan.views.AddProductActivity
-import com.example.dukaan.views.CreateStore
+import com.example.dukaan.views.EditProductActivity
 import kotlinx.android.synthetic.main.fragment_products.*
+
 
 class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickListener {
 
@@ -75,7 +76,9 @@ class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickL
     }
 
     override fun onEditClicked(productEntity: ProductEntity) {
-
+        val intent = Intent(context, EditProductActivity::class.java)
+        intent.putExtra("productEntity", productEntity)
+        startActivity(intent)
     }
 
     override fun onDeleteClicked(productEntity: ProductEntity) {

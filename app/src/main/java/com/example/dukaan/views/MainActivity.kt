@@ -1,10 +1,9 @@
 package com.example.dukaan.views
 
 
-
 import android.content.Intent
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import com.example.dukaan.R
 import com.example.dukaan.fragments.AllOrderOperationsFragment
 import com.example.dukaan.fragments.OTPFragment
@@ -19,29 +18,33 @@ import kotlin.concurrent.schedule
 class MainActivity : AppCompatActivity() {
 
 
+    class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-//        window.setFlags(
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//            WindowManager.LayoutParams.FLAG_FULLSCREEN
-//        )
-        setContentView(R.layout.activity_main)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
 
-        Timer("settingup").schedule(1000){
-            if (!PreferenceHelper.getStringFromPreference(this@MainActivity,OTPFragment.PHONE_KEY).isNullOrEmpty()){
-                val intent = Intent(this@MainActivity,Homescreen::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
-            }else{
+            setContentView(R.layout.activity_main)
 
-                val intent = Intent(this@MainActivity,phone_login_activity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                startActivity(intent)
+            Timer("settingup").schedule(500) {
+                if (!PreferenceHelper.getStringFromPreference(
+                        this@MainActivity,
+                        OTPFragment.PHONE_KEY
+                    ).isNullOrEmpty()
+                ) {
+                    val intent = Intent(this@MainActivity, Homescreen::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                } else {
+
+                    val intent = Intent(this@MainActivity, phone_login_activity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    startActivity(intent)
+                }
             }
+
         }
 
-    }
 
+    }
 
 }

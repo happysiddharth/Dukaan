@@ -29,7 +29,12 @@
             android:noHistory="true"
             />
         <activity android:name=".views.EditBusinessDetails" />
-        <activity android:name=".views.MainActivity">
+        <activity android:name=".views.CheckOutOrderActivity"/>
+        <activity android:name=".views.OrderNowActivity" />
+        <activity android:name=".views.RegistrationActivity" />
+        <activity android:name=".views.EditProductActivity" />
+        <activity android:name=".views.OrderActivity" />
+        <activity android:name=".views.MainActivity$MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,4 +42,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

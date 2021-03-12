@@ -15,10 +15,14 @@ class ProductsViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
         view.apply {
             Glide.with(view).load(productEntity.image).placeholder(R.drawable.milk)
                 .into(ivProductImageProductRecyclerLayout)
-            tvProductNameProductRecyclerLayout.text = productEntity.name
-            tvProductQuantityProductRecyclerLayout.text = "${productEntity.quantity} pieces"
-            tvProductPriceProductRecyclerLayout.text = "₹${productEntity.selling_price}"
+            TvOrderStoreProductName.text = productEntity.name
+            TvOrderStoreProductPrice.text = "${productEntity.quantity} pieces"
+            TvOrderStoreProductPrices.text = "₹${productEntity.selling_price}"
             scStockSwitchProductsRecyclerLayout.isChecked = true
+
+            cvRecyclerLayout.setOnClickListener {
+                productClickListener.onEditClicked(productEntity)
+            }
 
             if (scStockSwitchProductsRecyclerLayout.isChecked) {
                 tvStockProductsRecyclerLayout.text = "In stock"

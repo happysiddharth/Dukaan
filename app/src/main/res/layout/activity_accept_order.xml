@@ -41,12 +41,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:paddingLeft="20dp"
             android:text="Order #12456"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/ivGoTo"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -115,7 +115,7 @@
                     android:layout_below="@id/TvOrderItemQuantityAccept">
 
                     <ImageView
-                        android:id="@+id/ivOrderItemPicAccept"
+                        android:id="@+id/ivOrderItemPicCheck"
                         android:layout_width="60dp"
                         android:layout_height="100dp"
                         android:layout_marginLeft="10dp"
@@ -125,7 +125,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/TvOrderItemNameAccept"
+                        android:id="@+id/TvOrderItemNameCheck"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -133,22 +133,22 @@
                         android:text="CHANA BESAN"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicAccept"
+                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicCheck"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/TvOrderItemPriceAccept"
+                        android:id="@+id/TvOrderItemPriceCheck"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:text="Rs 450"
                         android:textColor="@color/black"
                         android:textSize="16sp"
-                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicAccept"
-                        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameAccept" />
+                        app:layout_constraintLeft_toRightOf="@id/ivOrderItemPicCheck"
+                        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameCheck" />
 
                     <TextView
-                        android:id="@+id/TvOrderItemTotalPriceAccept"
+                        android:id="@+id/TvOrderItemTotalPriceCheck"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -156,14 +156,14 @@
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameAccept" />
+                        app:layout_constraintTop_toBottomOf="@id/TvOrderItemNameCheck" />
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
                         android:layout_margin="8dp"
                         android:background="@color/light_gray"
-                        app:layout_constraintTop_toBottomOf="@id/ivOrderItemPicAccept"/>
+                        app:layout_constraintTop_toBottomOf="@id/ivOrderItemPicCheck"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
