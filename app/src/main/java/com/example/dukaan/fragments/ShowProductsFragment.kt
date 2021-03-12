@@ -27,7 +27,7 @@ import kotlinx.android.synthetic.main.fragment_show_products.*
 
 class ShowProductsFragment : Fragment(), AddItemToCart {
 
-    var StoreId: Int? = 1
+    var StoreId:Int? = 0
     var StoreName: String? = ""
     lateinit var usersViewModel: UsersViewModel
     lateinit var allProductAdapter: AllProductAdapter
@@ -39,8 +39,7 @@ class ShowProductsFragment : Fragment(), AddItemToCart {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         StoreId = arguments?.getInt("StoreId")
         StoreName = arguments?.getString("StoreName")
         return inflater.inflate(R.layout.fragment_show_products, container, false)
