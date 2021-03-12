@@ -9,22 +9,24 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="15dp"
+        android:fontFamily="@font/galano_grotesque"
         android:text="@string/TvAllOrders"
         android:textColor="@color/black"
         android:textSize="18sp"
-        android:textStyle="bold"
-        android:layout_alignParentLeft="true"
-        android:layout_margin="15dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/TvLifeTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_margin="15dp"
+        android:fontFamily="@font/galano_grotesque"
         android:text="@string/TvLifeTime"
         android:textColor="@color/light_gray"
-        android:textSize="18sp"
-        android:layout_alignParentRight="true"
-        android:layout_margin="15dp"/>
+        android:textSize="18sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,18 +36,18 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAllOrders"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/rlEmptyOrders"
-        android:layout_below="@id/TvLifeTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/TvLifeTime"
+        android:layout_centerInParent="true"
         android:layout_marginTop="50dp"
-        android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:orientation="vertical">
 
         <ImageView
             android:id="@+id/ivCheckList"
@@ -53,43 +55,46 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:background="@drawable/ic_checklist"/>
+            android:background="@drawable/ic_checklist" />
 
         <TextView
             android:id="@+id/TvNoOrder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/ivCheckList"
+            android:layout_margin="4dp"
+            android:fontFamily="@font/galano_grotesque"
+            android:padding="5dp"
             android:text="@string/TvNoOrders"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:padding="5dp"
-            android:layout_margin="4dp"/>
+            android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="1dp"
+            android:fontFamily="@font/galano_grotesque"
+            android:padding="5dp"
             android:text="Share your store's link with your customers \n on social media to get more orders."
             android:textColor="@color/light_gray"
-            android:layout_gravity="center"
             android:textSize="16sp"
-            android:textStyle="normal"
-            android:padding="5dp"
-            android:layout_margin="1dp"/>
+            android:textStyle="normal" />
 
         <Button
             android:id="@+id/BtnShareStore"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@id/TvNoOrder"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bg_button_share_store"
+            android:fontFamily="@font/galano_grotesque"
+            android:paddingHorizontal="20dp"
             android:text="Share store"
             android:textAllCaps="false"
-            android:layout_marginTop="60dp"
-            android:paddingHorizontal="20dp"
-            android:textColor="@color/white"
-            android:background="@drawable/bg_button_share_store"
-            android:layout_marginBottom="5dp"
-            android:layout_below="@id/TvNoOrder"
-            android:layout_gravity="center"/>
+            android:textColor="@color/white" />
 
     </LinearLayout>
 

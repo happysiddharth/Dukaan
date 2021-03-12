@@ -59,6 +59,8 @@ class HomescreenFragement : Fragment() {
                             btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
                         }else if (it[0].is_created_first_product==false){
 
+                            ivCompletion.setImageResource(R.drawable.percent_complete)
+
                             tvStoreAdd.visibility = View.GONE
 
                             ivStoreAddDone.visibility = View.VISIBLE
@@ -73,6 +75,8 @@ class HomescreenFragement : Fragment() {
                             })
 
                         }else{
+                            ivCompletion.setImageResource(R.drawable.percent_complete_66)
+
 
                             tvShareOnWhatsapp.setTextColor(resources.getColor(R.color.black))
 

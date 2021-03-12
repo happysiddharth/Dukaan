@@ -11,6 +11,9 @@ interface DukaanRoomDAO {
     @Insert
     fun addNewUser(entity: UsersEntity)
 
+    @Update
+    fun updateStore(storeEntity: StoreEntity)
+
     @Query("select * from users where phone = :phonenumber")
     fun isUserExists(phonenumber: String): List<UsersEntity>
 

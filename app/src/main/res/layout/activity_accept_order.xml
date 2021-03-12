@@ -31,6 +31,7 @@
             android:layout_height="35dp"
             android:layout_margin="10dp"
             android:background="@drawable/bg_edit_order"
+            android:fontFamily="@font/galano_grotesque"
             android:text="Edit order"
             android:textColor="@color/white"
             app:layout_constraintRight_toRightOf="parent"
@@ -42,6 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:paddingLeft="20dp"
+            android:fontFamily="@font/galano_grotesque"
             android:text="Order #12456"
             android:textColor="@color/white"
             android:textSize="20sp"
@@ -54,8 +56,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:layout_below="@id/cLayout">
+        android:layout_below="@id/cLayout"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -74,6 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_margin="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Mar 9, 08:25 PM"
                     android:textSize="16sp" />
 
@@ -83,6 +86,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_margin="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Pending"
                     android:textSize="16sp" />
 
@@ -105,6 +109,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/View1"
                     android:layout_margin="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="1 Item"
                     android:textSize="18sp" />
 
@@ -129,6 +134,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:fontFamily="@font/galano_grotesque"
                         android:paddingTop="25dp"
                         android:text="CHANA BESAN"
                         android:textColor="@color/black"
@@ -141,6 +147,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:fontFamily="@font/galano_grotesque"
                         android:text="Rs 450"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -152,6 +159,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
+                        android:fontFamily="@font/galano_grotesque"
                         android:text="Rs 450"
                         android:textColor="@color/black"
                         android:textSize="16sp"
@@ -171,80 +179,86 @@
                     android:id="@+id/Total"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/cLayout2"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Item Total"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="normal"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/cLayout2"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvItemTotalAccept"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/cLayout2"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Rs 450"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="normal"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/cLayout2"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/Delivery"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/Total"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="2dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Delivery Free"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="normal"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/Total"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvOrderDeliveryChargesAccept"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvItemTotalAccept"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Rs 00"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="normal"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvItemTotalAccept"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/grandTotal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/TvOrderDeliveryChargesAccept"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="2dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Grand Total"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/TvOrderDeliveryChargesAccept"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvOrderGrandTotalAccept"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvOrderDeliveryChargesAccept"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="2dp"
+                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Rs 450"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvOrderDeliveryChargesAccept"/>
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:id="@+id/View2"
@@ -263,169 +277,182 @@
                     android:id="@+id/TvCustomerDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/View2"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="CUSTOMER DETAILS"
-                    android:textStyle="normal"
                     android:textColor="@color/light_gray"
                     android:textSize="18sp"
-                    android:layout_below="@id/View2"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/TvCustomerDetails"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Name : "
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/TvCustomerDetails"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvCustomerName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvCustomerDetails"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="harshad pawar"
-                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvCustomerDetails"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvMobile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/TvName"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Mobile : "
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/TvName"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvCustomerMobileNO"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvName"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="123456789"
-                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvName"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/TvCustomerMobileNO"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Address : "
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/TvCustomerMobileNO"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvCustomerAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvMobile"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Nashik "
-                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvMobile"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/TvAddress"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="City : "
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/TvAddress"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvCustomerCity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvAddress"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="malegaon "
-                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvAddress"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvPin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/TvCity"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Pin Code : "
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/TvCity"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvCustomerPinCode"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvCity"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="423203"
-                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvCity"/>
+                    android:textStyle="normal" />
 
                 <TextView
                     android:id="@+id/TvPayment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/TvPin"
+                    android:layout_alignParentLeft="true"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="4dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Payment : "
-                    android:textStyle="bold"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@id/TvPin"/>
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/TvCustomerPayment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
+                    android:layout_below="@id/TvPin"
+                    android:layout_alignParentRight="true"
                     android:layout_marginTop="4dp"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="@font/galano_grotesque"
                     android:text="Cash on delivery"
-                    android:textStyle="normal"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:layout_alignParentRight="true"
-                    android:layout_below="@id/TvPin"/>
+                    android:textStyle="normal" />
 
             </RelativeLayout>
 
@@ -437,30 +464,32 @@
         android:id="@+id/BtnOrderAccept"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="15dp"
-        android:text="Accept order"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
         android:background="@drawable/btn_accept"
+        android:fontFamily="@font/galano_grotesque"
         android:paddingHorizontal="20dp"
         android:paddingVertical="5dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"/>
+        android:text="Accept order"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/BtnOrderReject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginLeft="10dp"
         android:layout_marginBottom="15dp"
-        android:text="Reject order"
-        android:textAllCaps="false"
-        android:textColor="#FF0000"
         android:background="@drawable/btn_reject"
+        android:fontFamily="@font/galano_grotesque"
         android:paddingHorizontal="20dp"
         android:paddingVertical="5dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"/>
+        android:text="Reject order"
+        android:textAllCaps="false"
+        android:textColor="#FF0000" />
 
 </RelativeLayout>

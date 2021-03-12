@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.CreateStore">
+    tools:context=".views.CreateStore"
+    tools:ignore="MissingClass">
 
     <EditText
         android:id="@+id/etBusinessName"
         android:layout_width="329dp"
         android:layout_height="45dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="Business name"
+        android:inputType="textPersonName"
+
         app:layout_constraintBottom_toTopOf="@+id/guideline7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,8 +47,10 @@
         android:layout_width="318dp"
         android:layout_height="47dp"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="@string/business_categories"
+        android:inputType="textPersonName"
+
         app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,9 +60,10 @@
         android:id="@+id/btnAddStore"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/create_store"
-        android:padding="@dimen/dp_10"
         android:background="@drawable/border"
+        android:fontFamily="@font/galano_grotesque"
+        android:padding="@dimen/dp_10"
+        android:text="@string/create_store"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
         app:layout_constraintEnd_toEndOf="parent"

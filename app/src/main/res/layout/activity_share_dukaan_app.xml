@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -19,6 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/dp_10"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/share_dukaan_app"
             android:textColor="@color/white"
             android:textSize="@dimen/sp_25"
@@ -48,9 +48,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp_20"
+        android:fontFamily="@font/galano_grotesque"
         android:text="@string/help_other_businesses"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_20"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgBanner" />
@@ -63,6 +65,7 @@
         android:layout_marginStart="@dimen/sp_30"
         android:layout_marginTop="@dimen/dp_20"
         android:layout_marginEnd="@dimen/sp_30"
+        android:fontFamily="@font/galano_grotesque"
         android:gravity="center"
         android:text="Share Dukaan app with your friends \n or family and help them digitize their \n business using Dukaan app."
         android:textAlignment="center"
@@ -81,23 +84,27 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
+            android:id="@+id/btnShareApp"
             android:layout_width="@dimen/dp_150"
             android:layout_height="@dimen/dp_50"
             android:layout_margin="@dimen/dp_10"
             android:layout_weight="1"
             android:background="@drawable/blue_stroke"
             android:drawableLeft="@drawable/ic_share"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/share"
             android:textAllCaps="false"
             android:textColor="@color/blue_bg" />
 
         <Button
+            android:id="@+id/btnShareApk"
             android:layout_width="@dimen/dp_150"
             android:layout_height="@dimen/dp_50"
             android:layout_margin="@dimen/dp_10"
             android:layout_weight="1"
             android:background="@drawable/all_blue"
             android:drawableLeft="@drawable/ic_whatsapp_white"
+            android:fontFamily="@font/galano_grotesque"
             android:text="Share APK"
             android:textAllCaps="false"
             android:textColor="@color/white" />

@@ -18,6 +18,10 @@ class UsersViewModel(val dukaanRoomDAO: DukaanRoomDAO) : ViewModel() {
         userRepository.adNewUser(usersEntity)
     }
 
+    suspend fun updateStore(storeEntity: StoreEntity){
+        dukaanRoomDAO.updateStore(storeEntity)
+    }
+
     suspend fun fetchUser(phonenumber: String): LiveData<List<UsersEntity>> {
         return userRepository.fetchUser(phonenumber)
     }

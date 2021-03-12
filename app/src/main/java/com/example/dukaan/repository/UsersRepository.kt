@@ -15,6 +15,10 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
         return dukaanRoomDAO.fetchUser(phonenumber)
     }
 
+    fun updateStore(storeEntity: StoreEntity){
+        dukaanRoomDAO.updateStore(storeEntity)
+    }
+
     fun adNewUser(usersEntity: UsersEntity) {
         dukaanRoomDAO.addNewUser(usersEntity)
     }

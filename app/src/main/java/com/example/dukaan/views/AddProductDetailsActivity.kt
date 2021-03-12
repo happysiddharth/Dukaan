@@ -129,8 +129,9 @@ class AddProductDetailsActivity : AppCompatActivity() {
 
 
 
+
             } else {
-                Toast.makeText(this, "Enter properly", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show()
             }
         }
     }

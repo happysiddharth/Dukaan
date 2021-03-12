@@ -9,36 +9,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="fill"
         android:layout_gravity="center"
-        android:padding="@dimen/dp_10"
-       >
+        android:gravity="fill"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10">
 
         <TextView
+            android:id="@+id/tvPhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/enter_otp"
             android:textSize="@dimen/sp_15"
-            android:textStyle="bold"
-            android:id="@+id/tvPhoneNumber"/>
+            android:textStyle="bold" />
+
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/enter_otp"
             android:id="@+id/etOTP"
-            />
-        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/galano_grotesque"
+            android:hint="@string/enter_otp" />
+
+        <Button
             android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/default_button"
+            android:fontFamily="@font/galano_grotesque"
             android:text="Submit"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textStyle="bold"
             android:textSize="@dimen/sp_15"
-            android:background="@color/default_button"
-            />
+            android:textStyle="bold" />
     </LinearLayout>
 
 </FrameLayout>
