@@ -36,9 +36,6 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
     }
 
     fun getAllOrdersRepo():LiveData<List<OrderEntity>>{
-        CoroutineScope(Dispatchers.IO).launch {
-
-        }
         return dukaanRoomDAO.getAllOrdersDao()
     }
 

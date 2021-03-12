@@ -87,11 +87,13 @@ class ShowProductsFragment : Fragment(), AddItemToCart {
         var imageOrder = productEntity.image
         var nameOrder = productEntity.name
         var categoryOrder = productEntity.category
-        var priceOrder = productEntity.price
+        var priceOrder = productEntity.selling_price
         var quantityOrder = productEntity.quantity
         var unitOrder = productEntity.unit
         var product_detailsOrder = productEntity.product_details
         var store_id = productEntity.store_id
+        //Toast.makeText(context,nameOrder,Toast.LENGTH_SHORT).show()
+
         val orderEntity = OrderEntity(imageOrder, nameOrder, categoryOrder, priceOrder, quantityOrder, unitOrder,
             product_detailsOrder, orderStatus,store_id)
         usersViewModel.placeOrderModel(orderEntity)
@@ -103,5 +105,6 @@ class ShowProductsFragment : Fragment(), AddItemToCart {
         intent.putExtra("quantityOrder",quantityOrder)
         intent.putExtra("unitOrder",unitOrder)
         intent.putExtra("product_detailsOrder",product_detailsOrder)
+        startActivity(intent)
     }
 }

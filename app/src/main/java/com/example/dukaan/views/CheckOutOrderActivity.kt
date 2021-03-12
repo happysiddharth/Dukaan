@@ -31,8 +31,8 @@ class CheckOutOrderActivity : AppCompatActivity() {
             var nameOrder = intent.getStringExtra("nameOrder")
             var priceOrder = intent.getStringExtra("priceOrder")
             TvOrderItemNameCheck.setText(nameOrder)
-            TvOrderItemPriceCheck.setText(priceOrder)
-            TvOrderItemTotalPriceCheck.setText(priceOrder)
+            TvOrderItemPriceCheck.setText(priceOrder.toString())
+            TvOrderItemTotalPriceCheck.setText(priceOrder.toString())
         }
     }
 
@@ -54,6 +54,8 @@ class CheckOutOrderActivity : AppCompatActivity() {
                 CoroutineScope(Dispatchers.IO).launch {
                     usersViewModel.checkOutOrderModel(consumerEntity)
                 }
+                val intent = Intent(this,OrderNowActivity::class.java)
+                startActivity(intent)
             }
         }
     }

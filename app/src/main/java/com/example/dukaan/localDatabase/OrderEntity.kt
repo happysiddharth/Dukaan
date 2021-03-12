@@ -10,7 +10,7 @@ import java.io.Serializable
     tableName = "Orders", foreignKeys = arrayOf(
         ForeignKey(
             entity = StoreEntity::class,
-            parentColumns = arrayOf("idOrder"),
+            parentColumns = arrayOf("id"),
             childColumns = arrayOf("store_id"),
             onDelete = ForeignKey.CASCADE
         )
@@ -27,6 +27,6 @@ data class OrderEntity(
     @ColumnInfo(name = "OrderStatus")var OrderStatus:String,
     @ColumnInfo(name = "store_id") var store_id: Int) : Serializable {
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "idOrder")
+    @ColumnInfo(name = "id")
     var id: Int? = null
 }

@@ -6,14 +6,14 @@ import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
 @Entity(
-    tableName = "Consumer", foreignKeys = arrayOf(
+    tableName = "Consumer"/* foreignKeys = arrayOf(
         ForeignKey(
             entity = OrderEntity::class,
-            parentColumns = arrayOf("idConsumer"),
-            childColumns = arrayOf("idOrder"),
+            parentColumns = arrayOf("id"),
+            childColumns = arrayOf("order_id"),
             onDelete = ForeignKey.CASCADE
         )
-    )
+    )*/
 )
 data class ConsumerEntity(
     @ColumnInfo(name = "ConsumerName") var ConsumerName:String,
@@ -24,5 +24,5 @@ data class ConsumerEntity(
     @ColumnInfo(name = "ConsumerPayment") var ConsumerPayment:String
 ){
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "idConsumer")var idConsumer:Int? = null
+    @ColumnInfo(name = "id")var idConsumer:Int? = null
 }

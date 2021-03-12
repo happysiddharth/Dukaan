@@ -29,7 +29,7 @@ class OrderNowActivity : AppCompatActivity(), OnStoreClicked {
     lateinit var usersViewModel: UsersViewModel
     lateinit var allStoresAdapter: AllStoresAdapter
     var storesList = mutableListOf<StoreEntity>()
-    var CartItem = 0;
+    var CartItem:Int? = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_now)
@@ -46,10 +46,9 @@ class OrderNowActivity : AppCompatActivity(), OnStoreClicked {
         val viewmodelFactory = ViewModelFactory(dao)
         usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
-        CoroutineScope(Dispatchers.IO).launch {
-            CartItem = usersViewModel.getAllOrdersModel().value!!.size
-        }
-        TVCartItems.setText(CartItem)
+
+        //CartItem = usersViewModel!!.getAllOrdersModel()!!.value!!.size
+        TVCartItems.setText(CartItem.toString())
 
         TVCartItems.setOnClickListener {
             val consumerOrdersFragment = ConsumerOrdersFragment()
