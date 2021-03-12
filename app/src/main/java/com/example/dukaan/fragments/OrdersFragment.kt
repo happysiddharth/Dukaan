@@ -20,11 +20,13 @@ import kotlinx.android.synthetic.main.activity_products.*
 import kotlinx.android.synthetic.main.fragment_orders.*
 
 
-class OrdersFragment : Fragment(),OnOrderOperationClicked{
+class OrdersFragment : Fragment(), OnOrderOperationClicked {
 
     lateinit var orderOperationsAdapter: OrderOperationsAdapter
     lateinit var ordersViewModel: OrdersViewModel
-
+    lateinit var usersViewModel: UsersViewModel
+    var phone = PreferenceHelper.getStringFromPreference(context!!,PHONE_KEY)
+    var Store_Id = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +53,7 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         super.onViewCreated(view, savedInstanceState)
         initViews()
         setOrderOperationListRecyclerview()
+        Store_Id = getStoreId()
     }
 
     private fun setOrderOperationListRecyclerview() {
@@ -67,11 +70,6 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         ordersViewModel =
             ViewModelProviders.of(this, orderViewModelFactory).get(OrdersViewModel::class.java)
         launchAllOrderOperations()
-
-
-
-
-
     }
 
     override fun onItemClicked(operation: String){
@@ -85,6 +83,45 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
             "Delivered" -> { launchDeliveredOrderOperations() }
             "Failed" -> { launchFailedOrderOperations() }
             else -> { launchAllOrderOperations() }
+
+        val database = DukaanRoomDatabase.getDatabaseContext(context!!)
+        val dao = database.getDukaan()
+        val viewmodelFactory = ViewModelFactory(dao)
+        usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+            .get(UsersViewModel::class.java)
+
+        launchAllOrderOperations()
+    }
+
+    override fun onItemClicked(operation: String) {
+        when (operation) {
+            "All" -> {
+                launchAllOrderOperations()
+            }
+            "Pending" -> {
+                launchPendingOrderOperations()
+            }
+            "Accepted" -> {
+                launchAcceptedOrderOperations()
+            }
+            "Rejected" -> {
+                launchRejectedOrderOperations()
+            }
+            "Shipped" -> {
+                launchShippedOrderOperations()
+            }
+            "Cancelled" -> {
+                launchCancelledOrderOperations()
+            }
+            "Delivered" -> {
+                launchDeliveredOrderOperations()
+            }
+            "Failed" -> {
+                launchFailedOrderOperations()
+            }
+            else -> {
+                launchAllOrderOperations()
+            }
         }
     }
 
@@ -93,6 +130,13 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val allOrderOperationsFragment = AllOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, allOrderOperationsFragment,
             "AllOrderOperationsFragment").commit()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        allOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, allOrderOperationsFragment,
+            "AllOrderOperationsFragment"
+        ).commit()
     }
 
     private fun launchPendingOrderOperations() {
@@ -100,6 +144,13 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val pendingOrderOperationsFragment = PendingOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, pendingOrderOperationsFragment,
             "PendingOrderOperationsFragment").commit()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        pendingOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, pendingOrderOperationsFragment,
+            "PendingOrderOperationsFragment"
+        ).commit()
     }
 
     private fun launchAcceptedOrderOperations() {
@@ -107,6 +158,13 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val acceptedOrderOperationsFragment = AcceptedOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, acceptedOrderOperationsFragment,
             "AcceptedOrderOperationsFragment").commit()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        acceptedOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, acceptedOrderOperationsFragment,
+            "AcceptedOrderOperationsFragment"
+        ).commit()
     }
 
     private fun launchRejectedOrderOperations() {
@@ -114,6 +172,14 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val rejectedOrderOperationsFragment =RejectedOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, rejectedOrderOperationsFragment,
             "RejectedOrderOperationsFragment").commit()
+        val rejectedOrderOperationsFragment = RejectedOrderOperationsFragment()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        rejectedOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, rejectedOrderOperationsFragment,
+            "RejectedOrderOperationsFragment"
+        ).commit()
     }
 
     private fun launchShippedOrderOperations() {
@@ -121,6 +187,13 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val shippedOrderOperationsFragment = ShippedOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, shippedOrderOperationsFragment,
             "ShippedOrderOperationsFragment").commit()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        shippedOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, shippedOrderOperationsFragment,
+            "ShippedOrderOperationsFragment"
+        ).commit()
     }
 
     private fun launchCancelledOrderOperations() {
@@ -128,6 +201,13 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val cancelledOrderOperationsFragment = CancelledOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, cancelledOrderOperationsFragment,
             "CancelledOrderOperationsFragment").commit()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        cancelledOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, cancelledOrderOperationsFragment,
+            "CancelledOrderOperationsFragment"
+        ).commit()
     }
 
     private fun launchDeliveredOrderOperations() {
@@ -135,6 +215,13 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val deliveredOrderOperationsFragment = DeliveredOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, deliveredOrderOperationsFragment,
             "DeliveredOrderOperationsFragment").commit()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        deliveredOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, deliveredOrderOperationsFragment,
+            "DeliveredOrderOperationsFragment"
+        ).commit()
     }
 
     private fun launchFailedOrderOperations() {
@@ -142,5 +229,43 @@ class OrdersFragment : Fragment(),OnOrderOperationClicked{
         val failedOrderOperationsFragment = FailedOrderOperationsFragment()
         fragmentTransaction.replace(R.id.flContainer, failedOrderOperationsFragment,
             "FailedOrderOperationsFragment").commit()
+        var bundle = Bundle()
+        bundle.putInt("StoreId", Store_Id)
+        failedOrderOperationsFragment.arguments = bundle
+        fragmentTransaction.replace(
+            R.id.flContainer, failedOrderOperationsFragment,
+            "FailedOrderOperationsFragment"
+        ).commit()
+    }
+
+    private fun getStoreId():Int {
+        val userId =  getUserId()
+        var StoreId = 0;
+        CoroutineScope(Dispatchers.IO).launch {
+            usersViewModel.fetchStoreIdModel(userId).observe(this@OrdersFragment, Observer {
+                val totalStore = it.size
+                for (i in 0 until totalStore){
+                    if (it[i].user_id == userId){
+                        StoreId = it[i].id!!
+                    }
+                }
+            })
+        }
+        return StoreId
+    }
+
+    private fun getUserId():Int {
+        var userId:Int = 0;
+        CoroutineScope(Dispatchers.Main).launch {
+            usersViewModel.fetchUser(phone!!).observe(this@OrdersFragment, Observer {
+                val totalUser = it.size
+                for (i in 0 until totalUser){
+                    if (it[i].phone == phone){
+                        userId = it[i].id!!
+                    }
+                }
+            })
+        }
+        return userId
     }
 }

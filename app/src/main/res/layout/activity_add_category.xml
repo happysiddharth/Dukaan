@@ -23,7 +23,6 @@
 
     </androidx.cardview.widget.CardView>
 
-
     <ImageView
         android:id="@+id/ivCategoryImageAddCategory"
         android:layout_width="100dp"
@@ -58,7 +57,7 @@
             android:id="@+id/btnCreateAddCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/material_on_background_disabled"
+            android:background="@color/blue1"
             android:text="@string/add_category"
             android:textAllCaps="false"
             android:textColor="@color/white"

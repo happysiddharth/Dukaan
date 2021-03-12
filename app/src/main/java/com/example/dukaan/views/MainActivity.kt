@@ -16,9 +16,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.concurrent.schedule
 
+
 class MainActivity : AppCompatActivity() {
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +41,4 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
-
 }
