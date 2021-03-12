@@ -59,7 +59,6 @@ class CreateStore : AppCompatActivity() {
 
                     PreferenceHelper.writeIntToPreference(this@CreateStore,CreateStore.STORE_ID,storeEntity.id!!)
 
-               usersViewModel.insertStore(StoreEntity(etBusinessName.text.toString(),userID!!,"",etBusinessCategories.text.toString()))
                     var usersEntity = UsersEntity("sid",phone_number!!,true,false,"","","Seller")
                     usersEntity.id = userID!!
                     usersViewModel.updateUser(usersEntity)

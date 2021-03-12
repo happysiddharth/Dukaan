@@ -23,7 +23,7 @@ class EditBusinessDetails : AppCompatActivity() {
         val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
 
-        usersViewModel.getStoreDetails(PreferenceHelper.getIntFromPreference(applicationContext,OTPFragment.PHONE_KEY)).observe(this,
+        usersViewModel.getStoreDetails(PreferenceHelper.getIntFromPreference(applicationContext,OTPFragment.PHONE_USER_ID).toInt()).observe(this,
             Observer {
                 etBusinessNameDetails.setText(it[0].store_name)
                 etBusinessNameLink.setText(it[0].store_name + "54232")
