@@ -61,9 +61,10 @@
             android:id="@+id/editTextTextPersonName"
             android:layout_height="match_parent"
             android:ems="10"
+            android:textColorHint="@color/white"
             android:textColor="@color/white"
             android:visibility="invisible"
-            android:hint="product Name"
+            android:hint="Product Name"
             android:inputType="textPersonName"
             android:layout_width="wrap_content" />
 

@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.dukaan.R
-import com.example.dukaan.recylerViewHolders.OnOrderOperationClicked
+import com.example.dukaan.interfaces.OnOrderOperationClicked
 import com.example.dukaan.recylerViewHolders.OrderOperationsViewHolder
 
 class OrderOperationsAdapter(val operationList:List<String>,val onOrderOperationClicked: OnOrderOperationClicked)

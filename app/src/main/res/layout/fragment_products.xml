@@ -36,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/custom_orange"
+        android:fontFamily="@font/galano_grotesque"
         android:paddingLeft="45dp"
         android:paddingTop="7dp"
         android:paddingRight="45dp"

@@ -31,8 +31,7 @@ class HomescreenFragement : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_homescreen_fragement, container, false)
     }
@@ -60,6 +59,8 @@ class HomescreenFragement : Fragment() {
                             btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
                         }else if (it[0].is_created_first_product==false){
 
+                            ivCompletion.setImageResource(R.drawable.percent_complete)
+
                             tvStoreAdd.visibility = View.GONE
 
                             ivStoreAddDone.visibility = View.VISIBLE
@@ -74,6 +75,21 @@ class HomescreenFragement : Fragment() {
                             })
 
                         }else{
+                            ivCompletion.setImageResource(R.drawable.percent_complete_66)
+
+
+                            tvShareOnWhatsapp.setTextColor(resources.getColor(R.color.black))
+
+                            tvShareOnWhatsapp.setOnClickListener(View.OnClickListener {
+                                val sendIntent: Intent = Intent().apply {
+                                    action = Intent.ACTION_SEND
+                                    putExtra(Intent.EXTRA_TEXT, "This is my text to send.")
+                                    type = "text/plain"
+                                }
+
+                                val shareIntent = Intent.createChooser(sendIntent, null)
+                                startActivity(shareIntent)
+                            })
 
                             tvStoreAdd.visibility = View.GONE
 
@@ -96,7 +112,9 @@ class HomescreenFragement : Fragment() {
                     })
                 }
             } else {
-                btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+                CoroutineScope(Dispatchers.Main).launch {
+                    btnAddProdcut.background = ContextCompat.getDrawable(context!!,R.drawable.disable_btn)
+                }
 
                 CoroutineScope(Dispatchers.Main).launch {
                     btnCreateStore.setOnClickListener(View.OnClickListener {
@@ -105,7 +123,7 @@ class HomescreenFragement : Fragment() {
 
                     })
                 }
-                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", ""))
+                usersViewModel.addNewuser(UsersEntity("", phone_number, false, false, "", "","Seller"))
 
                 CoroutineScope(Dispatchers.Main).launch {
                     usersViewModel.fetchUser(phone_number).observe(this@HomescreenFragement, Observer {

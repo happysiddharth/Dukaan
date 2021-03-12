@@ -6,6 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".views.AddProductDetailsActivity">
 
+    <TextView
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/custom_top"
+        android:drawableLeft="@drawable/ic_baseline_arrow_back_24"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Add Product"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_18"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cvAddImageAddProductDetails"
         android:layout_width="100dp"
@@ -13,7 +26,7 @@
         android:layout_margin="15dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/topBar">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -31,7 +44,7 @@
         android:layout_margin="15dp"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toEndOf="@id/cvAddImageAddProductDetails"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/topBar" />
 
     <EditText
         android:id="@+id/etProductNameAddProductDetails"
@@ -39,6 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="@string/product_name"
         app:layout_constraintBottom_toTopOf="@id/etProductCategoryAddProductDetails"
         app:layout_constraintTop_toBottomOf="@id/cvAddImageAddProductDetails" />
@@ -49,6 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="@string/product_category"
         app:layout_constraintBottom_toTopOf="@id/llMrpProductDetails"
         app:layout_constraintTop_toBottomOf="@id/etProductNameAddProductDetails" />
@@ -70,6 +85,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/mrp"
             android:inputType="number" />
 
@@ -78,6 +94,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/selling_price"
             android:inputType="number" />
 
@@ -99,6 +116,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/quantity"
             android:inputType="number" />
 
@@ -107,7 +125,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:fontFamily="@font/galano_grotesque"
             android:hint="@string/unit" />
+
 
     </LinearLayout>
 
@@ -117,6 +137,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        android:fontFamily="@font/galano_grotesque"
         android:hint="@string/product_category"
         app:layout_constraintBottom_toTopOf="@id/cvBtnAddProductProductDetails"
         app:layout_constraintTop_toBottomOf="@id/llQuantityProductDetails" />
@@ -137,6 +158,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/material_on_background_disabled"
+            android:fontFamily="@font/galano_grotesque"
             android:text="@string/add_product"
             android:textAllCaps="false"
             android:textColor="@color/white"

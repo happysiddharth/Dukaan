@@ -6,9 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(
-    entities = [UsersEntity::class, StoreEntity::class, ProductEntity::class, CategoriesEntity::class],
-    version = 4
-)
+    entities = [UsersEntity::class, StoreEntity::class, ProductEntity::class, CategoriesEntity::class,OrderEntity::class,ConsumerEntity::class],
+    version = 11)
+
 abstract class DukaanRoomDatabase : RoomDatabase() {
     abstract fun getDukaan(): DukaanRoomDAO
     abstract fun getProductsDao(): ProductsDao
@@ -22,8 +22,7 @@ abstract class DukaanRoomDatabase : RoomDatabase() {
                 val builder = Room.databaseBuilder(
                     context.applicationContext,
                     DukaanRoomDatabase::class.java,
-                    "dukaan"
-                )
+                    "dukaan")
                 builder.fallbackToDestructiveMigration()
                 INSTANCE = builder.build()
 

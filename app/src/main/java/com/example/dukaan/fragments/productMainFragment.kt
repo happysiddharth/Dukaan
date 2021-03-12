@@ -62,6 +62,7 @@ class productMainFragment : Fragment() {
                 imageButtonCancel.visibility = View.GONE;
                 editTextTextPersonName.visibility = View.INVISIBLE;
                 imageButton.visibility = View.VISIBLE;
+                editTextTextPersonName.text.clear()
             })
 
         })
@@ -76,7 +77,7 @@ class productMainFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                viewModel.getProducts(PreferenceHelper.getIntFromPreference(context!!,CreateStore.STORE_ID),s.toString()+"%").observe(this@productMainFragment, Observer {
+                viewModel.getProducts(PreferenceHelper.getIntFromPreference(context!!,CreateStore.STORE_ID),"%"+s.toString()+"%").observe(this@productMainFragment, Observer {
                     setViewPagerAdapter(it)
 
                 })

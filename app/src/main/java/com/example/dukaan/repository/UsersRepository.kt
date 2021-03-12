@@ -1,9 +1,10 @@
 package com.example.dukaan.repository
 
 import androidx.lifecycle.LiveData
-import com.example.dukaan.localDatabase.DukaanRoomDAO
-import com.example.dukaan.localDatabase.StoreEntity
-import com.example.dukaan.localDatabase.UsersEntity
+import com.example.dukaan.localDatabase.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
     fun isUserExists(phonenumber: String): Boolean {
@@ -12,6 +13,10 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
 
     fun fetchUser(phonenumber: String): LiveData<List<UsersEntity>> {
         return dukaanRoomDAO.fetchUser(phonenumber)
+    }
+
+    fun updateStore(storeEntity: StoreEntity){
+        dukaanRoomDAO.updateStore(storeEntity)
     }
 
     fun adNewUser(usersEntity: UsersEntity) {
@@ -30,7 +35,34 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
         dukaanRoomDAO.updateUser(usersEntity)
     }
 
-    fun getStoreDetails(): LiveData<List<StoreEntity>> {
-        return dukaanRoomDAO.getStoreDetails()
+    fun getStoreDetails(user_id: Int): LiveData<List<StoreEntity>> {
+        return dukaanRoomDAO.getStoreDetails(user_id)
+    }
+    fun fetchAllStoreRepo(): LiveData<List<StoreEntity>>{
+            return dukaanRoomDAO.fetchAllStoreDao()
+    }
+
+    fun getAllProductRepo(StoreId:Int):LiveData<List<ProductEntity>>{
+     return  dukaanRoomDAO.getAllProduct(StoreId)
+    }
+
+    fun getAllOrdersRepo():LiveData<List<OrderEntity>>{
+        return dukaanRoomDAO.getAllOrdersDao()
+    }
+
+    fun placeOrderRepo(orderEntity: OrderEntity){
+        CoroutineScope(Dispatchers.IO).launch {
+            dukaanRoomDAO.PlaceOrderDao(orderEntity)
+        }
+    }
+
+    fun getAllConsumersRepo():LiveData<List<ConsumerEntity>>{
+        return dukaanRoomDAO.getAllConsumersDao()
+    }
+
+    fun checkOutOrderRepo(consumerEntity: ConsumerEntity){
+        CoroutineScope(Dispatchers.IO).launch {
+            dukaanRoomDAO.checkOutOrder(consumerEntity)
+        }
     }
 }

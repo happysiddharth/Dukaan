@@ -73,6 +73,7 @@ class AddCategoryActivity : AppCompatActivity() {
 
                 val intent = Intent(this, ProductsActivity::class.java)
                 startActivity(intent)
+                finish()
             }
         }
     }
