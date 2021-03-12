@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:hint="@string/product_category"
+        android:hint="Product Details *"
         app:layout_constraintBottom_toTopOf="@id/cvBtnAddProductProductDetails"
         app:layout_constraintTop_toBottomOf="@id/llQuantityProductDetails" />
 
