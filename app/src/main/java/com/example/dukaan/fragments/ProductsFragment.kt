@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dukaan.R
+import com.example.dukaan.clickListeners.DeleteTheParticularProduct
 import com.example.dukaan.clickListeners.ProductClickListener
 import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.models.ProductsApplication
@@ -21,9 +22,12 @@ import com.example.dukaan.views.AddProductActivity
 import com.example.dukaan.views.CreateStore
 import com.example.dukaan.views.EditProductActivity
 import kotlinx.android.synthetic.main.fragment_products.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
-class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickListener {
+class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickListener,DeleteTheParticularProduct {
 
     private val productList = mutableListOf<ProductEntity>()
     lateinit var productsDataAdapter: ProductsDataAdapter
@@ -45,13 +49,14 @@ class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickL
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        productsDataAdapter = ProductsDataAdapter(productList, this)
+        productsDataAdapter = ProductsDataAdapter(productList, this,this)
 
         val appClass = activity?.application as ProductsApplication
         val repository = appClass.repository
         val viewModelFactory = ProductsViewModelFactory(repository)
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(ProductsViewModel::class.java)
+
 
         setRecyclerData()
         getProductsData()
@@ -83,6 +88,12 @@ class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickL
 
     override fun onDeleteClicked(productEntity: ProductEntity) {
 
+    }
+
+    override fun deleteThePEoduct(productEntity: ProductEntity) {
+        CoroutineScope(Dispatchers.IO).launch {
+            viewModel.deleteProduct(productEntity)
+        }
     }
 
 }

@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../Siddharth%20Kaushik/AppData/Local/Android/Sdk/icons/material/materialicons/share/baseline_share_24.xml" />
+                                      <entry key="url" value="file:/$PROJECT_DIR$/../../../Siddharth%20Kaushik/AppData/Local/Android/Sdk/icons/material/materialicons/delete/baseline_delete_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,15 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="color" value="ffffff" />
-<<<<<<< HEAD
-                            <entry key="outputName" value="ic_baseline_share_24" />
-                            <entry key="sourceFile" value="C:\Users\Siddharth Kaushik\Desktop\Downloads\whatsapp.svg" />
-=======
-                            <entry key="outputName" value="manage_icon" />
-                            <entry key="sourceFile" value="$PROJECT_DIR$/../Downloads/ic_navigation_products_selected.svg" />
->>>>>>> 3e99f3beae08d0c1fa9dd2a7a730b2a8640ce9d6
+                            <entry key="outputName" value="ic_baseline_delete_24" />
+                            <entry key="sourceFile" value="C:\Users\Siddharth Kaushik\Desktop\Dukaan" />
                           </map>
                         </option>
                       </PersistentState>

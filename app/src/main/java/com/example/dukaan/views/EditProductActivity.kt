@@ -4,6 +4,7 @@ package com.example.dukaan.views
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.example.dukaan.R
@@ -36,6 +37,7 @@ class EditProductActivity : AppCompatActivity() {
             productEntity = intent.getSerializableExtra("productEntity") as ProductEntity
         }
 
+
         Glide.with(this).load(productEntity.image).placeholder(R.drawable.ic_baseline_image_24)
             .into(ivProductImageEditProduct)
 
@@ -62,8 +64,8 @@ class EditProductActivity : AppCompatActivity() {
                 viewModel.editProduct(productEntity)
             }
 
-            val intent = Intent(this, ProductsActivity::class.java)
-            startActivity(intent)
+            Toast.makeText(applicationContext,"Updated",Toast.LENGTH_LONG).show()
+           finish()
         }
 
     }
