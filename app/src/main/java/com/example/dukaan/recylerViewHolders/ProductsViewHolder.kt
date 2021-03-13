@@ -18,8 +18,13 @@ class ProductsViewHolder(private val view: View) : RecyclerView.ViewHolder(view)
     ) {
 
         view.apply {
-            Glide.with(view).load(productEntity.image).placeholder(R.drawable.milk)
-                .into(ivProductImageProductRecyclerLayout)
+            if (productEntity.name.contains("rice")){
+                Glide.with(view).load("https://cdn.loveandlemons.com/wp-content/uploads/2020/03/how-to-cook-rice.jpg").placeholder(R.drawable.milk)
+                    .into(ivProductImageProductRecyclerLayout)
+            }else{
+                Glide.with(view).load("https://www.motherjones.com/wp-content/uploads/milka2master.jpg?w=990").into(ivProductImageProductRecyclerLayout)
+            }
+
             TvOrderStoreProductName.text = productEntity.name
             TvOrderStoreProductPrice.text = "${productEntity.quantity} pieces"
             TvOrderStoreProductPrices.text = "₹${productEntity.selling_price}"

@@ -115,16 +115,18 @@
             app:layout_constraintStart_toEndOf="@id/imgShareIcon"
             app:layout_constraintTop_toBottomOf="@id/ViewLine" />
 
+
         <ImageView
             android:id="@+id/Next1"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
             android:layout_margin="@dimen/dp_20"
+            android:layout_marginTop="20dp"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.841"
             app:layout_constraintStart_toEndOf="@id/tvShareDukaanApp"
             app:layout_constraintTop_toBottomOf="@id/ViewLine" />
-
 
         <ImageView
             android:id="@+id/imgGetMobile"
@@ -148,16 +150,18 @@
             app:layout_constraintStart_toEndOf="@id/imgGetMobile"
             app:layout_constraintTop_toBottomOf="@id/tvShareDukaanApp" />
 
+
         <ImageView
             android:id="@+id/Next2"
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
             android:layout_margin="@dimen/dp_20"
+            android:layout_marginTop="28dp"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.846"
             app:layout_constraintStart_toEndOf="@id/tvGetOwnApp"
             app:layout_constraintTop_toBottomOf="@id/Next1" />
-
 
         <ImageView
             android:id="@+id/imgChangeLanguage"
@@ -185,8 +189,10 @@
             android:layout_width="@dimen/dp_25"
             android:layout_height="@dimen/dp_25"
             android:layout_margin="@dimen/dp_20"
+            android:layout_marginTop="24dp"
             android:src="@drawable/next_icon"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.846"
             app:layout_constraintStart_toEndOf="@id/tvGetOwnApp"
             app:layout_constraintTop_toBottomOf="@id/Next2" />
 
