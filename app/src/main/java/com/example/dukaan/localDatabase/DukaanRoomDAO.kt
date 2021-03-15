@@ -54,7 +54,7 @@ interface DukaanRoomDAO {
     fun getAllOrdersDao(storeId:Int):LiveData<List<OrderEntity>>
 
     @Insert
-    fun PlaceOrderDao(orderEntity: OrderEntity)
+    fun placeOrder(orderEntity: OrderEntity)
 
     @Query("SELECT * FROM Consumer")
     fun getAllConsumersDao():LiveData<List<ConsumerEntity>>

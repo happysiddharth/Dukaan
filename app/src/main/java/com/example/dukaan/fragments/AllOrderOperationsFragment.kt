@@ -8,20 +8,15 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_all_order_operations.*
 import android.widget.Toast
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dukaan.R
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.localDatabase.OrderEntity
-import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.recylerViewAdapter.AllOrderOfStoreAdapter
-import com.example.dukaan.recylerViewAdapter.AllProductAdapter
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import com.example.dukaan.views.AcceptOrderActivity
-import kotlinx.android.synthetic.main.fragment_all_order_operations.*
-import kotlinx.android.synthetic.main.fragment_show_products.*
 
 class AllOrderOperationsFragment : Fragment() {
 
@@ -68,7 +63,7 @@ class AllOrderOperationsFragment : Fragment() {
     private fun initViews() {
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
         BtnShareStore.setOnClickListener {

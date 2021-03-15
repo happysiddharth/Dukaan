@@ -1,4 +1,4 @@
-package com.example.dukaan.viewModels.ViewModelsFactory
+package com.example.dukaan.viewModels.usersViewModelFactory
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

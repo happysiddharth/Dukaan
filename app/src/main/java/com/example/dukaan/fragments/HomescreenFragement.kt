@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -15,7 +14,7 @@ import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.localDatabase.UsersEntity
 import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import com.example.dukaan.views.AddProductActivity
 import com.example.dukaan.views.CreateStore
 import kotlinx.android.synthetic.main.activity_create_store2.*
@@ -40,7 +39,7 @@ class HomescreenFragement : Fragment() {
         super.onResume()
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
         val phone_number:String = PreferenceHelper.getStringFromPreference(context!!,OTPFragment.PHONE_KEY)!!

@@ -13,7 +13,7 @@ import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.sharedpreference.PreferenceHelper
 
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import com.example.dukaan.views.*
 import kotlinx.android.synthetic.main.fragment_account_page.*
 
@@ -78,7 +78,7 @@ class AccountPage : Fragment() {
 
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewModelFactory = ViewModelFactory(dao)
+        val viewModelFactory = UsersViewModelFactory(dao)
         val usersViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(UsersViewModel::class.java)
 

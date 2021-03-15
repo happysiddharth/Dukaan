@@ -10,9 +10,9 @@ import java.io.Serializable
     tableName = "CategoriesTable"
 )
 data class CategoriesEntity(
-    @ColumnInfo(name = "image") val image: String,
-    @ColumnInfo(name = "name") val name: String,
-    @ColumnInfo(name = "quantity") val quantity: String
+    @ColumnInfo(name = "image") var image: String,
+    @ColumnInfo(name = "name") var name: String,
+    @ColumnInfo(name = "quantity") var quantity: String
 ) : Serializable {
 
     @PrimaryKey(autoGenerate = true)

@@ -8,7 +8,7 @@ import com.example.dukaan.R
 import com.example.dukaan.localDatabase.ConsumerEntity
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import kotlinx.android.synthetic.main.activity_check_out_order.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -39,7 +39,7 @@ class CheckOutOrderActivity : AppCompatActivity() {
     private fun initViews() {
         val database = DukaanRoomDatabase.getDatabaseContext(this)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
 

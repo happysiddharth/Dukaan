@@ -57,7 +57,7 @@ class UsersRepository(val dukaanRoomDAO: DukaanRoomDAO) {
 
     fun placeOrderRepo(orderEntity: OrderEntity) {
         CoroutineScope(Dispatchers.IO).launch {
-            dukaanRoomDAO.PlaceOrderDao(orderEntity)
+            dukaanRoomDAO.placeOrder(orderEntity)
         }
     }
 

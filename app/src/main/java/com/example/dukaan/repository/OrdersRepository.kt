@@ -2,9 +2,9 @@ package com.example.dukaan.repository
 
 class OrdersRepository {
 
-    var operationList = mutableListOf<String>()
+    private var operationList = mutableListOf<String>()
 
-    fun setOperationsRepo(){
+    private fun setOperationsRepo(){
 
         operationList.add("All")
         operationList.add("Pending")

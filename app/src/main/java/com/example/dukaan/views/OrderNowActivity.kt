@@ -15,7 +15,7 @@ import com.example.dukaan.localDatabase.StoreEntity
 import com.example.dukaan.recylerViewAdapter.AllStoresAdapter
 import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import kotlinx.android.synthetic.main.activity_order_now.*
 
 
@@ -38,7 +38,7 @@ class OrderNowActivity : AppCompatActivity(), OnStoreClicked {
         var phone = PreferenceHelper.getStringFromPreference(this,PHONE_KEY)
         val database = DukaanRoomDatabase.getDatabaseContext(this)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
 

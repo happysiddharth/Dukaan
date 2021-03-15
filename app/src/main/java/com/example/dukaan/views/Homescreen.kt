@@ -1,12 +1,10 @@
 package com.example.dukaan.views
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.example.dukaan.R
 import com.example.dukaan.fragments.*
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_homescreen.*
 
 class Homescreen : AppCompatActivity() {
@@ -30,7 +28,7 @@ class Homescreen : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.action_products -> {
-                    val productsFragment = productMainFragment()
+                    val productsFragment = ProductMainFragment()
                     val transaction = fragmentManager.beginTransaction()
                     transaction.replace(R.id.flHomescreen, productsFragment, "product")
                         .addToBackStack("product").commit()

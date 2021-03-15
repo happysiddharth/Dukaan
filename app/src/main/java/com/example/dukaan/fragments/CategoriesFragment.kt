@@ -14,18 +14,18 @@ import com.example.dukaan.localDatabase.CategoriesEntity
 import com.example.dukaan.models.ProductsApplication
 import com.example.dukaan.recylerViewAdapter.CategoriesDataAdapter
 import com.example.dukaan.viewModels.CategoriesViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.CategoriesViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.CategoriesViewModelFactory
 import com.example.dukaan.views.AddCategoryActivity
-import kotlinx.android.synthetic.main.fragment_catefories.*
+import kotlinx.android.synthetic.main.fragment_categories.*
 
 class CategoriesFragment : Fragment(), CategoryClickListener {
 
     private val categoriesList = mutableListOf<CategoriesEntity>()
-    lateinit var categoriesDataAdapter: CategoriesDataAdapter
-    lateinit var viewModel: CategoriesViewModel
+    private lateinit var categoriesDataAdapter: CategoriesDataAdapter
+    private lateinit var viewModel: CategoriesViewModel
 
     companion object {
-        public fun newInstance(): CategoriesFragment {
+        fun newInstance(): CategoriesFragment {
             return CategoriesFragment()
         }
     }
@@ -34,7 +34,7 @@ class CategoriesFragment : Fragment(), CategoryClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_catefories, container, false)
+        return inflater.inflate(R.layout.fragment_categories, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

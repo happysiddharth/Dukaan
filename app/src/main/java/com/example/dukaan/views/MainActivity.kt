@@ -5,12 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.dukaan.R
-import com.example.dukaan.fragments.AllOrderOperationsFragment
 import com.example.dukaan.fragments.OTPFragment
-import com.example.dukaan.fragments.OrdersFragment
-import com.example.dukaan.fragments.ViewPagerAdapter
 import com.example.dukaan.sharedpreference.PreferenceHelper
-import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 import kotlin.concurrent.schedule

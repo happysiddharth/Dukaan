@@ -6,20 +6,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dukaan.R
-import com.example.dukaan.clickListeners.DeleteTheParticularProduct
 import com.example.dukaan.clickListeners.ProductClickListener
 import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.models.ProductsApplication
 import com.example.dukaan.recylerViewAdapter.ProductsDataAdapter
-import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.ProductsViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.ProductsViewModelFactory
 import com.example.dukaan.views.AddProductActivity
-import com.example.dukaan.views.CreateStore
 import com.example.dukaan.views.EditProductActivity
 import kotlinx.android.synthetic.main.fragment_products.*
 import kotlinx.coroutines.CoroutineScope
@@ -27,12 +23,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickListener,DeleteTheParticularProduct {
+class ProductsFragment(var list: List<ProductEntity>) : Fragment(), ProductClickListener {
 
     private val productList = mutableListOf<ProductEntity>()
     lateinit var productsDataAdapter: ProductsDataAdapter
     lateinit var viewModel: ProductsViewModel
-    lateinit var listL:List<ProductEntity>
+    lateinit var listL: List<ProductEntity>
+
     companion object {
         fun newInstance(list: List<ProductEntity>): ProductsFragment {
             return ProductsFragment(list)
@@ -49,7 +46,7 @@ class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickL
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        productsDataAdapter = ProductsDataAdapter(productList, this,this)
+        productsDataAdapter = ProductsDataAdapter(productList, this)
 
         val appClass = activity?.application as ProductsApplication
         val repository = appClass.repository
@@ -68,11 +65,11 @@ class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickL
     }
 
     private fun getProductsData() {
-            productList.clear()
-            productList.addAll(list)
-            recyclerViewProductsFragment.visibility = View.VISIBLE
-            progressBar.visibility = View.GONE
-            productsDataAdapter.notifyDataSetChanged()
+        productList.clear()
+        productList.addAll(list)
+        recyclerViewProductsFragment.visibility = View.VISIBLE
+        progressBar.visibility = View.GONE
+        productsDataAdapter.notifyDataSetChanged()
     }
 
     private fun setRecyclerData() {
@@ -87,10 +84,6 @@ class ProductsFragment(var list:List<ProductEntity>) : Fragment(), ProductClickL
     }
 
     override fun onDeleteClicked(productEntity: ProductEntity) {
-
-    }
-
-    override fun deleteThePEoduct(productEntity: ProductEntity) {
         CoroutineScope(Dispatchers.IO).launch {
             viewModel.deleteProduct(productEntity)
         }

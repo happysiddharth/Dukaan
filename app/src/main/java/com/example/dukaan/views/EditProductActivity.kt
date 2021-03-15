@@ -1,17 +1,19 @@
 package com.example.dukaan.views
 
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import com.bumptech.glide.Glide
 import com.example.dukaan.R
+import com.example.dukaan.localDatabase.CategoriesEntity
 import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.models.ProductsApplication
+import com.example.dukaan.viewModels.CategoriesViewModel
 import com.example.dukaan.viewModels.ProductsViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.CategoriesViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.ProductsViewModelFactory
 import kotlinx.android.synthetic.main.activity_edit_product.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -38,9 +40,6 @@ class EditProductActivity : AppCompatActivity() {
         }
 
 
-        Glide.with(this).load(productEntity.image).placeholder(R.drawable.ic_baseline_image_24)
-            .into(ivProductImageEditProduct)
-
         etProductNameEditProduct.setText(productEntity.name)
         etProductCategoryEditProduct.setText(productEntity.category)
         etMrpEditProduct.setText(productEntity.price.toString())
@@ -48,6 +47,8 @@ class EditProductActivity : AppCompatActivity() {
         etQuantityEditProduct.setText(productEntity.quantity)
         etUnitEditProduct.setText(productEntity.unit)
         etProductDetailsEditProduct.setText(productEntity.product_details)
+
+        Glide.with(this).load(productEntity.image).into(ivProductImageEditProduct)
 
         btnAddProductEditProduct.setOnClickListener {
 
@@ -64,9 +65,10 @@ class EditProductActivity : AppCompatActivity() {
                 viewModel.editProduct(productEntity)
             }
 
-            Toast.makeText(applicationContext,"Updated",Toast.LENGTH_LONG).show()
-           finish()
+            Toast.makeText(applicationContext, "Updated", Toast.LENGTH_LONG).show()
+            finish()
         }
 
     }
+
 }

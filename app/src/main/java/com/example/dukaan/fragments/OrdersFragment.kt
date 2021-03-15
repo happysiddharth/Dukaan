@@ -4,41 +4,32 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.viewpager.widget.ViewPager
 import com.example.dukaan.R
-import com.example.dukaan.localDatabase.DukaanRoomDAO
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
-import com.example.dukaan.models.ProductsApplication
 import com.example.dukaan.recylerViewAdapter.OrderOperationsAdapter
-import com.example.dukaan.recylerViewHolders.OnOrderOperationClicked
 import com.example.dukaan.repository.OrdersRepository
 import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.OrdersModelFactory
 import com.example.dukaan.viewModels.OrdersViewModel
-import com.example.dukaan.viewModels.ProductsViewModel
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
-import com.google.android.material.tabs.TabLayout
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import kotlinx.android.synthetic.main.activity_products.*
 import kotlinx.android.synthetic.main.fragment_orders.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.properties.Delegates
 
 
 class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperationClicked {
 
-    lateinit var orderOperationsAdapter: OrderOperationsAdapter
-    lateinit var ordersViewModel: OrdersViewModel
+    private lateinit var orderOperationsAdapter: OrderOperationsAdapter
+    private lateinit var ordersViewModel: OrdersViewModel
     lateinit var usersViewModel: UsersViewModel
     lateinit var phone:String
-    var Store_Id = 0;
+    private var Store_Id = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,7 +59,7 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
 
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
 
@@ -93,8 +84,6 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         ordersViewModel =
             ViewModelProviders.of(this, orderViewModelFactory).get(OrdersViewModel::class.java)
         launchAllOrderOperations()
-
-
     }
 
 

@@ -17,7 +17,7 @@ import com.example.dukaan.localDatabase.OrderEntity
 import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.recylerViewAdapter.AllProductAdapter
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import com.example.dukaan.views.CheckOutOrderActivity
 import kotlinx.android.synthetic.main.fragment_show_products.*
 import java.time.LocalDateTime
@@ -58,7 +58,7 @@ class ShowProductsFragment : Fragment(), OrderNow {
     private fun initViews() {
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
         TvOrderStoreName.setText(StoreName)

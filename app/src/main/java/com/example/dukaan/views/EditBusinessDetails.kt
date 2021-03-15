@@ -10,7 +10,7 @@ import com.example.dukaan.fragments.OTPFragment
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import kotlinx.android.synthetic.main.activity_edit_business_details.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +23,7 @@ class EditBusinessDetails : AppCompatActivity() {
 
         val database = DukaanRoomDatabase.getDatabaseContext(applicationContext)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
 

@@ -13,15 +13,18 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.dukaan.R
 import com.example.dukaan.fragments.OTPFragment
+import com.example.dukaan.localDatabase.CategoriesEntity
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.localDatabase.UsersEntity
 import com.example.dukaan.models.ProductsApplication
 import com.example.dukaan.sharedpreference.PreferenceHelper
+import com.example.dukaan.viewModels.CategoriesViewModel
 import com.example.dukaan.viewModels.ProductsViewModel
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.CategoriesViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.ProductsViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import kotlinx.android.synthetic.main.activity_add_product_details.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,7 +32,8 @@ import kotlinx.coroutines.launch
 
 class AddProductDetailsActivity : AppCompatActivity() {
 
-    lateinit var viewModel: ProductsViewModel
+    private lateinit var viewModel: ProductsViewModel
+    private lateinit var categoriesViewModel: CategoriesViewModel
     private var imageData: Uri? = null
 
     companion object {
@@ -43,23 +47,28 @@ class AddProductDetailsActivity : AppCompatActivity() {
 
         val appClass = application as ProductsApplication
         val repository = appClass.repository
+        val categoriesRepository = appClass.categoriesRepository
+
         val viewModelFactory = ProductsViewModelFactory(repository)
+        val categoriesViewModelFactory = CategoriesViewModelFactory(categoriesRepository)
 
         viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(ProductsViewModel::class.java)
+
+        categoriesViewModel = ViewModelProviders.of(this, categoriesViewModelFactory)
+            .get(CategoriesViewModel::class.java)
+
         val database = DukaanRoomDatabase.getDatabaseContext(applicationContext)
 
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
-        val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+
+        val usersViewModelFactory = UsersViewModelFactory(dao)
+        val usersViewModel = ViewModelProviders.of(this, usersViewModelFactory)
             .get(UsersViewModel::class.java)
 
         if (intent != null && intent.extras != null) {
             etProductNameAddProductDetails.setText(intent.getStringExtra("name"))
         }
-
-        //  btnAddProductProductDetails.background =
-        //    ContextCompat.getDrawable(this, R.drawable.disable_btn)
 
         etProductDetailsAddProductDetails.setOnClickListener {
             btnAddProductProductDetails.background =
@@ -104,12 +113,17 @@ class AddProductDetailsActivity : AppCompatActivity() {
                     quantity,
                     unit,
                     productDetails,
-                    PreferenceHelper.getIntFromPreference(applicationContext,CreateStore.STORE_ID)
+                    PreferenceHelper.getIntFromPreference(applicationContext, CreateStore.STORE_ID)
                 )
                 CoroutineScope(Dispatchers.Main).launch {
-                    usersViewModel.fetchUser(PreferenceHelper.getStringFromPreference(this@AddProductDetailsActivity,OTPFragment.PHONE_KEY)!!).observe(this@AddProductDetailsActivity,
+                    usersViewModel.fetchUser(
+                        PreferenceHelper.getStringFromPreference(
+                            this@AddProductDetailsActivity,
+                            OTPFragment.PHONE_KEY
+                        )!!
+                    ).observe(this@AddProductDetailsActivity,
                         Observer {
-                            var usersEntity:UsersEntity = it[0]
+                            val usersEntity: UsersEntity = it[0]
                             usersEntity.is_created_first_product = true
                             CoroutineScope(Dispatchers.IO).launch {
                                 usersViewModel.updateUser(usersEntity)
@@ -120,15 +134,11 @@ class AddProductDetailsActivity : AppCompatActivity() {
                 }
                 viewModel.addProduct(productEntity)
 
-//                val intent = Intent(applicationContext, ProductsActivity::class.java)
-//                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
-//                startActivity(intent)
+                val categoriesEntity = CategoriesEntity(image, category, quantity)
+                categoriesViewModel.addCategory(categoriesEntity)
 
-                finish()
-
-
-
-
+                val intent = Intent(applicationContext, ProductsActivity::class.java)
+                startActivity(intent)
 
             } else {
                 Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show()

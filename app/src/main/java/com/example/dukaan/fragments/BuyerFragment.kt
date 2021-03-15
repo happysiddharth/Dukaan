@@ -13,7 +13,7 @@ import com.example.dukaan.R
 import com.example.dukaan.localDatabase.DukaanRoomDatabase
 import com.example.dukaan.localDatabase.UsersEntity
 import com.example.dukaan.viewModels.UsersViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
 import com.example.dukaan.views.OrderNowActivity
 import kotlinx.android.synthetic.main.fragment_buyer.*
 import kotlinx.coroutines.CoroutineScope
@@ -46,7 +46,7 @@ class BuyerFragment : Fragment() {
 
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = ViewModelFactory(dao)
+        val viewmodelFactory = UsersViewModelFactory(dao)
         usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
             .get(UsersViewModel::class.java)
         initSetOnclickListener()

@@ -14,7 +14,7 @@ import com.example.dukaan.R
 import com.example.dukaan.localDatabase.CategoriesEntity
 import com.example.dukaan.models.ProductsApplication
 import com.example.dukaan.viewModels.CategoriesViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.CategoriesViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.CategoriesViewModelFactory
 import kotlinx.android.synthetic.main.activity_add_category.*
 
 class AddCategoryActivity : AppCompatActivity() {

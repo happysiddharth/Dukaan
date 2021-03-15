@@ -16,23 +16,18 @@ import com.example.dukaan.localDatabase.ProductEntity
 import com.example.dukaan.models.ProductsApplication
 import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.ProductsViewModel
-import com.example.dukaan.viewModels.ViewModelsFactory.ProductsViewModelFactory
+import com.example.dukaan.viewModels.usersViewModelFactory.ProductsViewModelFactory
 import com.example.dukaan.views.CreateStore
 import com.google.android.material.tabs.TabLayout
 import kotlinx.android.synthetic.main.activity_products.tabLayoutProducts
 import kotlinx.android.synthetic.main.activity_products.viewPagerProducts
 import kotlinx.android.synthetic.main.fragment_product_main.*
 
-class productMainFragment : Fragment() {
+class ProductMainFragment : Fragment() {
 
     private lateinit var viewPager: ViewPager
     private lateinit var tabLayout: TabLayout
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,21 +46,21 @@ class productMainFragment : Fragment() {
         val appClass = activity?.application as ProductsApplication
         val repository = appClass.repository
         val viewModelFactory = ProductsViewModelFactory(repository)
-        var viewModel = ViewModelProviders.of(this, viewModelFactory)
+        val viewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(ProductsViewModel::class.java)
 
-        imageButton.setOnClickListener(View.OnClickListener {
-            imageButtonCancel.visibility = View.VISIBLE;
-            editTextTextPersonName.visibility = View.VISIBLE;
-            imageButton.visibility = View.GONE;
-            imageButtonCancel.setOnClickListener(View.OnClickListener {
-                imageButtonCancel.visibility = View.GONE;
-                editTextTextPersonName.visibility = View.INVISIBLE;
-                imageButton.visibility = View.VISIBLE;
+        imageButton.setOnClickListener {
+            imageButtonCancel.visibility = View.VISIBLE
+            editTextTextPersonName.visibility = View.VISIBLE
+            imageButton.visibility = View.GONE
+            imageButtonCancel.setOnClickListener {
+                imageButtonCancel.visibility = View.GONE
+                editTextTextPersonName.visibility = View.INVISIBLE
+                imageButton.visibility = View.VISIBLE
                 editTextTextPersonName.text.clear()
-            })
+            }
 
-        })
+        }
 
         editTextTextPersonName.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -77,7 +72,7 @@ class productMainFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                viewModel.getProducts(PreferenceHelper.getIntFromPreference(context!!,CreateStore.STORE_ID),"%"+s.toString()+"%").observe(this@productMainFragment, Observer {
+                viewModel.getProducts(PreferenceHelper.getIntFromPreference(context!!,CreateStore.STORE_ID),"%"+s.toString()+"%").observe(this@ProductMainFragment, Observer {
                     setViewPagerAdapter(it)
 
                 })

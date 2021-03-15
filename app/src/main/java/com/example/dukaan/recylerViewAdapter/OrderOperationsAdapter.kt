@@ -8,7 +8,7 @@ import com.example.dukaan.interfaces.OnOrderOperationClicked
 import com.example.dukaan.recylerViewHolders.OrderOperationsViewHolder
 
 
-class OrderOperationsAdapter(val operationList:List<String>,val onOrderOperationClicked: OnOrderOperationClicked)
+class OrderOperationsAdapter(private val operationList:List<String>, private val onOrderOperationClicked: OnOrderOperationClicked)
     :RecyclerView.Adapter<OrderOperationsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderOperationsViewHolder {

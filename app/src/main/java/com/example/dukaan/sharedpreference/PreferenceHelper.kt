@@ -5,9 +5,9 @@ import android.content.SharedPreferences
 
 class PreferenceHelper {
     companion object {
-        private val SHARED_PREFERENCE_KEY = "com.xyz.sharedpreferences"
+        private const val SHARED_PREFERENCE_KEY = "com.xyz.sharedpreferences"
 
-        fun getSharedPreference(context: Context): SharedPreferences {
+        private fun getSharedPreference(context: Context): SharedPreferences {
             return context.getSharedPreferences(SHARED_PREFERENCE_KEY, Context.MODE_PRIVATE)
         }
 

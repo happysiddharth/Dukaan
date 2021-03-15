@@ -6,7 +6,7 @@ import androidx.room.*
 @Dao
 interface CategoriesDao {
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addCategory(categoriesEntity: CategoriesEntity)
 
     @Query("select * from CategoriesTable")
