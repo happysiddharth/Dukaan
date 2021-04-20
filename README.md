@@ -1,5 +1,5 @@
 # Dukaan
- // ViewModel and LiveData
+    // ViewModel and LiveData
     implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_version"
@@ -37,6 +37,7 @@
     annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
     implementation 'io.paperdb:paperdb:2.6'
     
-    Room database is used for storing user information , products details and storing store information.Room database is also used to fetch the live data from the database and display the data on activities.
+    
+    Room database is used for storing user information , products details and storing store information.Room database is also used to fetch the live data from the database and   display the data on activities.
     
   
