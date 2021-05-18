@@ -1,43 +1,41 @@
 # Dukaan
-    // ViewModel and LiveData
-    implementation "androidx.lifecycle:lifecycle-extensions:$arch_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$arch_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$arch_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$arch_version"
-    //Coroutines
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
-    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinCoroutineVersion"
-    //Room
-    //implementation "androidx.room:room-runtime:$jetpack_version"
-    implementation "androidx.room:room-ktx:$jetpack_version"
-    kapt "androidx.room:room-compiler:$jetpack_version"
-    kapt "com.android.databinding:compiler:$jetpack_version"
-    //Anko
-    implementation "org.jetbrains.anko:anko-commons:$anko_version"
-    // Retrofit & OkHttp
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.0.1"
-    testImplementation "com.android.support.test.espresso:espresso-core:3.0.2"
-    testImplementation "androidx.test.ext:junit-ktx:1.1.2-beta01"
-    androidTestImplementation "androidx.test.ext:junit-ktx:1.1.2-beta01"
-    androidTestImplementation "org.mockito:mockito-core:2.27.0"
-    testImplementation "org.mockito:mockito-core:2.27.0"
-    testImplementation "android.arch.core:core-testing:2.1.0"
-    testImplementation "com.squareup.okhttp3:mockwebserver:3.6.0"
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'com.github.bumptech.glide:glide:4.8.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
-    androidTestImplementation 'com.android.support.test:runner:1.0.0'
-    androidTestCompile "android.arch.core:core-testing:1.1.0"
-    testImplementation 'org.robolectric:robolectric:4.0'
-    //glide dependencys
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
-    implementation 'io.paperdb:paperdb:2.6'
-    
-    
-    Room database is used for storing user information , products details and storing store information.Room database is also used to fetch the live data from the database and   display the data on activities.
-    
+
+App Screenshots :
+
+<table>
+  <tr>
+    <td><img src="https://i.postimg.cc/ZYpKgf9y/Screenshot-2021-05-18-19-46-27-930-com-example-dukaan.jpg" width="200"/></td>
+    <td><img src="https://i.postimg.cc/13C962db/Screenshot-2021-05-18-19-46-53-596-com-example-dukaan.jpg" width="200"/></td>
+  </tr>
   
+  
+  <tr>
+    <td><img src="https://i.postimg.cc/50v1h0tM/Screenshot-2021-05-18-19-48-42-530-com-example-dukaan.jpg" width="200"/></td>
+    <td><img src="https://i.postimg.cc/HsTHNTDf/Screenshot-2021-05-18-19-48-55-354-com-example-dukaan.jpg" width="200"/></td>
+  </tr>
+  
+  
+  <tr>
+    <td><img src="https://i.postimg.cc/7YBvQ7N2/Screenshot-2021-05-18-19-48-58-499-com-example-dukaan.jpg" width="200"/></td>
+    <td><img src="https://i.postimg.cc/SsbHzGmw/Screenshot-2021-05-18-19-49-53-348-com-example-dukaan.jpg" width="200"/></td>
+  </tr>
+ </table>
+
+
+This project is designed only for learning purpose with the guidance of Masai School mentors.
+
+This Project is made in Kotlin with Android Studio IDE.
+Dependency Used 
+- [Circular View](https://github.com/hdodenhof/CircleImageView) 
+- [Glide](https://github.com/bumptech/glide) 
+- [ViewModel & LiveData](https://gist.github.com/sanogueralorenzo/217ab91e45b2b66935608bb6f48c0d1f)
+- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
+- [Retrofit](https://github.com/square/retrofit)
+- [Used Icons](https://www.flaticon.com)
+- All Random images available on Internet
+
+Team Members 
+- Prabin Kumar Sahu
+- Siddharth Kaushik
+- Harshad Pawar
+- Rahul Yadav
