@@ -1,42 +1,41 @@
-# Dukaan
+# Dukaan App Clone
+#### The Dukaan App is a DIY platform that enables merchants, retailers and others with zero programming skills to set up their very own e-commerce store using a smartphone in 30 seconds.
 
-App Screenshots :
-
-<table>
-  <tr>
-    <td><img src="https://i.postimg.cc/ZYpKgf9y/Screenshot-2021-05-18-19-46-27-930-com-example-dukaan.jpg" width="200"/></td>
-    <td><img src="https://i.postimg.cc/13C962db/Screenshot-2021-05-18-19-46-53-596-com-example-dukaan.jpg" width="200"/></td>
-  </tr>
-  
-  
-  <tr>
-    <td><img src="https://i.postimg.cc/50v1h0tM/Screenshot-2021-05-18-19-48-42-530-com-example-dukaan.jpg" width="200"/></td>
-    <td><img src="https://i.postimg.cc/HsTHNTDf/Screenshot-2021-05-18-19-48-55-354-com-example-dukaan.jpg" width="200"/></td>
-  </tr>
-  
-  
-  <tr>
-    <td><img src="https://i.postimg.cc/7YBvQ7N2/Screenshot-2021-05-18-19-48-58-499-com-example-dukaan.jpg" width="200"/></td>
-    <td><img src="https://i.postimg.cc/SsbHzGmw/Screenshot-2021-05-18-19-49-53-348-com-example-dukaan.jpg" width="200"/></td>
-  </tr>
- </table>
+<img src=https://play-lh.googleusercontent.com/gubbLe7g_oSN9PCkpVH0AxO0oUWykVYVN2xhDuThLJ4M1mVnEPV2VTFIMzNGd5oWsp0 height="55px" />
 
 
-This project is designed only for learning purpose with the guidance of Masai School mentors.
+## Screenshots
 
-This Project is made in Kotlin with Android Studio IDE.
+|**Login Screen**|**Home Screen**|**Orders Screen**|
+|:---|:--|:--|
+|<img src=https://i.postimg.cc/ZYpKgf9y/Screenshot-2021-05-18-19-46-27-930-com-example-dukaan.jpg height="500px" width="350px"/>|<img src=https://i.postimg.cc/13C962db/Screenshot-2021-05-18-19-46-53-596-com-example-dukaan.jpg height="500px" width="350px"/>|<img src=https://i.postimg.cc/50v1h0tM/Screenshot-2021-05-18-19-48-42-530-com-example-dukaan.jpg height="500px" width="350px"/>
 
-Dependencies Used :
-- [Circular View](https://github.com/hdodenhof/CircleImageView) 
-- [Glide](https://github.com/bumptech/glide) 
-- [ViewModel & LiveData](https://gist.github.com/sanogueralorenzo/217ab91e45b2b66935608bb6f48c0d1f)
-- [Coroutines](https://github.com/Kotlin/kotlinx.coroutines)
-- [Retrofit](https://github.com/square/retrofit)
-- [Used Icons](https://www.flaticon.com)
-- All Random images available on Internet
 
-Team Members 
-- Prabin Kumar Sahu
-- Siddharth Kaushik
-- Harshad Pawar
-- Rahul Yadav
+|**Manage Store**|**Account Screen**|**Products Screen**|
+|:---|:--|:--|
+|<img src=https://i.postimg.cc/HsTHNTDf/Screenshot-2021-05-18-19-48-55-354-com-example-dukaan.jpg height="500px" width="350px"/>|<img src=https://i.postimg.cc/7YBvQ7N2/Screenshot-2021-05-18-19-48-58-499-com-example-dukaan.jpg height="500px" width="350px"/>|<img src=https://i.postimg.cc/SsbHzGmw/Screenshot-2021-05-18-19-49-53-348-com-example-dukaan.jpg height="500px" width="350px"/>
+
+
+## Technologies
+* Kotlin
+* Glide 
+* Recycler View 
+* Fragments
+* Coroutines
+* MVVM
+* Live Data
+* Retrofit
+* Shared Preferences
+* Room Database
+
+## Features
+* In this app, user can create their own digital store within 30 sec.
+* You can expand your small business using social media.
+* You can add your product to our app.
+
+
+## Team Members : 
+* Prabin Kumar Sahu 
+* Siddharth Kaushik
+* Rahul Yadav
+* Harshad Pawar
