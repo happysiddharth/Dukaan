@@ -8,13 +8,7 @@ import android.view.ViewGroup
 import com.example.dukaan.R
 
 
-class ManageStoreFragement : Fragment() {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+class ManageStoreFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

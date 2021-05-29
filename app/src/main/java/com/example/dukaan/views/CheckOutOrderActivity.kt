@@ -26,35 +26,33 @@ class CheckOutOrderActivity : AppCompatActivity() {
     }
 
     private fun getDataFromIntent() {
-        var intent: Intent = getIntent()
-        if (intent != null) {
-            var nameOrder = intent.getStringExtra("nameOrder")
-            var priceOrder = intent.getStringExtra("priceOrder")
-            TvOrderItemNameCheck.setText(nameOrder)
-            TvOrderItemPriceCheck.setText(priceOrder.toString())
-            TvOrderItemTotalPriceCheck.setText(priceOrder.toString())
-        }
+        val intent: Intent = intent
+        val nameOrder = intent.getStringExtra("nameOrder")
+        val priceOrder = intent.getStringExtra("priceOrder")
+        TvOrderItemNameCheck.text = nameOrder
+        TvOrderItemPriceCheck.text = priceOrder.toString()
+        TvOrderItemTotalPriceCheck.text = priceOrder.toString()
     }
 
     private fun initViews() {
         val database = DukaanRoomDatabase.getDatabaseContext(this)
         val dao = database.getDukaan()
-        val viewmodelFactory = UsersViewModelFactory(dao)
-        usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+        val viewModelFactory = UsersViewModelFactory(dao)
+        usersViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(UsersViewModel::class.java)
 
         BtnPayment.setOnClickListener {
             if (isDataValid()) {
-                var name = EtvConsumerName.text.toString()
-                var MobileNo = EtvConsumerMobileNo.text.toString()
-                var Address = EtvConsumerAddress.text.toString()
-                var City = EtvConsumerCity.text.toString()
-                var Pin = EtvConsumerPin.text.toString()
-               val consumerEntity = ConsumerEntity(name,MobileNo,Address,City,Pin,"COD")
+                val name = EtvConsumerName.text.toString()
+                val mobileNo = EtvConsumerMobileNo.text.toString()
+                val address = EtvConsumerAddress.text.toString()
+                val city = EtvConsumerCity.text.toString()
+                val pin = EtvConsumerPin.text.toString()
+                val consumerEntity = ConsumerEntity(name, mobileNo, address, city, pin, "COD")
                 CoroutineScope(Dispatchers.IO).launch {
                     usersViewModel.checkOutOrderModel(consumerEntity)
                 }
-                val intent = Intent(this,OrderNowActivity::class.java)
+                val intent = Intent(this, OrderNowActivity::class.java)
                 startActivity(intent)
             }
         }
@@ -62,23 +60,23 @@ class CheckOutOrderActivity : AppCompatActivity() {
 
     private fun isDataValid(): Boolean {
         if (EtvConsumerName.text.toString().isEmpty()) {
-            EtvConsumerName.setError("Name Field Can't Be Blank")
+            EtvConsumerName.error = "Name Field Can't Be Blank"
             return false
         }
         if (EtvConsumerMobileNo.text.toString().length != 10) {
-            EtvConsumerMobileNo.setError("Invalid Mobile No")
+            EtvConsumerMobileNo.error = "Invalid Mobile No"
             return false
         }
         if (EtvConsumerAddress.text.toString().isEmpty()) {
-            EtvConsumerAddress.setError("Address Field Can't Be Blank")
+            EtvConsumerAddress.error = "Address Field Can't Be Blank"
             return false
         }
         if (EtvConsumerCity.text.toString().isEmpty()) {
-            EtvConsumerCity.setError("City Field Can't Be Blank")
+            EtvConsumerCity.error = "City Field Can't Be Blank"
             return false
         }
         if (EtvConsumerPin.text.toString().isEmpty()) {
-            EtvConsumerPin.setError("Pin Field Can't Be Blank")
+            EtvConsumerPin.error = "Pin Field Can't Be Blank"
             return false
         }
         return true

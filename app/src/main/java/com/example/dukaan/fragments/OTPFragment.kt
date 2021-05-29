@@ -14,7 +14,7 @@ import com.example.dukaan.sharedpreference.PreferenceHelper
 import com.example.dukaan.viewModels.LoginViewModel
 import com.example.dukaan.viewModels.UsersViewModel
 import com.example.dukaan.viewModels.usersViewModelFactory.UsersViewModelFactory
-import com.example.dukaan.views.Homescreen
+import com.example.dukaan.views.HomeScreen
 import com.example.dukaan.views.OrderNowActivity
 import com.example.dukaan.views.RegistrationActivity
 import kotlinx.android.synthetic.main.fragment_o_t_p.*
@@ -93,7 +93,7 @@ class OTPFragment : Fragment() {
                         val intent = Intent(context, OrderNowActivity::class.java)
                         startActivity(intent)
                     } else {
-                        val intent = Intent(context, Homescreen::class.java)
+                        val intent = Intent(context, HomeScreen::class.java)
                         startActivity(intent)
                     }
                 } else {

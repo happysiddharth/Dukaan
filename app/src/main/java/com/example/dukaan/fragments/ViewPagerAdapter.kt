@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.example.dukaan.localDatabase.ProductEntity
 
-class ViewPagerAdapter(fm: FragmentManager, behavior: Int,var list:List<ProductEntity>) :
+class ViewPagerAdapter(fm: FragmentManager, behavior: Int, var list: List<ProductEntity>) :
     FragmentStatePagerAdapter(fm, behavior) {
 
     override fun getCount(): Int {
@@ -20,10 +20,7 @@ class ViewPagerAdapter(fm: FragmentManager, behavior: Int,var list:List<ProductE
         }
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
-
-        var tabName: String = ""
-
+    override fun getPageTitle(position: Int): CharSequence {
         return if (position == 0) {
             "Products"
         } else {

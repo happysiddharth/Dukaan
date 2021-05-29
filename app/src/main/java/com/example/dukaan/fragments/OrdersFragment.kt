@@ -1,4 +1,5 @@
 package com.example.dukaan.fragments
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,34 +24,25 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 
-class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperationClicked {
+class OrdersFragment : Fragment(), com.example.dukaan.interfaces.OnOrderOperationClicked {
 
     private lateinit var orderOperationsAdapter: OrderOperationsAdapter
     private lateinit var ordersViewModel: OrdersViewModel
     lateinit var usersViewModel: UsersViewModel
-    lateinit var phone:String
-    private var Store_Id = 0;
+    lateinit var phone: String
+    private var storeId = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        phone = PreferenceHelper.getStringFromPreference(context!!,OTPFragment.PHONE_KEY)!!
+        phone = PreferenceHelper.getStringFromPreference(context!!, OTPFragment.PHONE_KEY)!!
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_orders, container, false)
-    }
-
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            OrdersFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -59,22 +51,24 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
 
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = UsersViewModelFactory(dao)
-        usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+        val viewModelFactory = UsersViewModelFactory(dao)
+        usersViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(UsersViewModel::class.java)
 
 
 
         initViews()
         setOrderOperationListRecyclerview()
-        Store_Id = getStoreId()
+        storeId = getStoreId()
     }
 
     private fun setOrderOperationListRecyclerview() {
-        var operationList = ordersViewModel.allOperationsModel() as MutableList<String>
-        orderOperationsAdapter = OrderOperationsAdapter(operationList,this)
-        rvOrderOperations.layoutManager = LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,
-            false)
+        val operationList = ordersViewModel.allOperationsModel() as MutableList<String>
+        orderOperationsAdapter = OrderOperationsAdapter(operationList, this)
+        rvOrderOperations.layoutManager = LinearLayoutManager(
+            context, LinearLayoutManager.HORIZONTAL,
+            false
+        )
         rvOrderOperations.adapter = orderOperationsAdapter
     }
 
@@ -85,7 +79,6 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
             ViewModelProviders.of(this, orderViewModelFactory).get(OrdersViewModel::class.java)
         launchAllOrderOperations()
     }
-
 
 
     override fun onItemClicked(operation: String) {
@@ -123,8 +116,8 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
     private fun launchAllOrderOperations() {
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val allOrderOperationsFragment = AllOrderOperationsFragment()
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         allOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, allOrderOperationsFragment,
@@ -136,8 +129,8 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val pendingOrderOperationsFragment = PendingOrderOperationsFragment()
 
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         pendingOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, pendingOrderOperationsFragment,
@@ -149,8 +142,8 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val acceptedOrderOperationsFragment = AcceptedOrderOperationsFragment()
 
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         acceptedOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, acceptedOrderOperationsFragment,
@@ -160,9 +153,10 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
 
     private fun launchRejectedOrderOperations() {
         val fragmentTransaction = fragmentManager!!.beginTransaction()
-        val rejectedOrderOperationsFragment: RejectedOrderOperationsFragment =RejectedOrderOperationsFragment()
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val rejectedOrderOperationsFragment =
+            RejectedOrderOperationsFragment()
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         rejectedOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, rejectedOrderOperationsFragment,
@@ -174,8 +168,8 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val shippedOrderOperationsFragment = ShippedOrderOperationsFragment()
 
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         shippedOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, shippedOrderOperationsFragment,
@@ -187,8 +181,8 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val cancelledOrderOperationsFragment = CancelledOrderOperationsFragment()
 
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         cancelledOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, cancelledOrderOperationsFragment,
@@ -200,8 +194,8 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val deliveredOrderOperationsFragment = DeliveredOrderOperationsFragment()
 
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         deliveredOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, deliveredOrderOperationsFragment,
@@ -213,8 +207,8 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         val fragmentTransaction = fragmentManager!!.beginTransaction()
         val failedOrderOperationsFragment = FailedOrderOperationsFragment()
 
-        var bundle = Bundle()
-        bundle.putInt("StoreId", Store_Id)
+        val bundle = Bundle()
+        bundle.putInt("StoreId", storeId)
         failedOrderOperationsFragment.arguments = bundle
         fragmentTransaction.replace(
             R.id.flContainer, failedOrderOperationsFragment,
@@ -222,29 +216,29 @@ class OrdersFragment : Fragment(),com.example.dukaan.interfaces.OnOrderOperation
         ).commit()
     }
 
-    private fun getStoreId():Int {
-        val userId =  getUserId()
-        var StoreId = 0;
+    private fun getStoreId(): Int {
+        val userId = getUserId()
+        var storeId = 0
         CoroutineScope(Dispatchers.Main).launch {
             usersViewModel.fetchStoreIdModel(userId).observe(this@OrdersFragment, Observer {
                 val totalStore = it.size
-                for (i in 0 until totalStore){
-                    if (it[i].user_id == userId){
-                        StoreId = it[i].id!!
+                for (i in 0 until totalStore) {
+                    if (it[i].user_id == userId) {
+                        storeId = it[i].id!!
                     }
                 }
             })
         }
-        return StoreId
+        return storeId
     }
 
-    private fun getUserId():Int {
-        var userId:Int = 0;
+    private fun getUserId(): Int {
+        val userId = 0
         CoroutineScope(Dispatchers.Main).launch {
-            usersViewModel.fetchUser(phone!!).observe(this@OrdersFragment, Observer {
+            usersViewModel.fetchUser(phone).observe(this@OrdersFragment, Observer {
                 val totalUser = it.size
-                for (i in 0 until totalUser){
-                    if (it[i].phone == phone){
+                for (i in 0 until totalUser) {
+                    if (it[i].phone == phone) {
                         //userId = it[i].id!!
                     }
                 }

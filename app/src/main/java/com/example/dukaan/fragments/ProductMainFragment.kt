@@ -62,7 +62,7 @@ class ProductMainFragment : Fragment() {
 
         }
 
-        editTextTextPersonName.addTextChangedListener(object : TextWatcher{
+        editTextTextPersonName.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
 
             }
@@ -72,7 +72,12 @@ class ProductMainFragment : Fragment() {
             }
 
             override fun afterTextChanged(s: Editable?) {
-                viewModel.getProducts(PreferenceHelper.getIntFromPreference(context!!,CreateStore.STORE_ID),"%"+s.toString()+"%").observe(this@ProductMainFragment, Observer {
+                viewModel.getProducts(
+                    PreferenceHelper.getIntFromPreference(
+                        context!!,
+                        CreateStore.STORE_ID
+                    ), "%" + s.toString() + "%"
+                ).observe(this@ProductMainFragment, Observer {
                     setViewPagerAdapter(it)
 
                 })
@@ -81,12 +86,18 @@ class ProductMainFragment : Fragment() {
 
         })
 
-        viewModel.getProducts(PreferenceHelper.getIntFromPreference(context!!,CreateStore.STORE_ID),"%").observe(this, Observer {
+        viewModel.getProducts(
+            PreferenceHelper.getIntFromPreference(
+                context!!,
+                CreateStore.STORE_ID
+            ), "%"
+        ).observe(this, Observer {
             setViewPagerAdapter(it)
 
         })
 
     }
+
     private fun setViewPagerAdapter(list: List<ProductEntity>) {
         val supportFragmentManager = activity?.supportFragmentManager!!
         val viewPagerAdapter = ViewPagerAdapter(

@@ -10,8 +10,8 @@ import com.example.dukaan.interfaces.LoginWIthPhoneInterface
 import kotlinx.android.synthetic.main.fragment_phone_number_enter_field_fragment.*
 
 
-class Phone_number_enter_field_fragment(var loginWIthPhoneInterface:LoginWIthPhoneInterface) : Fragment() {
-
+class Phone_number_enter_field_fragment(var loginWIthPhoneInterface: LoginWIthPhoneInterface) :
+    Fragment() {
 
 
     override fun onCreateView(
@@ -29,7 +29,7 @@ class Phone_number_enter_field_fragment(var loginWIthPhoneInterface:LoginWIthPho
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnToOtp.setOnClickListener(View.OnClickListener {
-            loginWIthPhoneInterface.handelOnClick("phonenumberOtp",editTextPhone.text.toString())
+            loginWIthPhoneInterface.handelOnClick("phonenumberOtp", editTextPhone.text.toString())
         })
     }
 

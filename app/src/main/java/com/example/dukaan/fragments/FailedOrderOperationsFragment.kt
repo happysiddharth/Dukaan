@@ -24,18 +24,4 @@ class FailedOrderOperationsFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_failed_order_operations, container, false)
     }
 
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FailedOrderOperationsFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 }

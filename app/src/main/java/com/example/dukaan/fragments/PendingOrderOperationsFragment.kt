@@ -23,19 +23,4 @@ class PendingOrderOperationsFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_pending_order_operations, container, false)
     }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PendingOrderOperationsFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 }

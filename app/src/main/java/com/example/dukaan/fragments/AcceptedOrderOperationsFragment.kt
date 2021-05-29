@@ -29,15 +29,11 @@ class AcceptedOrderOperationsFragment : Fragment() {
     companion object {
 
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance() =
             AcceptedOrderOperationsFragment().apply {
                 arguments = Bundle().apply {
 
                 }
             }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
     }
 }

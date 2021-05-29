@@ -62,7 +62,8 @@ class CreateStore : AppCompatActivity() {
                         storeEntity.id!!
                     )
 
-                    val usersEntity = UsersEntity("sid", phoneNumber!!,
+                    val usersEntity = UsersEntity(
+                        "sid", phoneNumber!!,
                         is_created_first_store = true,
                         is_created_first_product = false,
                         imageUrl = "",

@@ -26,9 +26,8 @@ import kotlinx.coroutines.launch
 class ProductsFragment(var list: List<ProductEntity>) : Fragment(), ProductClickListener {
 
     private val productList = mutableListOf<ProductEntity>()
-    lateinit var productsDataAdapter: ProductsDataAdapter
+    private lateinit var productsDataAdapter: ProductsDataAdapter
     lateinit var viewModel: ProductsViewModel
-    lateinit var listL: List<ProductEntity>
 
     companion object {
         fun newInstance(list: List<ProductEntity>): ProductsFragment {

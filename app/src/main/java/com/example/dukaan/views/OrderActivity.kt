@@ -13,9 +13,10 @@ class OrderActivity : AppCompatActivity() {
         launchFragment()
     }
 
-    fun launchFragment(){
-        val OrderFragment = OrdersFragment()
-        supportFragmentManager.beginTransaction().add(R.id.flContainer1, OrderFragment, "OrderFragment").commit()
+    private fun launchFragment() {
+        val ordersFragment = OrdersFragment()
+        supportFragmentManager.beginTransaction()
+            .add(R.id.flContainer1, ordersFragment, "OrderFragment").commit()
     }
 
 }

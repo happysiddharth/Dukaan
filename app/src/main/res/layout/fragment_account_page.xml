@@ -29,21 +29,6 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/dp_20"
-            android:layout_marginRight="@dimen/dp_10"
-            android:background="@drawable/white_bg"
-            android:drawableLeft="@drawable/information"
-            android:drawablePadding="@dimen/dp_5"
-            android:fontFamily="@font/roboto_thin"
-            android:text="@string/support"
-            android:textColor="@color/blue_bg"
-            android:textSize="@dimen/sp_15"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <ImageView
             android:id="@+id/imgShopLogo"

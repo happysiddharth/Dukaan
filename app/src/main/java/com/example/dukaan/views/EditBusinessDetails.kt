@@ -23,11 +23,16 @@ class EditBusinessDetails : AppCompatActivity() {
 
         val database = DukaanRoomDatabase.getDatabaseContext(applicationContext)
         val dao = database.getDukaan()
-        val viewmodelFactory = UsersViewModelFactory(dao)
-        val usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+        val viewModelFactory = UsersViewModelFactory(dao)
+        val usersViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(UsersViewModel::class.java)
 
-        usersViewModel.getStoreDetails(PreferenceHelper.getIntFromPreference(applicationContext,OTPFragment.PHONE_USER_ID).toInt()).observe(this,
+        usersViewModel.getStoreDetails(
+            PreferenceHelper.getIntFromPreference(
+                applicationContext,
+                OTPFragment.PHONE_USER_ID
+            )
+        ).observe(this,
             Observer {
                 etBusinessNameDetails.setText(it[0].store_name)
                 etBusinessNameLink.setText(it[0].store_name + "54232")
@@ -37,7 +42,12 @@ class EditBusinessDetails : AppCompatActivity() {
         btnSaveBusiness.setOnClickListener {
 
             CoroutineScope(Dispatchers.IO).launch {
-                var storeEntity = usersViewModel.fetchParticularStore(PreferenceHelper.getIntFromPreference(applicationContext,OTPFragment.PHONE_USER_ID))
+                val storeEntity = usersViewModel.fetchParticularStore(
+                    PreferenceHelper.getIntFromPreference(
+                        applicationContext,
+                        OTPFragment.PHONE_USER_ID
+                    )
+                )
                 storeEntity.categories = etBusinessCategory.text.toString()
                 storeEntity.store_name = etBusinessNameDetails.text.toString()
 

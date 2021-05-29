@@ -21,21 +21,17 @@ import com.example.dukaan.views.AcceptOrderActivity
 class AllOrderOperationsFragment : Fragment() {
 
 
-    var StoreId: Int? = 0
+    var storeId: Int? = 0
     lateinit var usersViewModel: UsersViewModel
-    lateinit var allOrderOfStoreAdapter: AllOrderOfStoreAdapter
-    var orderList = mutableListOf<OrderEntity>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var allOrderOfStoreAdapter: AllOrderOfStoreAdapter
+    private var orderList = mutableListOf<OrderEntity>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        StoreId = arguments?.getInt("StoreId")
+        storeId = arguments?.getInt("StoreId")
 
         return inflater.inflate(R.layout.fragment_all_order_operations, container, false)
     }
@@ -56,15 +52,15 @@ class AllOrderOperationsFragment : Fragment() {
         }
         initViews()
         setRecyclerAdapter()
-       // showAllOrderOfStores()
-        Toast.makeText(context,"AllOrders Fragment $StoreId",Toast.LENGTH_SHORT).show()
+        // showAllOrderOfStores()
+        Toast.makeText(context, "AllOrders Fragment $storeId", Toast.LENGTH_SHORT).show()
     }
 
     private fun initViews() {
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = UsersViewModelFactory(dao)
-        usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+        val viewModelFactory = UsersViewModelFactory(dao)
+        usersViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(UsersViewModel::class.java)
         BtnShareStore.setOnClickListener {
             val intent = Intent(context, AcceptOrderActivity::class.java)
@@ -76,14 +72,6 @@ class AllOrderOperationsFragment : Fragment() {
         allOrderOfStoreAdapter = AllOrderOfStoreAdapter(orderList)
         rvAllOrders.layoutManager = LinearLayoutManager(context)
         rvAllOrders.adapter = allOrderOfStoreAdapter
-    }
-
-    private fun showAllOrderOfStores() {
-//        usersViewModel.getAllOrdersModel(StoreId!!).observe(this, Observer {
-//            orderList.clear()
-//            orderList.addAll(it)
-//            allOrderOfStoreAdapter.notifyDataSetChanged()
-//        })
     }
 
 }

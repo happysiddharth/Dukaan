@@ -24,7 +24,7 @@ class OrderNowActivity : AppCompatActivity(), OnStoreClicked {
     lateinit var usersViewModel: UsersViewModel
     lateinit var allStoresAdapter: AllStoresAdapter
     var storesList = mutableListOf<StoreEntity>()
-    var CartItem:Int? = 0
+    var CartItem: Int? = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_order_now)
@@ -35,7 +35,7 @@ class OrderNowActivity : AppCompatActivity(), OnStoreClicked {
     }
 
     private fun initViews() {
-        var phone = PreferenceHelper.getStringFromPreference(this,PHONE_KEY)
+        var phone = PreferenceHelper.getStringFromPreference(this, PHONE_KEY)
         val database = DukaanRoomDatabase.getDatabaseContext(this)
         val dao = database.getDukaan()
         val viewmodelFactory = UsersViewModelFactory(dao)
@@ -50,8 +50,10 @@ class OrderNowActivity : AppCompatActivity(), OnStoreClicked {
             var bundle = Bundle()
             bundle.putString("ConsumerPhoneNo", phone)
             consumerOrdersFragment.arguments = bundle
-           supportFragmentManager.beginTransaction().replace(R.id.flStoreProduct,consumerOrdersFragment,
-               "ConsumerOrdersFragment").addToBackStack("ConsumerOrdersFragment").commit()
+            supportFragmentManager.beginTransaction().replace(
+                R.id.flStoreProduct, consumerOrdersFragment,
+                "ConsumerOrdersFragment"
+            ).addToBackStack("ConsumerOrdersFragment").commit()
         }
     }
 
@@ -67,16 +69,16 @@ class OrderNowActivity : AppCompatActivity(), OnStoreClicked {
     }
 
     private fun setRecyclerAdapter() {
-       allStoresAdapter = AllStoresAdapter(storesList,this)
+        allStoresAdapter = AllStoresAdapter(storesList, this)
         rvAllStores.layoutManager = LinearLayoutManager(this)
         rvAllStores.adapter = allStoresAdapter
     }
 
     private fun showAllStores() {
-           usersViewModel.getAllStoreModel().observe(this, Observer {
-               storesList.clear()
-               storesList.addAll(it)
-               allStoresAdapter.notifyDataSetChanged()
-           })
+        usersViewModel.getAllStoreModel().observe(this, Observer {
+            storesList.clear()
+            storesList.addAll(it)
+            allStoresAdapter.notifyDataSetChanged()
+        })
     }
 }

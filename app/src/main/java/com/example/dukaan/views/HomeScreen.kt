@@ -7,9 +7,9 @@ import com.example.dukaan.R
 import com.example.dukaan.fragments.*
 import kotlinx.android.synthetic.main.activity_homescreen.*
 
-class Homescreen : AppCompatActivity() {
+class HomeScreen : AppCompatActivity() {
 
-    val fragmentManager = supportFragmentManager
+    private val fragmentManager = supportFragmentManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_homescreen)
@@ -35,7 +35,7 @@ class Homescreen : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.action_home -> {
-                    val homescreenFragement = HomescreenFragement()
+                    val homescreenFragement = HomeScreenFragement()
                     val transaction = fragmentManager.beginTransaction()
                     transaction.replace(
                         R.id.flHomescreen,
@@ -46,7 +46,7 @@ class Homescreen : AppCompatActivity() {
                     return@setOnNavigationItemSelectedListener true
                 }
                 R.id.action_manage_store -> {
-                    val manageStoreFragement = ManageStoreFragement()
+                    val manageStoreFragement = ManageStoreFragment()
                     val transaction = fragmentManager.beginTransaction()
                     transaction.replace(
                         R.id.flHomescreen,
@@ -71,7 +71,7 @@ class Homescreen : AppCompatActivity() {
 
     private fun setHomescreenFragment() {
         val transaction = fragmentManager.beginTransaction()
-        val homescreenFragement = HomescreenFragement()
+        val homescreenFragement = HomeScreenFragement()
         transaction.add(R.id.flHomescreen, homescreenFragement, "homescreen").commit()
 
     }

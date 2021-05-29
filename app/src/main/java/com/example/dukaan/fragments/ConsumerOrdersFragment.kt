@@ -11,29 +11,18 @@ import com.example.dukaan.R
 
 class ConsumerOrdersFragment : Fragment() {
 
-    var PhoneNo = ""
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private var phoneNo = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        PhoneNo = arguments?.getString("ConsumerPhoneNo").toString()
+        savedInstanceState: Bundle?
+    ): View? {
+        phoneNo = arguments?.getString("ConsumerPhoneNo").toString()
         return inflater.inflate(R.layout.fragment_consumer_orders, container, false)
-    }
-
-    companion object {
-
-        fun newInstance() =
-            ConsumerOrdersFragment().apply {
-
-            }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Toast.makeText(context,PhoneNo,Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, phoneNo, Toast.LENGTH_SHORT).show()
     }
 }

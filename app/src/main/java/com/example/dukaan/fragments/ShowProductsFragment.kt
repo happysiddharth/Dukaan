@@ -24,28 +24,19 @@ import java.time.LocalDateTime
 
 class ShowProductsFragment : Fragment(), OrderNow {
 
-    var StoreId:Int? = 0
-    var StoreName: String? = ""
+    var storeId: Int? = 0
+    var storeName: String? = ""
     lateinit var usersViewModel: UsersViewModel
-    lateinit var allProductAdapter: AllProductAdapter
-    var productList = mutableListOf<ProductEntity>()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
+    private lateinit var allProductAdapter: AllProductAdapter
+    private var productList = mutableListOf<ProductEntity>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
-        StoreId = arguments?.getInt("StoreId")
-        StoreName = arguments?.getString("StoreName")
+        savedInstanceState: Bundle?
+    ): View? {
+        storeId = arguments?.getInt("StoreId")
+        storeName = arguments?.getString("StoreName")
         return inflater.inflate(R.layout.fragment_show_products, container, false)
-    }
-
-    companion object {
-        fun newInstance(): ShowProductsFragment {
-            return ShowProductsFragment()
-        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -58,10 +49,10 @@ class ShowProductsFragment : Fragment(), OrderNow {
     private fun initViews() {
         val database = DukaanRoomDatabase.getDatabaseContext(context!!)
         val dao = database.getDukaan()
-        val viewmodelFactory = UsersViewModelFactory(dao)
-        usersViewModel = ViewModelProviders.of(this, viewmodelFactory)
+        val viewModelFactory = UsersViewModelFactory(dao)
+        usersViewModel = ViewModelProviders.of(this, viewModelFactory)
             .get(UsersViewModel::class.java)
-        TvOrderStoreName.setText(StoreName)
+        TvOrderStoreName.text = storeName
     }
 
     private fun setRecyclerAdapter() {
@@ -70,8 +61,8 @@ class ShowProductsFragment : Fragment(), OrderNow {
         rvStoreProducts.adapter = allProductAdapter
     }
 
-    fun showAllProductsOfStores() {
-        usersViewModel.getAllProductModel(StoreId!!).observe(this, Observer {
+    private fun showAllProductsOfStores() {
+        usersViewModel.getAllProductModel(storeId!!).observe(this, Observer {
             productList.clear()
             productList.addAll(it)
             allProductAdapter.notifyDataSetChanged()
@@ -79,34 +70,36 @@ class ShowProductsFragment : Fragment(), OrderNow {
     }
 
     override fun onProductClicked(productEntity: ProductEntity) {
-        var orderStatus = "Pending"
-        var imageOrder = productEntity.image
-        var nameOrder = productEntity.name
-        var categoryOrder = productEntity.category
-        var priceOrder = productEntity.selling_price
-        var quantityOrder = productEntity.quantity
-        var unitOrder = productEntity.unit
-        var product_detailsOrder = productEntity.product_details
-        var store_id = productEntity.store_id
+        val orderStatus = "Pending"
+        val imageOrder = productEntity.image
+        val nameOrder = productEntity.name
+        val categoryOrder = productEntity.category
+        val priceOrder = productEntity.selling_price
+        val quantityOrder = productEntity.quantity
+        val unitOrder = productEntity.unit
+        val product_detailsOrder = productEntity.product_details
+        val store_id = productEntity.store_id
 
-        var time = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+        val time = if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             LocalDateTime.now()
         } else {
-            Toast.makeText(context,"Android Version is old",Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Android Version is old", Toast.LENGTH_SHORT).show()
         }
         //Toast.makeText(context,nameOrder,Toast.LENGTH_SHORT).show()
 
-        val orderEntity = OrderEntity(imageOrder, nameOrder, categoryOrder, priceOrder, quantityOrder, unitOrder,
-            product_detailsOrder, orderStatus,time.toString(),store_id)
+        val orderEntity = OrderEntity(
+            imageOrder, nameOrder, categoryOrder, priceOrder, quantityOrder, unitOrder,
+            product_detailsOrder, orderStatus, time.toString(), store_id
+        )
         usersViewModel.placeOrderModel(orderEntity)
-        val intent = Intent(context,CheckOutOrderActivity::class.java)
-        intent.putExtra("imageOrder",imageOrder)
-        intent.putExtra("nameOrder",nameOrder)
-        intent.putExtra("categoryOrder",categoryOrder)
-        intent.putExtra("priceOrder",priceOrder)
-        intent.putExtra("quantityOrder",quantityOrder)
-        intent.putExtra("unitOrder",unitOrder)
-        intent.putExtra("product_detailsOrder",product_detailsOrder)
+        val intent = Intent(context, CheckOutOrderActivity::class.java)
+        intent.putExtra("imageOrder", imageOrder)
+        intent.putExtra("nameOrder", nameOrder)
+        intent.putExtra("categoryOrder", categoryOrder)
+        intent.putExtra("priceOrder", priceOrder)
+        intent.putExtra("quantityOrder", quantityOrder)
+        intent.putExtra("unitOrder", unitOrder)
+        intent.putExtra("product_detailsOrder", product_detailsOrder)
         startActivity(intent)
     }
 }

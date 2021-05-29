@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dukaan.iml" filepath="$PROJECT_DIR$/.idea/modules/Dukaan.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Dukaan.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Dukaan.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Dhukaan.iml" filepath="$PROJECT_DIR$/.idea/modules/Dhukaan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Dhukaan.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Dhukaan.app.iml" />
     </modules>
   </component>
 </project>
